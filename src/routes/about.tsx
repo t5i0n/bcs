@@ -16,7 +16,7 @@ export default function AboutPage() {
           src={farmers}
           alt="Ethiopian coffee farmers"
           loading="lazy"
-          className="rounded-3xl shadow-elegant w-full aspect-[4/5] object-cover"
+          className="rounded-3xl shadow-elegant w-full aspect-4/5 object-cover"
         />
         <div>
           <h2 className="font-display text-3xl md:text-4xl font-bold">
@@ -60,7 +60,7 @@ export default function AboutPage() {
               src={ceremony}
               alt="Ethiopian coffee ceremony"
               loading="lazy"
-              className="rounded-3xl shadow-elegant w-full aspect-[4/3] object-cover"
+              className="rounded-3xl shadow-elegant w-full aspect-4/3 object-cover"
             />
           </div>
           <div>

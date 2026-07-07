@@ -1,5 +1,5 @@
 import { Route, Routes, Link } from "react-router-dom";
-import { useState, type ReactNode } from "react";
+import { useState, type ComponentType, type ReactNode } from "react";
 import AboutPage from "./routes/about";
 import ContactPage from "./routes/contact";
 import ServicesPage from "./routes/services";
@@ -32,6 +32,7 @@ export default function App() {
             <AboutSection />
             <ServicesSection />
             <OriginsSection />
+            <ContactSection />
           </>
         }
       />
@@ -53,8 +54,8 @@ function Hero() {
           height={1280}
           className="w-full h-full object-cover animate-ken-burns"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/80" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.18_0.05_148/0.7)] to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/40 to-black/80" />
+        <div className="absolute inset-0 bg-linear-to-r from-[oklch(0.18_0.05_148/0.7)] to-transparent" />
       </div>
 
       <div className="container-x relative z-10 pt-32 pb-24 text-white">
@@ -116,9 +117,17 @@ function Hero() {
 }
 
 /* ───────────── ABOUT SECTION ───────────── */
-function SectionEyebrow({ children }: { children: ReactNode }) {
+function SectionEyebrow({
+  children,
+  inverted,
+}: {
+  children: ReactNode;
+  inverted?: boolean;
+}) {
   return (
-    <p className="text-accent uppercase tracking-[0.25em] text-xs font-semibold mb-4">
+    <p
+      className={`uppercase tracking-[0.25em] text-xs font-semibold mb-4 ${inverted ? "text-white" : "text-accent"}`}
+    >
       {children}
     </p>
   );
@@ -136,7 +145,7 @@ function AboutSection() {
               width={1280}
               height={1280}
               loading="lazy"
-              className="w-full aspect-[4/5] object-cover hover:scale-105 transition duration-700"
+              className="w-full aspect-4/5 object-cover hover:scale-105 transition duration-700"
             />
           </div>
           <div className="hidden md:block absolute -bottom-8 -right-8 w-56 rounded-2xl overflow-hidden shadow-xl border-8 border-background">
@@ -493,5 +502,164 @@ function Stat({
       </p>
       <p className="text-sm font-semibold mt-0.5">{value}</p>
     </div>
+  );
+}
+
+function ContactSection() {
+  return (
+    <section
+      id="contact"
+      className="py-24 md:py-32 gradient-forest text-white relative overflow-hidden"
+    >
+      <div
+        className="absolute inset-0 opacity-20"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle at 80% 20%, oklch(0.74 0.15 80 / 0.7), transparent 50%)",
+        }}
+      />
+      <div className="container-x relative grid lg:grid-cols-2 gap-14 items-start">
+        <div>
+          <SectionEyebrow inverted>Get in Touch</SectionEyebrow>
+          <h2 className="mt-3 font-display text-4xl md:text-5xl font-bold text-balance">
+            Let's Source Your Next Harvest.
+          </h2>
+          <p className="mt-5 text-white/80 text-lg leading-relaxed">
+            Tell us about your roastery, volume, and flavor goals. A consultant
+            will respond within one business day.
+          </p>
+
+          <div className="mt-10 space-y-4">
+            <InfoRow
+              icon={MapPin}
+              title="Headquarters"
+              lines={["Bole Sub-City, Addis Ababa", "Ethiopia"]}
+            />
+            <InfoRow
+              icon={() => <span className="text-lg">📞</span>}
+              title="Phone & WhatsApp"
+              lines={["+251 11 555 0199", "+251 91 234 5678"]}
+            />
+            <InfoRow
+              icon={() => <span className="text-lg">✉</span>}
+              title="Email"
+              lines={["hello@bcscoffee.com", "trade@bcscoffee.com"]}
+            />
+          </div>
+
+          <a
+            href="https://wa.me/251912345678"
+            className="inline-flex items-center gap-2 mt-8 px-6 py-3 rounded-full bg-[#25D366] text-white font-semibold hover:scale-105 transition"
+          >
+            <span>💬</span> Chat on WhatsApp
+          </a>
+
+          <div className="mt-8 rounded-2xl overflow-hidden border border-white/20 h-56">
+            <iframe
+              title="Map of Addis Ababa"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=38.70%2C8.95%2C38.85%2C9.05&layer=mapnik&marker=9.0054%2C38.7636"
+              className="w-full h-full grayscale-20"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            alert("Thank you — we'll be in touch within one business day.");
+          }}
+          className="rounded-3xl bg-white text-foreground p-8 md:p-10 shadow-elegant"
+        >
+          <div className="grid sm:grid-cols-2 gap-4">
+            <Field label="Name" name="name" required />
+            <Field label="Company" name="company" />
+            <Field label="Country" name="country" />
+            <Field label="Email" name="email" type="email" required />
+          </div>
+          <Field
+            label="Coffee Interest"
+            name="interest"
+            placeholder="e.g. Yirgacheffe washed Grade 1, 5 tons"
+          />
+          <Field label="Message" name="message" textarea required />
+          <button
+            type="submit"
+            className="mt-6 w-full py-4 rounded-full bg-accent text-accent-foreground font-semibold shadow-gold hover:scale-[1.02] transition"
+          >
+            Send Inquiry
+          </button>
+        </form>
+      </div>
+    </section>
+  );
+}
+
+function InfoRow({
+  icon: Icon,
+  title,
+  lines,
+}: {
+  icon: ComponentType<{ className?: string }>;
+  title: string;
+  lines: string[];
+}) {
+  return (
+    <div className="flex gap-4">
+      <div className="w-11 h-11 shrink-0 rounded-xl bg-white/10 backdrop-blur grid place-items-center text-accent">
+        <Icon className="w-5 h-5" />
+      </div>
+      <div>
+        <p className="font-semibold">{title}</p>
+        {lines.map((l) => (
+          <p key={l} className="text-sm text-white/70">
+            {l}
+          </p>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function Field({
+  label,
+  name,
+  type = "text",
+  required,
+  textarea,
+  placeholder,
+}: {
+  label: string;
+  name: string;
+  type?: string;
+  required?: boolean;
+  textarea?: boolean;
+  placeholder?: string;
+}) {
+  const cls =
+    "w-full mt-1.5 px-4 py-3 rounded-xl border border-border bg-cream focus:bg-background focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition";
+  return (
+    <label className={`block ${textarea ? "sm:col-span-2 mt-4" : ""}`}>
+      <span className="text-xs uppercase tracking-wider font-semibold text-muted-foreground">
+        {label} {required && <span className="text-accent">*</span>}
+      </span>
+      {textarea ? (
+        <textarea
+          name={name}
+          required={required}
+          rows={4}
+          placeholder={placeholder}
+          className={cls}
+        />
+      ) : (
+        <input
+          name={name}
+          type={type}
+          required={required}
+          placeholder={placeholder}
+          className={cls}
+        />
+      )}
+    </label>
   );
 }
