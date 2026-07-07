@@ -6,6 +6,7 @@ import ServicesPage from "./routes/services";
 import OriginsPage from "./routes/origins";
 import ProcessPage from "./routes/process";
 import BlogPage from "./routes/blog";
+import { Layout } from "@/components/site/Layout";
 import heroFarm from "@/assets/hero-farm.jpg";
 import farmers from "@/assets/farmers.jpg";
 import cherries from "@/assets/cherries.jpg";
@@ -30,13 +31,13 @@ export default function App() {
       <Route
         path="/"
         element={
-          <>
+          <Layout transparentNav>
             <Hero />
             <AboutSection />
             <ServicesSection />
             <OriginsSection />
             <ContactSection />
-          </>
+          </Layout>
         }
       />
       <Route path="/about" element={<AboutPage />} />
