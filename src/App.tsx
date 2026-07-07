@@ -22,6 +22,10 @@ import {
   Mountain,
   Leaf,
   Calendar,
+  Star,
+  Sparkles,
+  Users,
+  MessageSquare,
   type LucideIcon,
 } from "lucide-react";
 
@@ -36,6 +40,11 @@ export default function App() {
             <AboutSection />
             <ServicesSection />
             <OriginsSection />
+            <ProcessSection />
+            <WhyUsSection />
+            <MetricsSection />
+            <TestimonialsSection />
+            <BlogSection />
             <ContactSection />
           </Layout>
         }
@@ -509,6 +518,275 @@ function Stat({
       </p>
       <p className="text-sm font-semibold mt-0.5">{value}</p>
     </div>
+  );
+}
+
+function ProcessSection() {
+  const STEP_ITEMS = [
+    {
+      icon: Handshake,
+      title: "Sourcing",
+      desc: "Identify trusted farms and exporters with traceable lot history and consistent quality.",
+    },
+    {
+      icon: ShieldCheck,
+      title: "Verification",
+      desc: "Audit exporter credentials, inspect samples, and confirm documentation before every shipment.",
+    },
+    {
+      icon: Truck,
+      title: "Delivery",
+      desc: "Coordinate export and freight so your coffee arrives on time, cleared for customs, and ready to roast.",
+    },
+  ];
+
+  return (
+    <section id="process" className="py-24 bg-cream">
+      <div className="container-x">
+        <div className="max-w-2xl">
+          <SectionEyebrow>Our Process</SectionEyebrow>
+          <h2 className="mt-3 font-display text-4xl md:text-5xl font-bold text-balance">
+            How We Source, Verify, and Deliver Ethiopian Coffee
+          </h2>
+          <p className="mt-4 text-muted-foreground text-lg leading-relaxed">
+            Transparent sourcing, exporter verification, and logistics handoff
+            built for buyers who need quality, traceability, and reliable
+            delivery.
+          </p>
+        </div>
+
+        <div className="mt-14 grid md:grid-cols-3 gap-6">
+          {STEP_ITEMS.map((item) => {
+            const Icon = item.icon;
+            return (
+              <div
+                key={item.title}
+                className="rounded-3xl bg-background p-8 border border-border shadow-elegant"
+              >
+                <div className="w-14 h-14 rounded-xl gradient-forest text-white grid place-items-center mb-5">
+                  <Icon className="w-6 h-6" />
+                </div>
+                <h3 className="font-display text-xl font-semibold">
+                  {item.title}
+                </h3>
+                <p className="mt-3 text-muted-foreground leading-relaxed">
+                  {item.desc}
+                </p>
+              </div>
+            );
+          })}
+        </div>
+
+        <div className="mt-12 text-center">
+          <Link
+            to="/process"
+            className="inline-flex items-center gap-2 px-7 py-4 rounded-full bg-primary text-primary-foreground font-semibold shadow-gold hover:scale-105 transition"
+          >
+            See the full process
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function WhyUsSection() {
+  const FEATURES = [
+    {
+      icon: Star,
+      title: "Trusted Expertise",
+      desc: "Fifteen years in Ethiopian coffee trade with deep regional knowledge and verified exporter networks.",
+    },
+    {
+      icon: Sparkles,
+      title: "Premium Quality",
+      desc: "We focus on origins and lots that deliver the cup profiles buyers expect from Ethiopia.",
+    },
+    {
+      icon: Users,
+      title: "Verified Partners",
+      desc: "Each supplier is vetted for reliability, compliance, and consistent export performance.",
+    },
+    {
+      icon: MessageSquare,
+      title: "Clear Communication",
+      desc: "We keep buyers informed at every stage, from sample approval to port delivery.",
+    },
+  ];
+
+  return (
+    <section className="py-24 bg-background">
+      <div className="container-x grid lg:grid-cols-2 gap-14 items-center">
+        <div>
+          <SectionEyebrow>Why BCS</SectionEyebrow>
+          <h2 className="font-display text-4xl md:text-5xl font-bold text-balance">
+            The Difference Between a Supplier and a Trusted Origin Partner
+          </h2>
+          <p className="mt-5 text-muted-foreground text-lg leading-relaxed">
+            We don’t just connect buyers with coffee. We manage the process,
+            protect your interests, and make Ethiopian origin trade simpler and
+            more reliable.
+          </p>
+        </div>
+        <div className="grid gap-6">
+          {FEATURES.map((item) => {
+            const Icon = item.icon;
+            return (
+              <div
+                key={item.title}
+                className="rounded-3xl bg-cream p-8 border border-border shadow-elegant"
+              >
+                <div className="w-12 h-12 rounded-2xl gradient-forest text-white grid place-items-center mb-5">
+                  <Icon className="w-5 h-5" />
+                </div>
+                <h3 className="font-display text-xl font-semibold">
+                  {item.title}
+                </h3>
+                <p className="mt-3 text-muted-foreground leading-relaxed">
+                  {item.desc}
+                </p>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function MetricsSection() {
+  const METRICS = [
+    { value: "15+", label: "Years Experience" },
+    { value: "100+", label: "Verified Partners" },
+    { value: "40+", label: "Countries Served" },
+    { value: "$50M+", label: "Trade Facilitated" },
+  ];
+
+  return (
+    <section className="py-24 bg-cream">
+      <div className="container-x">
+        <div className="grid gap-6 lg:grid-cols-4">
+          {METRICS.map((metric) => (
+            <div
+              key={metric.label}
+              className="rounded-3xl bg-background p-8 border border-border text-center shadow-elegant"
+            >
+              <p className="font-display text-4xl font-bold text-primary">
+                {metric.value}
+              </p>
+              <p className="mt-3 text-sm uppercase tracking-[0.2em] text-muted-foreground">
+                {metric.label}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function TestimonialsSection() {
+  const TESTIMONIALS = [
+    {
+      quote:
+        "BCS made our first Ethiopian origin shipment effortless. Their verification and communication were exceptional.",
+      name: "Anna Morgan",
+      role: "Head of Sourcing, Aurelia Roasters",
+    },
+    {
+      quote:
+        "The team helped us secure a clean, traceable lot from Sidama with confidence and speed.",
+      name: "Marcus Lee",
+      role: "Procurement Director, Northshore Coffee",
+    },
+  ];
+
+  return (
+    <section className="py-24 bg-background">
+      <div className="container-x">
+        <div className="max-w-2xl">
+          <SectionEyebrow>Testimonials</SectionEyebrow>
+          <h2 className="mt-3 font-display text-4xl md:text-5xl font-bold text-balance">
+            Buyers Trust Us for Coffee That Delivers on Flavor and Compliance
+          </h2>
+        </div>
+        <div className="mt-14 grid gap-6 lg:grid-cols-2">
+          {TESTIMONIALS.map((item) => (
+            <div
+              key={item.name}
+              className="rounded-3xl bg-cream p-10 border border-border shadow-elegant"
+            >
+              <p className="text-lg leading-relaxed text-foreground">
+                “{item.quote}”
+              </p>
+              <div className="mt-6">
+                <p className="font-semibold">{item.name}</p>
+                <p className="text-sm text-muted-foreground">{item.role}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function BlogSection() {
+  const POSTS = [
+    {
+      title:
+        "How to choose the right Ethiopian coffee region for your roast profile",
+      excerpt:
+        "Learn which origin suits bright citrus, chocolatey body, or floral aromatics, with practical buying advice.",
+    },
+    {
+      title:
+        "What exporters must provide for clean, compliant shipments from Ethiopia",
+      excerpt:
+        "A short guide to documentation, quality checks, and exporter verification for international buyers.",
+    },
+  ];
+
+  return (
+    <section className="py-24 bg-cream">
+      <div className="container-x">
+        <div className="max-w-2xl">
+          <SectionEyebrow>Insights</SectionEyebrow>
+          <h2 className="mt-3 font-display text-4xl md:text-5xl font-bold text-balance">
+            Latest Coffee Market Stories and Origin Updates
+          </h2>
+          <p className="mt-4 text-muted-foreground text-lg leading-relaxed">
+            Practical articles for buyers, traders, and coffee professionals
+            exploring Ethiopian origin markets.
+          </p>
+        </div>
+        <div className="mt-14 grid gap-6 lg:grid-cols-2">
+          {POSTS.map((item) => (
+            <article
+              key={item.title}
+              className="rounded-3xl bg-background p-8 border border-border shadow-elegant hover:-translate-y-1 transition-all"
+            >
+              <h3 className="font-display text-2xl font-semibold">
+                {item.title}
+              </h3>
+              <p className="mt-4 text-muted-foreground leading-relaxed">
+                {item.excerpt}
+              </p>
+            </article>
+          ))}
+        </div>
+        <div className="mt-12 text-center">
+          <Link
+            to="/blog"
+            className="inline-flex items-center gap-2 px-7 py-4 rounded-full bg-primary text-primary-foreground font-semibold shadow-gold hover:scale-105 transition"
+          >
+            Read more insights
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+      </div>
+    </section>
   );
 }
 
