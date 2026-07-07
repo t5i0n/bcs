@@ -3,6 +3,9 @@ import { useState, type ComponentType, type ReactNode } from "react";
 import AboutPage from "./routes/about";
 import ContactPage from "./routes/contact";
 import ServicesPage from "./routes/services";
+import OriginsPage from "./routes/origins";
+import ProcessPage from "./routes/process";
+import BlogPage from "./routes/blog";
 import heroFarm from "@/assets/hero-farm.jpg";
 import farmers from "@/assets/farmers.jpg";
 import cherries from "@/assets/cherries.jpg";
@@ -39,6 +42,9 @@ export default function App() {
       <Route path="/about" element={<AboutPage />} />
       <Route path="/contact" element={<ContactPage />} />
       <Route path="/services" element={<ServicesPage />} />
+      <Route path="/origins" element={<OriginsPage />} />
+      <Route path="/process" element={<ProcessPage />} />
+      <Route path="/blog" element={<BlogPage />} />
     </Routes>
   );
 }
