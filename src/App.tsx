@@ -6,7 +6,15 @@ import ServicesPage from "./routes/services";
 import heroFarm from "@/assets/hero-farm.jpg";
 import farmers from "@/assets/farmers.jpg";
 import cherries from "@/assets/cherries.jpg";
-import { ArrowRight } from "lucide-react";
+import {
+  ArrowRight,
+  Handshake,
+  ShieldCheck,
+  CheckCircle2,
+  TrendingUp,
+  Truck,
+  Search,
+} from "lucide-react";
 
 export default function App() {
   return (
@@ -17,6 +25,7 @@ export default function App() {
           <>
             <Hero />
             <AboutSection />
+            <ServicesSection />
           </>
         }
       />
@@ -199,6 +208,82 @@ function AboutSection() {
               </div>
             ))}
           </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ───────────── SERVICES SECTION ───────────── */
+function ServicesSection() {
+  const SERVICES = [
+    {
+      icon: Handshake,
+      title: "Coffee Export Consulting",
+      desc: "Helping buyers source reliable Ethiopian coffee with expert market guidance.",
+    },
+    {
+      icon: ShieldCheck,
+      title: "Supplier Verification",
+      desc: "Background checks, exporter validation, and end-to-end due diligence.",
+    },
+    {
+      icon: CheckCircle2,
+      title: "Quality Control & Grading",
+      desc: "Professional cupping, grading, and pre-shipment inspection.",
+    },
+    {
+      icon: TrendingUp,
+      title: "Market Research",
+      desc: "Coffee market trends, pricing intelligence, and opportunity analysis.",
+    },
+    {
+      icon: Truck,
+      title: "Logistics Coordination",
+      desc: "Export documentation, freight, and shipping support to any port.",
+    },
+    {
+      icon: Search,
+      title: "Price Negotiation",
+      desc: "Helping buyers secure transparent, competitive pricing direct from origin.",
+    },
+  ];
+
+  return (
+    <section id="services" className="py-24 md:py-32 bg-cream">
+      <div className="container-x">
+        <div className="max-w-2xl">
+          <SectionEyebrow>What We Do</SectionEyebrow>
+          <h2 className="mt-3 font-display text-4xl md:text-5xl font-bold text-balance">
+            End-to-End Coffee Services
+          </h2>
+          <p className="mt-4 text-muted-foreground text-lg">
+            A complete consulting and trade desk for international buyers — from
+            sourcing decisions to shipping containers.
+          </p>
+        </div>
+
+        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {SERVICES.map((s) => (
+            <div
+              key={s.title}
+              className="group relative rounded-2xl bg-background p-7 border border-border hover:border-accent/60 hover:-translate-y-1 hover:shadow-elegant transition-all duration-300"
+            >
+              <div className="w-14 h-14 rounded-xl gradient-forest text-white grid place-items-center mb-5 group-hover:rotate-6 transition">
+                <s.icon className="w-6 h-6" />
+              </div>
+              <h3 className="font-display text-xl font-semibold">{s.title}</h3>
+              <p className="mt-2.5 text-muted-foreground text-sm leading-relaxed">
+                {s.desc}
+              </p>
+              <Link
+                to="/services"
+                className="inline-flex items-center gap-1 mt-5 text-sm font-semibold text-primary group-hover:gap-2 transition-all"
+              >
+                Learn more <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          ))}
         </div>
       </div>
     </section>
