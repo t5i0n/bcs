@@ -1,5 +1,5 @@
 import { Route, Routes, Link } from "react-router-dom";
-import type { ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 import AboutPage from "./routes/about";
 import ContactPage from "./routes/contact";
 import ServicesPage from "./routes/services";
@@ -14,6 +14,11 @@ import {
   TrendingUp,
   Truck,
   Search,
+  MapPin,
+  Mountain,
+  Leaf,
+  Calendar,
+  type LucideIcon,
 } from "lucide-react";
 
 export default function App() {
@@ -26,6 +31,7 @@ export default function App() {
             <Hero />
             <AboutSection />
             <ServicesSection />
+            <OriginsSection />
           </>
         }
       />
@@ -287,5 +293,205 @@ function ServicesSection() {
         </div>
       </div>
     </section>
+  );
+}
+
+function OriginsSection() {
+  const REGIONS = [
+    {
+      name: "Yirgacheffe",
+      altitude: "1,800–2,200m",
+      process: "Washed, Natural",
+      notes: "Floral, citrus, tea-like body",
+      season: "Oct – Jan",
+    },
+    {
+      name: "Sidama",
+      altitude: "1,500–2,200m",
+      process: "Washed, Natural",
+      notes: "Berry, wine, sweet citrus",
+      season: "Oct – Dec",
+    },
+    {
+      name: "Guji",
+      altitude: "1,800–2,300m",
+      process: "Washed, Natural",
+      notes: "Berry, chocolate, jasmine",
+      season: "Oct – Jan",
+    },
+    {
+      name: "Limu",
+      altitude: "1,400–2,000m",
+      process: "Washed",
+      notes: "Balanced, spicy, winey",
+      season: "Nov – Feb",
+    },
+    {
+      name: "Jimma",
+      altitude: "1,400–1,800m",
+      process: "Natural",
+      notes: "Earthy, mild, full body",
+      season: "Nov – Feb",
+    },
+    {
+      name: "Nekemte",
+      altitude: "1,500–2,100m",
+      process: "Natural",
+      notes: "Fruity, mocha, bold",
+      season: "Oct – Jan",
+    },
+    {
+      name: "Harrar",
+      altitude: "1,500–2,100m",
+      process: "Natural",
+      notes: "Blueberry, wine, mocha",
+      season: "Oct – Feb",
+    },
+  ];
+
+  const [active, setActive] = useState(0);
+
+  return (
+    <section id="origins" className="py-24 md:py-32 bg-background">
+      <div className="container-x">
+        <div className="max-w-2xl">
+          <SectionEyebrow>Coffee Origins</SectionEyebrow>
+          <h2 className="mt-3 font-display text-4xl md:text-5xl font-bold text-balance">
+            Seven Regions. One Legendary Origin.
+          </h2>
+          <p className="mt-4 text-muted-foreground text-lg">
+            Ethiopia is the birthplace of coffee — each region produces a
+            distinct cup profile shaped by altitude, soil, and tradition.
+          </p>
+        </div>
+
+        <div className="mt-14 grid lg:grid-cols-[1.1fr_1fr] gap-10 items-start">
+          <div className="relative aspect-square max-w-xl mx-auto lg:mx-0 rounded-3xl bg-cream border border-border p-8 overflow-hidden">
+            <div
+              className="absolute inset-0 opacity-30"
+              style={{
+                backgroundImage:
+                  "radial-gradient(circle at 50% 50%, oklch(0.36 0.08 148 / 0.4), transparent 65%)",
+              }}
+            />
+            <svg
+              viewBox="0 0 400 400"
+              className="absolute inset-0 w-full h-full p-8"
+            >
+              <path
+                d="M80 140 Q120 80 200 90 Q290 100 320 160 Q345 220 310 280 Q260 340 200 330 Q130 320 90 270 Q60 210 80 140 Z"
+                fill="oklch(0.36 0.08 148 / 0.15)"
+                stroke="oklch(0.36 0.08 148 / 0.6)"
+                strokeWidth="2"
+                strokeDasharray="4 4"
+              />
+            </svg>
+            {[
+              { x: 35, y: 50 },
+              { x: 50, y: 60 },
+              { x: 55, y: 70 },
+              { x: 42, y: 75 },
+              { x: 38, y: 65 },
+              { x: 30, y: 55 },
+              { x: 72, y: 45 },
+            ].map((p, i) => (
+              <button
+                key={i}
+                onClick={() => setActive(i)}
+                style={{ left: `${p.x}%`, top: `${p.y}%` }}
+                className={`absolute -translate-x-1/2 -translate-y-1/2 transition-all ${
+                  active === i ? "scale-125 z-10" : "hover:scale-110"
+                }`}
+              >
+                <span className="relative grid place-items-center">
+                  <span
+                    className={`absolute inset-0 rounded-full ${
+                      active === i ? "bg-accent animate-ping" : ""
+                    }`}
+                  />
+                  <MapPin
+                    className={`w-6 h-6 ${
+                      active === i ? "text-accent" : "text-primary"
+                    }`}
+                    fill="currentColor"
+                  />
+                </span>
+                <span className="absolute top-full left-1/2 -translate-x-1/2 mt-1 text-[11px] font-semibold whitespace-nowrap bg-background px-2 py-0.5 rounded-full border border-border shadow-sm">
+                  {REGIONS[i].name}
+                </span>
+              </button>
+            ))}
+          </div>
+
+          <div className="space-y-4">
+            <div className="rounded-3xl gradient-forest text-white p-8 shadow-elegant">
+              <p className="text-accent uppercase tracking-[0.2em] text-xs font-semibold">
+                Featured Region
+              </p>
+              <h3 className="font-display text-4xl font-bold mt-3">
+                {REGIONS[active].name}
+              </h3>
+              <p className="mt-2 text-white/80 italic">
+                "{REGIONS[active].notes}"
+              </p>
+
+              <div className="mt-7 grid grid-cols-3 gap-4">
+                <Stat
+                  icon={Mountain}
+                  label="Altitude"
+                  value={REGIONS[active].altitude}
+                />
+                <Stat
+                  icon={Leaf}
+                  label="Processing"
+                  value={REGIONS[active].process}
+                />
+                <Stat
+                  icon={Calendar}
+                  label="Harvest"
+                  value={REGIONS[active].season}
+                />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+              {REGIONS.map((r, i) => (
+                <button
+                  key={r.name}
+                  onClick={() => setActive(i)}
+                  className={`px-3 py-2.5 rounded-xl text-sm font-medium transition ${
+                    active === i
+                      ? "bg-primary text-primary-foreground"
+                      : "bg-cream hover:bg-accent/20 text-foreground"
+                  }`}
+                >
+                  {r.name}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Stat({
+  icon: Icon,
+  label,
+  value,
+}: {
+  icon: LucideIcon;
+  label: string;
+  value: string;
+}) {
+  return (
+    <div className="bg-white/10 backdrop-blur rounded-xl p-3">
+      <Icon className="w-4 h-4 text-accent" />
+      <p className="text-[10px] uppercase tracking-wider text-white/70 mt-2">
+        {label}
+      </p>
+      <p className="text-sm font-semibold mt-0.5">{value}</p>
+    </div>
   );
 }
