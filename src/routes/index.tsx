@@ -585,7 +585,13 @@ function WhyUsSection() {
           </div>
         </div>
 
-        <div className="rounded-[2.5rem] overflow-hidden bg-gradient-to-br from-accent to-[#d38a31] p-10 text-white shadow-elegant">
+        <div
+          className="rounded-[2.5rem] overflow-hidden p-10 text-white shadow-elegant"
+          style={{
+            backgroundImage:
+              "linear-gradient(135deg, #b37a14 0%, #c08a1f 30%, #c98f24 60%, #d38a31 100%)",
+          }}
+        >
           <p className="uppercase tracking-[0.28em] text-xs text-white/80">
             Our Commitment
           </p>
