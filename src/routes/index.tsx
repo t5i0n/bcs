@@ -20,7 +20,6 @@ import {
   Sparkles,
   Users,
   MessageSquare,
-  type LucideIcon,
 } from "lucide-react";
 
 export default function HomePage() {
@@ -408,14 +407,10 @@ function OriginsSection() {
               >
                 <span className="relative grid place-items-center">
                   <span
-                    className={`absolute inset-0 rounded-full ${
-                      active === i ? "bg-accent animate-ping" : ""
-                    }`}
+                    className={`absolute inset-0 rounded-full ${active === i ? "bg-accent animate-ping" : ""}`}
                   />
                   <MapPin
-                    className={`w-6 h-6 ${
-                      active === i ? "text-accent" : "text-primary"
-                    }`}
+                    className={`w-6 h-6 ${active === i ? "text-accent" : "text-primary"}`}
                     fill="currentColor"
                   />
                 </span>
@@ -765,26 +760,6 @@ function BlogSection() {
   );
 }
 
-function Stat({
-  icon: Icon,
-  label,
-  value,
-}: {
-  icon: LucideIcon;
-  label: string;
-  value: string;
-}) {
-  return (
-    <div className="bg-white/10 backdrop-blur rounded-xl p-3">
-      <Icon className="w-4 h-4 text-accent" />
-      <p className="text-[10px] uppercase tracking-wider text-white/70 mt-2">
-        {label}
-      </p>
-      <p className="text-sm font-semibold mt-0.5">{value}</p>
-    </div>
-  );
-}
-
 function ContactSection() {
   return (
     <section
@@ -897,6 +872,28 @@ function InfoRow({
           </p>
         ))}
       </div>
+    </div>
+  );
+}
+
+function Stat({
+  icon: Icon,
+  label,
+  value,
+}: {
+  icon: ComponentType<{ className?: string }>;
+  label: string;
+  value: string;
+}) {
+  return (
+    <div className="rounded-3xl bg-white/5 border border-white/10 p-5">
+      <div className="w-12 h-12 rounded-3xl bg-accent text-accent-foreground grid place-items-center mb-4">
+        <Icon className="w-5 h-5" />
+      </div>
+      <p className="text-sm uppercase tracking-[0.18em] text-muted-foreground">
+        {label}
+      </p>
+      <p className="mt-2 font-display text-2xl font-semibold">{value}</p>
     </div>
   );
 }
