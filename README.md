@@ -41,6 +41,6 @@ npm run build
 
 ## Notes
 
-This project currently uses `react-router-dom` for routing, not `@tanstack/react-router`.
+This project currently uses `react-router-dom` for routing.
 
 The homepage is implemented in `src/routes/index.tsx`, while `src/App.tsx` is responsible for mounting the route structure.
