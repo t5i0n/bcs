@@ -1,6 +1,6 @@
 import farmers from "@/assets/farmers.jpg";
 import ceremony from "@/assets/ceremony.jpg";
-import { Layout, PageHero } from "@site/Layout";
+import { Layout, PageHero } from "@/components/site/Layout";
 import { Link } from "react-router-dom";
 
 export default function AboutPage() {
