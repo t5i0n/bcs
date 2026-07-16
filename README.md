@@ -1,6 +1,6 @@
 # BCS Coffee Market Consulting
 
-An internship project: a Vite + React + TypeScript landing page built for BCS Coffee Market Consulting.
+An internship project featuring a modern landing page for BCS Coffee Market Consulting, built with Vite, React, and TypeScript.
 
 ## About this project
 
