@@ -70,8 +70,7 @@ export function Footer() {
               <Phone className="w-4 h-4 mt-0.5 text-accent" /> +251 11 555 0199
             </li>
             <li className="flex gap-2.5">
-              <Mail className="w-4 h-4 mt-0.5 text-accent" />{" "}
-              hello@bcscoffee.com
+              <Mail className="w-4 h-4 mt-0.5 text-accent" /> info@bcscoffee.et
             </li>
           </ul>
         </div>
