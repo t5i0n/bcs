@@ -72,7 +72,7 @@ export default function AboutPage() {
             </h2>
             <p className="mt-5 text-muted-foreground leading-relaxed text-lg">
               Ethiopia is coffee's birthplace. Our work honors that lineage by
-              ensuring fair, transparent trade — where producers, exporters, and
+              ensuring fair, transparent trade where producers, exporters, and
               buyers all win.
             </p>
             <Link
