@@ -40,6 +40,9 @@ export default function AboutPage() {
               ["15+", "Years"],
               ["100+", "Partners"],
               ["40+", "Countries"],
+              ["6+", "Coffee Regions Covered"],
+              ["50M+", "Trade Value"],
+              ["24/7", "Customer Support"],
             ].map(([v, l]) => (
               <div key={l} className="rounded-2xl bg-cream p-5 text-center">
                 <p className="font-display text-3xl font-bold text-primary">
