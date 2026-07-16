@@ -26,13 +26,13 @@ export default function AboutPage() {
             BCS Coffee Market Consulting was founded in 2009 by a team of
             Ethiopian coffee professionals who saw a gap between the country's
             extraordinary coffee heritage and the international buyers seeking
-            it. We've spent fifteen years closing that gap — visit by visit,
+            it. We've spent fifteen years closing that gap visit by visit,
             container by container.
           </p>
           <p className="mt-4 text-muted-foreground leading-relaxed">
             Today our consultancy operates as the trusted intermediary between
             verified Ethiopian exporters and roasters in Europe, Asia, North
-            America, and the Middle East — facilitating over $50M in trade and
+            America, and the Middle East facilitating over $50M in trade and
             shipping more than 5,000 tons.
           </p>
           <div className="mt-8 grid grid-cols-3 gap-4">
