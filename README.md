@@ -10,6 +10,10 @@ of a client site — from page structure and routing to styling, responsive desi
 using a modern React toolchain.
 
 **Internship goals covered by this project:**
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3194e82 (updated readme file)
 - Structuring a multi-page site with client-side routing
 - Building reusable layout and UI components (navbar, footer, shared layout)
 - Implementing a consistent design system with Tailwind CSS (custom theme, colors, typography)
