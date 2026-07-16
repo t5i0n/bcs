@@ -4,10 +4,8 @@ An internship project featuring a modern landing page for BCS Coffee Market Cons
 
 ## About this project
 
-This project was developed as part of an internship, with the goal of building a production-style
-marketing website for a coffee export and consulting business. It covers the full front-end workflow
-of a client site — from page structure and routing to styling, responsive design, and content layout —
-using a modern React toolchain.
+This project was developed as part of an internship, with the goal of building a production-style marketing website for a coffee export and consulting business. It covers the full front-end workflow
+of a client site from page structure and routing to styling, responsive design, and content layout using a modern React toolchain.
 
 **Internship goals covered by this project:**
 
@@ -24,7 +22,7 @@ using a modern React toolchain.
 - `src/App.tsx` — route definitions and router setup
 - `src/routes/index.tsx` — homepage route component
 - `src/routes/*.tsx` — page route components for about, services, origins, process, blog, contact, and not found
-- `src/components/site` — shared layout and site-level components
+- `src/components/site` — shared layout and site level components
 - `src/assets` — image assets used in the homepage
 - `public/` — static assets
 
