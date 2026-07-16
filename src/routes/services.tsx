@@ -19,7 +19,7 @@ const SERVICES = [
   {
     icon: ShieldCheck,
     title: "Supplier Verification",
-    desc: "Comprehensive due diligence — licenses, export history, capacity audits, and reference checks.",
+    desc: "Comprehensive due diligence licenses, export history, capacity audits, and reference checks.",
   },
   {
     icon: CheckCircle2,
@@ -39,7 +39,7 @@ const SERVICES = [
   {
     icon: Search,
     title: "Price Negotiation",
-    desc: "Direct origin pricing with full transparency — no hidden margins or kickbacks.",
+    desc: "Direct origin pricing with full transparency no hidden margins or kickbacks.",
   },
 ];
 
