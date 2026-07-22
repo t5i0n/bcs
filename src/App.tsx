@@ -8,6 +8,7 @@ import OriginsPage from "./routes/origins";
 import ProcessPage from "./routes/process";
 import ServicesPage from "./routes/services";
 
+// Define the application's routes and map each URL path to its corresponding page component.
 export default function App() {
   return (
     <Routes>
