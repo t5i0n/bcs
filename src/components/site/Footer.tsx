@@ -87,7 +87,7 @@ export function Footer() {
     </footer>
   );
 }
-
+// Reusable footer column component that displays a title and a list of navigation links.
 function FooterCol({
   title,
   items,
