@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { Navbar } from "./Navbar";
 import { Footer } from "./Footer";
-
+// Main layout wrapper that provides a shared Navbar, page content area, and Footer.
 export function Layout({
   children,
   transparentNav = false,
