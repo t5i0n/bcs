@@ -21,7 +21,7 @@
 <!-- - `src/main.tsx` — app entry point -->
 <!-- - `src/App.tsx` — route definitions and router setup -->
 <!-- - `src/routes/index.tsx` — homepage route component -->
-<!-- - `src/routes/*.tsx` — page route components for about, services, origins, process, blog, contact, and not found -->
+<!-- - `src/routes/*.tsx` — page route components for about, services, origins, process, contact, and not found -->
 <!-- - `src/components/site` — shared layout and site level components -->
 <!-- - `src/assets` — image assets used in the homepage -->
 <!-- - `public/` — static assets -->
