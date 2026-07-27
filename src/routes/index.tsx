@@ -33,7 +33,6 @@ export default function HomePage() {
       <WhyUsSection />
       <MetricsSection />
       <TestimonialsSection />
-      <BlogSection />
       <ContactSection />
     </Layout>
   );
@@ -698,60 +697,6 @@ function TestimonialsSection() {
               <p className="text-muted-foreground leading-relaxed">
                 “{item.quote}”
               </p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function BlogSection() {
-  return (
-    <section className="py-24 md:py-32 bg-cream">
-      <div className="container-x">
-        <div className="max-w-2xl">
-          <SectionEyebrow>Insights</SectionEyebrow>
-          <h2 className="mt-3 font-display text-4xl md:text-5xl font-bold text-balance">
-            Latest Market Insights from Ethiopia
-          </h2>
-          <p className="mt-4 text-muted-foreground text-lg leading-relaxed">
-            Stay updated on coffee origins, exporter practices, and sourcing
-            strategy with our latest articles and market commentary.
-          </p>
-        </div>
-
-        <div className="mt-14 grid gap-6 md:grid-cols-3">
-          {[
-            {
-              title: "Coffee season outlook for 2025",
-              desc: "What buyers should expect from Ethiopia’s main regions next harvest.",
-            },
-            {
-              title: "Why supplier traceability matters",
-              desc: "How certified export partnerships reduce risk and improve quality.",
-            },
-            {
-              title: "Understanding Ethiopian process styles",
-              desc: "A guide to washed, natural, and honey coffees from origin.",
-            },
-          ].map((post) => (
-            <div
-              key={post.title}
-              className="rounded-3xl bg-background p-7 border border-border shadow-elegant"
-            >
-              <h3 className="font-display text-xl font-semibold">
-                {post.title}
-              </h3>
-              <p className="mt-3 text-muted-foreground leading-relaxed">
-                {post.desc}
-              </p>
-              <Link
-                to="/blog"
-                className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary"
-              >
-                Read article <ArrowRight className="w-4 h-4" />
-              </Link>
             </div>
           ))}
         </div>
