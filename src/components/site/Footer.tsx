@@ -45,7 +45,6 @@ export function Footer() {
           items={[
             { to: "/about", label: "About" },
             { to: "/services", label: "Services" },
-            { to: "/blog", label: "Blog" },
             { to: "/contact", label: "Contact" },
           ]}
         />
@@ -55,7 +54,6 @@ export function Footer() {
             { to: "/origins", label: "Coffee Origins" },
             { to: "/process", label: "Processing Methods" },
             { to: "/process", label: "Export Guide" },
-            { to: "/blog", label: "Insights" },
           ]}
         />
 
