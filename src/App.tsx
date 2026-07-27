@@ -1,6 +1,5 @@
 import { Route, Routes } from "react-router-dom";
 import AboutPage from "./routes/about";
-import BlogPage from "./routes/blog";
 import ContactPage from "./routes/contact";
 import HomePage from "./routes/index";
 import NotFoundPage from "./routes/not-found";
@@ -17,7 +16,6 @@ export default function App() {
       <Route path="/services" element={<ServicesPage />} />
       <Route path="/origins" element={<OriginsPage />} />
       <Route path="/process" element={<ProcessPage />} />
-      <Route path="/blog" element={<BlogPage />} />
       <Route path="/contact" element={<ContactPage />} />
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
