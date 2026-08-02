@@ -29,7 +29,6 @@ export default function HomePage() {
       <AboutSection />
       <ServicesSection />
       <OriginsSection />
-      <ProcessSection />
       <WhyUsSection />
       <MetricsSection />
       <TestimonialsSection />
@@ -473,61 +472,6 @@ function OriginsSection() {
   );
 }
 
-function ProcessSection() {
-  return (
-    <section id="process" className="py-24 md:py-32 bg-cream">
-      <div className="container-x">
-        <div className="max-w-2xl">
-          <SectionEyebrow>Process</SectionEyebrow>
-          <h2 className="mt-3 font-display text-4xl md:text-5xl font-bold text-balance">
-            A Transparent Coffee Supply Chain
-          </h2>
-          <p className="mt-4 text-muted-foreground text-lg">
-            From farm assessments to shipment coordination, our process is
-            designed for buyers who want traceability, quality, and on time
-            delivery.
-          </p>
-        </div>
-
-        <div className="mt-14 grid gap-6 sm:grid-cols-3">
-          {[
-            {
-              title: "Source",
-              desc: "Identify trusted farms and exporters across Ethiopia’s top coffee regions.",
-              icon: Search,
-            },
-            {
-              title: "Verify",
-              desc: "Audit exporters and quality check every lot before it leaves origin.",
-              icon: ShieldCheck,
-            },
-            {
-              title: "Deliver",
-              desc: "Coordinate logistics, export documentation, and shipping to your chosen port.",
-              icon: Truck,
-            },
-          ].map((item) => (
-            <div
-              key={item.title}
-              className="rounded-3xl bg-background p-6 border border-border shadow-elegant"
-            >
-              <div className="w-14 h-14 rounded-2xl bg-accent text-accent-foreground grid place-items-center mb-5">
-                <item.icon className="w-6 h-6" />
-              </div>
-              <h3 className="font-display text-2xl font-semibold">
-                {item.title}
-              </h3>
-              <p className="mt-3 text-muted-foreground leading-relaxed">
-                {item.desc}
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
 function WhyUsSection() {
   return (
     <section className="py-24 md:py-32 bg-background">
@@ -598,10 +542,10 @@ function WhyUsSection() {
             suppliers, and close deals on their terms.
           </p>
           <Link
-            to="/process"
+            to="/field"
             className="mt-8 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.18em] text-white/90 hover:text-white"
           >
-            See Our Full Process <ArrowRight className="w-4 h-4" />
+            See Life at Origin <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
       </div>
