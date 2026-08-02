@@ -167,14 +167,14 @@ function AboutSection() {
           <p className="mt-5 text-muted-foreground text-lg leading-relaxed">
             BCS Coffee Market Consulting bridges the world's most discerning
             buyers with Ethiopia's finest verified exporters and producers. From
-            single-origin micro-lots in Yirgacheffe to commercial-grade
+            single origin micro lots in Yirgacheffe to commercial grade
             containers from Sidama, we deliver clarity, integrity, and quality
             at every step.
           </p>
           <p className="mt-4 text-muted-foreground leading-relaxed">
             Founded in Addis Ababa, our team blends deep cultural expertise with
-            international trade rigor — so you source with confidence, every
-            harvest.
+            international trade experience, so you can source with confidence
+            every harvest.
           </p>
 
           <div className="mt-10 space-y-6">
@@ -265,7 +265,7 @@ function ServicesSection() {
             End-to-End Coffee Services
           </h2>
           <p className="mt-4 text-muted-foreground text-lg">
-            A complete consulting and trade desk for international buyers — from
+            A complete consulting and trade desk for international buyers from
             sourcing decisions to shipping containers.
           </p>
         </div>
@@ -358,11 +358,11 @@ function OriginsSection() {
         <div className="max-w-2xl">
           <SectionEyebrow>Coffee Origins</SectionEyebrow>
           <h2 className="mt-3 font-display text-4xl md:text-5xl font-bold text-balance">
-            Seven Regions. One Legendary Origin.
+            Seven Regions, One Legendary Origin.
           </h2>
           <p className="mt-4 text-muted-foreground text-lg">
-            Ethiopia is the birthplace of coffee — each region produces a
-            distinct cup profile shaped by altitude, soil, and tradition.
+            Ethiopia is the birthplace of coffee each region produces a distinct
+            cup profile shaped by altitude, soil, and tradition.
           </p>
         </div>
 
@@ -484,7 +484,7 @@ function ProcessSection() {
           </h2>
           <p className="mt-4 text-muted-foreground text-lg">
             From farm assessments to shipment coordination, our process is
-            designed for buyers who want traceability, quality, and on-time
+            designed for buyers who want traceability, quality, and on time
             delivery.
           </p>
         </div>
@@ -498,7 +498,7 @@ function ProcessSection() {
             },
             {
               title: "Verify",
-              desc: "Audit exporters and quality-check every lot before it leaves origin.",
+              desc: "Audit exporters and quality check every lot before it leaves origin.",
               icon: ShieldCheck,
             },
             {
@@ -553,7 +553,7 @@ function WhyUsSection() {
               {
                 icon: Star,
                 title: "Trusted Relationships",
-                desc: "Long-term partnerships with producers, exporters, and buyers ensure consistency and reliability.",
+                desc: "Long term partnerships with producers, exporters, and buyers ensure consistency and reliability.",
               },
               {
                 icon: ShieldCheck,
@@ -590,7 +590,7 @@ function WhyUsSection() {
             Our Commitment
           </p>
           <h3 className="mt-6 font-display text-4xl font-bold">
-            Ethiopian expertise. global markets.
+            Ethiopian expertise, global markets.
           </h3>
           <p className="mt-6 text-white/90 leading-relaxed">
             We pair regional coffee knowledge with international buyer needs,
@@ -619,7 +619,7 @@ function MetricsSection() {
         </h2>
         <p className="mt-4 mx-auto max-w-2xl text-muted-foreground text-lg leading-relaxed">
           Our team supports global buyers with verified suppliers, smoother
-          exports, and in-market insights across Ethiopia.
+          exports, and in market insights across Ethiopia.
         </p>
 
         <div className="mt-14 grid sm:grid-cols-2 xl:grid-cols-4 gap-6">
@@ -733,17 +733,17 @@ function ContactSection() {
             <InfoRow
               icon={MapPin}
               title="Headquarters"
-              lines={["Bole Sub-City, Addis Ababa", "Ethiopia"]}
+              lines={["Addis Ababa", "Ethiopia"]}
             />
             <InfoRow
               icon={() => <span className="text-lg">📞</span>}
               title="Phone & WhatsApp"
-              lines={["+251 11 555 0199", "+251 91 234 5678"]}
+              lines={["+251-973-053-737", "+251-912-345-678"]}
             />
             <InfoRow
               icon={() => <span className="text-lg">✉</span>}
               title="Email"
-              lines={["hello@bcscoffee.com", "trade@bcscoffee.com"]}
+              lines={["info@bcscoffee.et"]}
             />
           </div>
 
