@@ -8,12 +8,32 @@ import grading from "@/assets/grading.jpg";
 import washing from "@/assets/washing.jpg";
 
 const moments = [
-  { image: farmers, title: "At the farm", alt: "Coffee farmers at work in Ethiopia" },
-  { image: cherries, title: "Harvest season", alt: "Freshly picked coffee cherries" },
-  { image: washing, title: "Washing stations", alt: "Coffee processing at a washing station" },
+  {
+    image: farmers,
+    title: "At the farm",
+    alt: "Coffee farmers at work in Ethiopia",
+  },
+  {
+    image: cherries,
+    title: "Harvest season",
+    alt: "Freshly picked coffee cherries",
+  },
+  {
+    image: washing,
+    title: "Washing stations",
+    alt: "Coffee processing at a washing station",
+  },
   { image: drying, title: "Drying coffee", alt: "Coffee drying in the sun" },
-  { image: grading, title: "Quality in every lot", alt: "Coffee grading process" },
-  { image: ceremony, title: "Coffee culture", alt: "Traditional Ethiopian coffee ceremony" },
+  {
+    image: grading,
+    title: "Quality in every lot",
+    alt: "Coffee grading process",
+  },
+  {
+    image: ceremony,
+    title: "Coffee culture",
+    alt: "Traditional Ethiopian coffee ceremony",
+  },
 ];
 
 export default function FieldPage() {
@@ -82,7 +102,10 @@ export default function FieldPage() {
               className="h-full w-full object-cover"
             />
             <div className="absolute inset-0 grid place-items-center bg-black/30">
-              <span className="grid h-16 w-16 place-items-center rounded-full bg-accent text-accent-foreground shadow-gold" aria-label="Video placeholder">
+              <span
+                className="grid h-16 w-16 place-items-center rounded-full bg-accent text-accent-foreground shadow-gold"
+                aria-label="Video placeholder"
+              >
                 <Play className="ml-1 h-7 w-7 fill-current" />
               </span>
             </div>
