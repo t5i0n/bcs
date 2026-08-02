@@ -62,8 +62,7 @@ export function Footer() {
           title="Coffee Resources"
           items={[
             { to: "/origins", label: "Coffee Origins" },
-            { to: "/process", label: "Processing Methods" },
-            { to: "/process", label: "Export Guide" },
+            { to: "/field", label: "From the Field" },
           ]}
         />
 
