@@ -1,9 +1,6 @@
 import { Link as RouterLink } from "react-router-dom";
 import {
   Coffee,
-  Link as LinkIcon,
-  Link2,
-  ExternalLink,
   Mail,
   Phone,
   MapPin,
@@ -27,14 +24,27 @@ export function Footer() {
             trusted consulting, sourcing, and export expertise since 2009.
           </p>
           <div className="flex gap-3 mt-5">
-            {[LinkIcon, ExternalLink, Link2].map((I, i) => (
+            {[
+              { label: "Facebook", icon: "f" },
+              { label: "Instagram", icon: "◎" },
+              { label: "LinkedIn", icon: "in" },
+            ].map(({ label, icon }) => (
               <a
-                key={i}
+                key={label}
                 href="#"
                 className="w-9 h-9 grid place-items-center rounded-full bg-white/10 hover:bg-accent hover:text-accent-foreground transition"
-                aria-label="social"
+                aria-label={label}
+                title={label}
               >
-                <I className="w-4 h-4" />
+                <span
+                  className={
+                    icon === "in"
+                      ? "text-xs font-bold tracking-tight"
+                      : "text-lg font-bold leading-none"
+                  }
+                >
+                  {icon}
+                </span>
               </a>
             ))}
           </div>
