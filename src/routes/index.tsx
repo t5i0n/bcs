@@ -1,17 +1,17 @@
 import { Link } from "react-router-dom";
 import { useState, type ComponentType, type ReactNode } from "react";
 import { Layout } from "@/components/site/Layout";
+import { ContactForm } from "@/components/site/ContactForm";
+import { InfoRow } from "@/components/site/InfoRow";
+import { SERVICES } from "@/data/services";
+import { REGIONS } from "@/data/regions";
 import heroFarm from "@/assets/hero-farm.jpg";
 import farmers from "@/assets/farmers.jpg";
 import cherries from "@/assets/cherries.jpg";
 import {
   ArrowRight,
-  Handshake,
   ShieldCheck,
-  CheckCircle2,
   TrendingUp,
-  Truck,
-  Search,
   MapPin,
   Mountain,
   Leaf,
@@ -222,39 +222,6 @@ function AboutSection() {
 }
 
 function ServicesSection() {
-  const SERVICES = [
-    {
-      icon: Handshake,
-      title: "Coffee Export Consulting",
-      desc: "Helping buyers source reliable Ethiopian coffee with expert market guidance.",
-    },
-    {
-      icon: ShieldCheck,
-      title: "Supplier Verification",
-      desc: "Background checks, exporter validation, and end-to-end due diligence.",
-    },
-    {
-      icon: CheckCircle2,
-      title: "Quality Control & Grading",
-      desc: "Professional cupping, grading, and pre-shipment inspection.",
-    },
-    {
-      icon: TrendingUp,
-      title: "Market Research",
-      desc: "Coffee market trends, pricing intelligence, and opportunity analysis.",
-    },
-    {
-      icon: Truck,
-      title: "Logistics Coordination",
-      desc: "Export documentation, freight, and shipping support to any port.",
-    },
-    {
-      icon: Search,
-      title: "Price Negotiation",
-      desc: "Helping buyers secure transparent, competitive pricing direct from origin.",
-    },
-  ];
-
   return (
     <section id="services" className="py-24 md:py-32 bg-cream">
       <div className="container-x">
@@ -297,58 +264,6 @@ function ServicesSection() {
 }
 
 function OriginsSection() {
-  const REGIONS = [
-    {
-      name: "Yirgacheffe",
-      altitude: "1,800–2,200m",
-      process: "Washed, Natural",
-      notes: "Floral, citrus, tea-like body",
-      season: "Oct – Jan",
-    },
-    {
-      name: "Sidama",
-      altitude: "1,500–2,200m",
-      process: "Washed, Natural",
-      notes: "Berry, wine, sweet citrus",
-      season: "Oct – Dec",
-    },
-    {
-      name: "Guji",
-      altitude: "1,800–2,300m",
-      process: "Washed, Natural",
-      notes: "Berry, chocolate, jasmine",
-      season: "Oct – Jan",
-    },
-    {
-      name: "Limu",
-      altitude: "1,400–2,000m",
-      process: "Washed",
-      notes: "Balanced, spicy, winey",
-      season: "Nov – Feb",
-    },
-    {
-      name: "Jimma",
-      altitude: "1,400–1,800m",
-      process: "Natural",
-      notes: "Earthy, mild, full body",
-      season: "Nov – Feb",
-    },
-    {
-      name: "Nekemte",
-      altitude: "1,500–2,100m",
-      process: "Natural",
-      notes: "Fruity, mocha, bold",
-      season: "Oct – Jan",
-    },
-    {
-      name: "Harrar",
-      altitude: "1,500–2,100m",
-      process: "Natural",
-      notes: "Blueberry, wine, mocha",
-      season: "Oct – Feb",
-    },
-  ];
-
   const [active, setActive] = useState(0);
 
   return (
@@ -675,16 +590,19 @@ function ContactSection() {
 
           <div className="mt-10 space-y-4">
             <InfoRow
+              dark
               icon={MapPin}
               title="Headquarters"
               lines={["Addis Ababa", "Ethiopia"]}
             />
             <InfoRow
+              dark
               icon={() => <span className="text-lg">📞</span>}
               title="Phone & WhatsApp"
               lines={["+251-973-053-737", "+251-912-345-678"]}
             />
             <InfoRow
+              dark
               icon={() => <span className="text-lg">✉</span>}
               title="Email"
               lines={["info@bcscoffee.et"]}
@@ -708,60 +626,9 @@ function ContactSection() {
           </div>
         </div>
 
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            alert("Thank you — we'll be in touch within one business day.");
-          }}
-          className="rounded-3xl bg-card text-foreground p-8 md:p-10 shadow-elegant"
-        >
-          <div className="grid sm:grid-cols-2 gap-4">
-            <Field label="Name" name="name" required />
-            <Field label="Company" name="company" />
-            <Field label="Country" name="country" />
-            <Field label="Email" name="email" type="email" required />
-          </div>
-          <Field
-            label="Coffee Interest"
-            name="interest"
-            placeholder="e.g. Yirgacheffe washed Grade 1, 5 tons"
-          />
-          <Field label="Message" name="message" textarea required />
-          <button
-            type="submit"
-            className="mt-6 w-full py-4 rounded-full bg-accent text-accent-foreground font-semibold shadow-gold hover:scale-[1.02] transition"
-          >
-            Send Inquiry
-          </button>
-        </form>
+        <ContactForm />
       </div>
     </section>
-  );
-}
-
-function InfoRow({
-  icon: Icon,
-  title,
-  lines,
-}: {
-  icon: ComponentType<{ className?: string }>;
-  title: string;
-  lines: string[];
-}) {
-  return (
-    <div className="flex gap-4">
-      <div className="w-11 h-11 shrink-0 rounded-xl bg-white/10 backdrop-blur grid place-items-center text-accent">
-        <Icon className="w-5 h-5" />
-      </div>
-      <div>
-        <p className="font-semibold">{title}</p>
-        {lines.map((l) => (
-          <p key={l} className="text-sm text-white/70">
-            {l}
-          </p>
-        ))}
-      </div>
-    </div>
   );
 }
 
@@ -787,45 +654,3 @@ function Stat({
   );
 }
 
-function Field({
-  label,
-  name,
-  type = "text",
-  required,
-  textarea,
-  placeholder,
-}: {
-  label: string;
-  name: string;
-  type?: string;
-  required?: boolean;
-  textarea?: boolean;
-  placeholder?: string;
-}) {
-  const cls =
-    "w-full mt-1.5 px-4 py-3 rounded-xl border border-border bg-cream focus:bg-background focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition placeholder:text-muted-foreground";
-  return (
-    <label className={`block ${textarea ? "sm:col-span-2 mt-4" : ""}`}>
-      <span className="text-xs uppercase tracking-wider font-semibold text-muted-foreground">
-        {label} {required && <span className="text-accent">*</span>}
-      </span>
-      {textarea ? (
-        <textarea
-          name={name}
-          required={required}
-          rows={4}
-          placeholder={placeholder}
-          className={cls}
-        />
-      ) : (
-        <input
-          name={name}
-          type={type}
-          required={required}
-          placeholder={placeholder}
-          className={cls}
-        />
-      )}
-    </label>
-  );
-}
