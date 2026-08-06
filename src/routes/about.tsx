@@ -37,12 +37,12 @@ export default function AboutPage() {
           </p>
           <div className="mt-8 grid grid-cols-3 gap-4">
             {[
-              ["15+", "Years"],
-              ["100+", "Partners"],
-              ["40+", "Countries"],
-              ["6+", "Coffee Regions Covered"],
-              ["50M+", "Trade Value"],
-              ["24/7", "Customer Support"],
+              ["15+", "Years Experience"],
+              ["100+", "Verified Exporters"],
+              ["40+", "Countries Served"],
+              ["7", "Coffee Regions"],
+              ["$50M+", "Trade Facilitated"],
+              ["5,000+", "Tons Shipped"],
             ].map(([v, l]) => (
               <div key={l} className="rounded-2xl bg-cream p-5 text-center">
                 <p className="font-display text-3xl font-bold text-primary">

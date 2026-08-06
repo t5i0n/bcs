@@ -86,7 +86,7 @@ function Hero() {
         <div className="mt-20 grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl">
           {[
             { v: "15+", l: "Years Experience" },
-            { v: "100+", l: "Verified Partners" },
+            { v: "100+", l: "Verified Exporters" },
             { v: "40+", l: "Countries Served" },
             { v: "$50M+", l: "Trade Facilitated" },
           ].map((s, i) => (
@@ -571,7 +571,7 @@ function MetricsSection() {
             { value: "100+", label: "Verified Exporters", icon: Users },
             { value: "40+", label: "Countries Served", icon: MapPin },
             { value: "$50M+", label: "Trade Facilitated", icon: TrendingUp },
-            { value: "15+", label: "Years in Origin", icon: Star },
+            { value: "15+", label: "Years Experience", icon: Star },
           ].map((item) => (
             <div
               key={item.label}
@@ -682,7 +682,7 @@ function ContactSection() {
             <InfoRow
               icon={() => <span className="text-lg">📞</span>}
               title="Phone & WhatsApp"
-              lines={["+251-973-053-737", "+251 91 234 5678"]}
+              lines={["+251-973-053-737", "+251-912-345-678"]}
             />
             <InfoRow
               icon={() => <span className="text-lg">✉</span>}
