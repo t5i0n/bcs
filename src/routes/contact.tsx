@@ -60,7 +60,7 @@ export default function ContactPage() {
             e.preventDefault();
             alert("Thank you — we'll be in touch within one business day.");
           }}
-          className="rounded-3xl bg-white text-foreground p-8 md:p-10 shadow-elegant"
+          className="rounded-3xl bg-card text-foreground p-8 md:p-10 shadow-elegant"
         >
           <h2 className="font-display text-2xl font-bold mb-6">
             Send an inquiry
@@ -131,7 +131,7 @@ function Field({
   placeholder?: string;
 }) {
   const cls =
-    "w-full mt-1.5 px-4 py-3 rounded-xl border border-border bg-cream focus:bg-background focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition";
+    "w-full mt-1.5 px-4 py-3 rounded-xl border border-border bg-cream focus:bg-background focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition placeholder:text-muted-foreground";
   return (
     <label className={`block ${textarea ? "sm:col-span-2 mt-4" : ""}`}>
       <span className="text-xs uppercase tracking-wider font-semibold text-muted-foreground">
