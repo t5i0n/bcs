@@ -70,12 +70,34 @@
 }
 
 .dark {
-  --background: oklch(0.18 0.02 145);
-  --foreground: oklch(0.97 0.012 80);
-  --card: oklch(0.22 0.03 145);
-  --card-foreground: oklch(0.97 0.012 80);
+  --background: oklch(0.16 0.02 145);
+  --foreground: oklch(0.95 0.01 90);
+  --forest: oklch(0.44 0.09 148);
+  --coffee: oklch(0.43 0.06 50);
+  --gold: oklch(0.74 0.15 80);
+  --cream: oklch(0.215 0.02 145);
+
+  --primary: var(--forest);
+  --primary-foreground: oklch(0.98 0.01 80);
+  --secondary: var(--coffee);
+  --secondary-foreground: oklch(0.98 0.01 80);
+  --accent: var(--gold);
+  --accent-foreground: oklch(0.22 0.03 145);
+
+  --card: oklch(0.205 0.02 145);
+  --card-foreground: var(--foreground);
+  --popover: oklch(0.205 0.02 145);
+  --popover-foreground: var(--foreground);
+  --muted: oklch(0.24 0.02 145);
+  --muted-foreground: oklch(0.72 0.02 90);
+  --destructive: oklch(0.65 0.22 25);
+  --destructive-foreground: oklch(0.98 0 0);
   --border: oklch(1 0 0 / 12%);
   --input: oklch(1 0 0 / 15%);
+  --ring: var(--gold);
+
+  --shadow-elegant: 0 20px 60px -20px oklch(0 0 0 / 0.6);
+  --shadow-gold: 0 10px 40px -10px oklch(0.74 0.15 80 / 0.2);
 }
 
 @layer base {

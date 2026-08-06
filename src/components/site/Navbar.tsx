@@ -1,6 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { Menu, X, Coffee } from "lucide-react";
+import { Menu, X, Coffee, Moon, Sun } from "lucide-react";
+import { useTheme } from "@/use-theme";
 
 const links = [
   { to: "/", label: "Home" },
@@ -14,6 +15,7 @@ const links = [
 export function Navbar({ transparent = false }: { transparent?: boolean }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 30);
@@ -80,20 +82,38 @@ export function Navbar({ transparent = false }: { transparent?: boolean }) {
           ))}
         </nav>
 
-        <Link
-          to="/contact"
-          className="hidden lg:inline-flex items-center px-5 py-2.5 rounded-full bg-accent text-accent-foreground text-sm font-semibold shadow-gold hover:opacity-90 transition"
-        >
-          Request Consultation
-        </Link>
-
-        <button
-          onClick={() => setOpen((v) => !v)}
-          className={`lg:hidden p-2 rounded-md ${solid ? "text-foreground" : "text-white"}`}
-          aria-label="Toggle menu"
-        >
-          {open ? <X /> : <Menu />}
-        </button>
+        <div className="flex items-center gap-1.5">
+          <button
+            onClick={toggleTheme}
+            aria-label={
+              theme === "dark" ? "Switch to light mode" : "Switch to dark mode"
+            }
+            className={`p-2.5 rounded-full transition-colors ${
+              solid
+                ? "text-foreground/80 hover:text-foreground hover:bg-cream"
+                : "text-white/85 hover:text-white hover:bg-white/10"
+            }`}
+          >
+            {theme === "dark" ? (
+              <Sun className="w-5 h-5" />
+            ) : (
+              <Moon className="w-5 h-5" />
+            )}
+          </button>
+          <Link
+            to="/contact"
+            className="hidden lg:inline-flex items-center px-5 py-2.5 rounded-full bg-accent text-accent-foreground text-sm font-semibold shadow-gold hover:opacity-90 transition"
+          >
+            Request Consultation
+          </Link>
+          <button
+            onClick={() => setOpen((v) => !v)}
+            className={`lg:hidden p-2 rounded-md ${solid ? "text-foreground" : "text-white"}`}
+            aria-label="Toggle menu"
+          >
+            {open ? <X /> : <Menu />}
+          </button>
+        </div>
       </div>
 
       {open && (
