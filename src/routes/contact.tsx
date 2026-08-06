@@ -34,7 +34,7 @@ export default function ContactPage() {
               <InfoRow
                 icon={Mail}
                 title="Email"
-                lines={["hello@bcscoffee.com", "trade@bcscoffee.com"]}
+                lines={["info@bcscoffee.et"]}
               />
             </div>
             <a
@@ -100,13 +100,13 @@ function InfoRow({
 }) {
   return (
     <div className="flex gap-4">
-      <div className="w-11 h-11 shrink-0 rounded-xl bg-white/10 backdrop-blur grid place-items-center text-accent">
+      <div className="w-11 h-11 shrink-0 rounded-xl bg-accent/15 grid place-items-center text-accent">
         <Icon className="w-5 h-5" />
       </div>
       <div>
         <p className="font-semibold">{title}</p>
         {lines.map((l) => (
-          <p key={l} className="text-sm text-white/70">
+          <p key={l} className="text-sm text-muted-foreground">
             {l}
           </p>
         ))}
