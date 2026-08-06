@@ -1,10 +1,5 @@
 import { Link as RouterLink } from "react-router-dom";
-import {
-  Coffee,
-  Mail,
-  Phone,
-  MapPin,
-} from "lucide-react";
+import { Coffee, Mail, Phone, MapPin, MessageCircle } from "lucide-react";
 
 export function Footer() {
   return (
@@ -75,6 +70,10 @@ export function Footer() {
             </li>
             <li className="flex gap-2.5">
               <Phone className="w-4 h-4 mt-0.5 text-accent" /> +251-973-053-737
+            </li>
+            <li className="flex gap-2.5">
+              <MessageCircle className="w-4 h-4 mt-0.5 text-accent" />
+              +251-912-345-678
             </li>
             <li className="flex gap-2.5">
               <Mail className="w-4 h-4 mt-0.5 text-accent" /> info@bcscoffee.et

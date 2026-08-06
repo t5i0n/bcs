@@ -29,7 +29,7 @@ export default function ContactPage() {
               <InfoRow
                 icon={Phone}
                 title="Phone & WhatsApp"
-                lines={["+251 11 555 0199", "+251 91 234 5678"]}
+                lines={["+251-973-053-737", "+251-912-345-678"]}
               />
               <InfoRow
                 icon={Mail}

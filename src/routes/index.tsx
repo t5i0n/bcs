@@ -682,7 +682,7 @@ function ContactSection() {
             <InfoRow
               icon={() => <span className="text-lg">📞</span>}
               title="Phone & WhatsApp"
-              lines={["+251-973-053-737", "+251-912-345-678"]}
+              lines={["+251-973-053-737", "+251 91 234 5678"]}
             />
             <InfoRow
               icon={() => <span className="text-lg">✉</span>}
