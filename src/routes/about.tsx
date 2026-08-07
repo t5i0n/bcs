@@ -15,6 +15,8 @@ export default function AboutPage() {
         <img
           src={farmers}
           alt="Ethiopian coffee farmers"
+          width={1280}
+          height={1280}
           loading="lazy"
           className="rounded-3xl shadow-elegant w-full aspect-4/5 object-cover"
         />
@@ -62,6 +64,8 @@ export default function AboutPage() {
             <img
               src={ceremony}
               alt="Ethiopian coffee ceremony"
+              width={1280}
+              height={960}
               loading="lazy"
               className="rounded-3xl shadow-elegant w-full aspect-4/3 object-cover"
             />
