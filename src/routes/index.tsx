@@ -20,6 +20,9 @@ import {
   Sparkles,
   Users,
   MessageSquare,
+  Phone,
+  Mail,
+  MessageCircle,
 } from "lucide-react";
 
 export default function HomePage() {
@@ -118,7 +121,7 @@ function SectionEyebrow({
 }) {
   return (
     <p
-      className={`uppercase tracking-[0.25em] text-xs font-semibold mb-4 ${inverted ? "text-white" : "text-accent"}`}
+      className={`uppercase tracking-[0.25em] text-xs font-semibold mb-4 ${inverted ? "text-white" : "text-gold-deep"}`}
     >
       {children}
     </p>
@@ -275,8 +278,8 @@ function OriginsSection() {
             Seven Regions, One Legendary Origin.
           </h2>
           <p className="mt-4 text-muted-foreground text-lg">
-            Ethiopia is the birthplace of coffee each region produces a distinct
-            cup profile shaped by altitude, soil, and tradition.
+            Ethiopia is the birthplace of coffee — each region produces a
+            distinct cup profile shaped by altitude, soil, and tradition.
           </p>
         </div>
 
@@ -593,17 +596,17 @@ function ContactSection() {
               dark
               icon={MapPin}
               title="Headquarters"
-              lines={["Addis Ababa", "Ethiopia"]}
+              lines={["Addis Ababa, Ethiopia"]}
             />
             <InfoRow
               dark
-              icon={() => <span className="text-lg">📞</span>}
+              icon={Phone}
               title="Phone & WhatsApp"
               lines={["+251-973-053-737", "+251-912-345-678"]}
             />
             <InfoRow
               dark
-              icon={() => <span className="text-lg">✉</span>}
+              icon={Mail}
               title="Email"
               lines={["info@bcscoffee.et"]}
             />
@@ -613,7 +616,7 @@ function ContactSection() {
             href="https://wa.me/251912345678"
             className="inline-flex items-center gap-2 mt-8 px-6 py-3 rounded-full bg-[#25D366] text-white font-semibold hover:scale-105 transition"
           >
-            <span>💬</span> Chat on WhatsApp
+            <MessageCircle className="w-4 h-4" /> Chat on WhatsApp
           </a>
 
           <div className="mt-8 rounded-2xl overflow-hidden border border-white/20 h-56">
