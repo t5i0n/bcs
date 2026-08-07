@@ -11,14 +11,12 @@ import cherries from "@/assets/cherries.jpg";
 import {
   ArrowRight,
   ShieldCheck,
-  TrendingUp,
   MapPin,
   Mountain,
   Leaf,
   Calendar,
   Star,
   Sparkles,
-  Users,
   MessageSquare,
   Phone,
   Mail,
@@ -33,7 +31,6 @@ export default function HomePage() {
       <ServicesSection />
       <OriginsSection />
       <WhyUsSection />
-      <MetricsSection />
       <TestimonialsSection />
       <ContactSection />
     </Layout>
@@ -465,43 +462,6 @@ function WhyUsSection() {
           >
             See Life at Origin <ArrowRight className="w-4 h-4" />
           </Link>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function MetricsSection() {
-  return (
-    <section className="py-24 md:py-32 bg-cream">
-      <div className="container-x text-center">
-        <SectionEyebrow>Impact</SectionEyebrow>
-        <h2 className="font-display text-4xl md:text-5xl font-bold text-balance">
-          Measurable Results for Coffee Buyers
-        </h2>
-        <p className="mt-4 mx-auto max-w-2xl text-muted-foreground text-lg leading-relaxed">
-          Our team supports global buyers with verified suppliers, smoother
-          exports, and in market insights across Ethiopia.
-        </p>
-
-        <div className="mt-14 grid sm:grid-cols-2 xl:grid-cols-4 gap-6">
-          {[
-            { value: "100+", label: "Verified Exporters", icon: Users },
-            { value: "40+", label: "Countries Served", icon: MapPin },
-            { value: "$50M+", label: "Trade Facilitated", icon: TrendingUp },
-            { value: "15+", label: "Years Experience", icon: Star },
-          ].map((item) => (
-            <div
-              key={item.label}
-              className="rounded-3xl bg-background p-8 border border-border shadow-elegant"
-            >
-              <div className="w-14 h-14 rounded-3xl grid place-items-center bg-accent text-accent-foreground mb-5">
-                <item.icon className="w-6 h-6" />
-              </div>
-              <p className="font-display text-4xl font-bold">{item.value}</p>
-              <p className="mt-3 text-muted-foreground">{item.label}</p>
-            </div>
-          ))}
         </div>
       </div>
     </section>
