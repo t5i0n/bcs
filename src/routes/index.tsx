@@ -389,7 +389,7 @@ function OriginsSection() {
 
 function WhyUsSection() {
   return (
-    <section className="py-24 md:py-32 bg-background">
+    <section className="py-24 md:py-32 bg-cream">
       <div className="container-x grid lg:grid-cols-[0.9fr_1.1fr] gap-14 items-center">
         <div>
           <SectionEyebrow>Why Us</SectionEyebrow>
@@ -422,7 +422,7 @@ function WhyUsSection() {
             ].map((item) => (
               <div
                 key={item.title}
-                className="flex gap-4 p-5 rounded-3xl bg-cream border border-border"
+                className="flex gap-4 p-5 rounded-3xl bg-background border border-border"
               >
                 <div className="w-14 h-14 rounded-3xl grid place-items-center bg-accent text-accent-foreground">
                   <item.icon className="w-6 h-6" />
