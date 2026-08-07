@@ -110,6 +110,8 @@ export function Navbar({ transparent = false }: { transparent?: boolean }) {
             onClick={() => setOpen((v) => !v)}
             className={`lg:hidden p-2 rounded-md ${solid ? "text-foreground" : "text-white"}`}
             aria-label="Toggle menu"
+            aria-expanded={open}
+            aria-controls="mobile-menu"
           >
             {open ? <X /> : <Menu />}
           </button>
@@ -117,7 +119,7 @@ export function Navbar({ transparent = false }: { transparent?: boolean }) {
       </div>
 
       {open && (
-        <div className="lg:hidden bg-background border-t border-border">
+        <div id="mobile-menu" className="lg:hidden bg-background border-t border-border">
           <div className="container-x py-4 flex flex-col gap-1">
             {links.map((l) => (
               <Link
