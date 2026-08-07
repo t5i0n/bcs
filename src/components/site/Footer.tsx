@@ -65,8 +65,7 @@ export function Footer() {
           <h4 className="font-display text-white text-lg mb-4">Contact</h4>
           <ul className="space-y-3 text-sm">
             <li className="flex gap-2.5">
-              <MapPin className="w-4 h-4 mt-0.5 text-accent" /> Addis Ababa,
-              Ethiopia
+              <MapPin className="w-4 h-4 mt-0.5 text-accent" /> Addis Ababa, Ethiopia
             </li>
             <li className="flex gap-2.5">
               <Phone className="w-4 h-4 mt-0.5 text-accent" /> +251-973-053-737
