@@ -1,4 +1,3 @@
-import { Play } from "lucide-react";
 import { Layout, PageHero } from "@/components/site/Layout";
 import ceremony from "@/assets/ceremony.jpg";
 import cherries from "@/assets/cherries.jpg";
@@ -12,27 +11,43 @@ const moments = [
     image: farmers,
     title: "At the farm",
     alt: "Coffee farmers at work in Ethiopia",
+    width: 1280,
+    height: 1280,
   },
   {
     image: cherries,
     title: "Harvest season",
     alt: "Freshly picked coffee cherries",
+    width: 1280,
+    height: 960,
   },
   {
     image: washing,
     title: "Washing stations",
     alt: "Coffee processing at a washing station",
+    width: 1280,
+    height: 960,
   },
-  { image: drying, title: "Drying coffee", alt: "Coffee drying in the sun" },
+  {
+    image: drying,
+    title: "Drying coffee",
+    alt: "Coffee drying in the sun",
+    width: 1280,
+    height: 960,
+  },
   {
     image: grading,
     title: "Quality in every lot",
     alt: "Coffee grading process",
+    width: 1280,
+    height: 960,
   },
   {
     image: ceremony,
     title: "Coffee culture",
     alt: "Traditional Ethiopian coffee ceremony",
+    width: 1280,
+    height: 960,
   },
 ];
 
@@ -69,6 +84,8 @@ export default function FieldPage() {
                 <img
                   src={moment.image}
                   alt={moment.alt}
+                  width={moment.width}
+                  height={moment.height}
                   loading="lazy"
                   className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
                 />
@@ -99,14 +116,13 @@ export default function FieldPage() {
             <img
               src={drying}
               alt="Coffee drying at origin"
+              width={1280}
+              height={960}
               className="h-full w-full object-cover"
             />
             <div className="absolute inset-0 grid place-items-center bg-black/30">
-              <span
-                className="grid h-16 w-16 place-items-center rounded-full bg-accent text-accent-foreground shadow-gold"
-                aria-label="Video placeholder"
-              >
-                <Play className="ml-1 h-7 w-7 fill-current" />
+              <span className="rounded-full bg-accent text-accent-foreground px-6 py-3 text-sm font-semibold shadow-gold">
+                Videos coming soon
               </span>
             </div>
           </div>
