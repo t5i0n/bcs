@@ -25,7 +25,7 @@ export default function ContactPage() {
               <InfoRow
                 icon={MapPin}
                 title="Headquarters"
-                lines={["Bole Sub-City, Addis Ababa, Ethiopia"]}
+                lines={["Addis Ababa, Ethiopia"]}
               />
               <InfoRow
                 icon={Phone}
@@ -50,7 +50,7 @@ export default function ContactPage() {
             <iframe
               title="Map of Addis Ababa"
               src="https://www.openstreetmap.org/export/embed.html?bbox=38.70%2C8.95%2C38.85%2C9.05&layer=mapnik&marker=9.0054%2C38.7636"
-              className="w-full h-full"
+              className="w-full h-full grayscale-20"
               loading="lazy"
             />
           </div>
