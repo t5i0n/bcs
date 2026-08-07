@@ -31,6 +31,7 @@
   --color-cream: var(--cream);
   --color-coffee: var(--coffee);
   --color-gold: var(--gold);
+  --color-gold-deep: var(--gold-deep);
   --color-forest: var(--forest);
   --font-display: "Playfair Display", serif;
   --font-sans: "Inter", sans-serif;
@@ -47,6 +48,7 @@
   --forest: oklch(0.36 0.08 148);
   --coffee: oklch(0.43 0.06 50);
   --gold: oklch(0.74 0.15 80);
+  --gold-deep: oklch(0.45 0.11 78);
   --cream: oklch(0.98 0.01 95);
 
   --primary: var(--forest);
@@ -75,6 +77,7 @@
   --forest: oklch(0.44 0.09 148);
   --coffee: oklch(0.43 0.06 50);
   --gold: oklch(0.74 0.15 80);
+  --gold-deep: var(--gold);
   --cream: oklch(0.215 0.02 145);
 
   --primary: var(--forest);
