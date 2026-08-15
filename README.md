@@ -1,68 +1,93 @@
 # BCS Coffee Market Consulting
 
-An internship project featuring a modern landing page for BCS Coffee Market Consulting, built with Vite, React, and TypeScript.
+Marketing website for BCS Coffee Market Consulting, an Ethiopian coffee sourcing and consulting business. The site presents the company, its services, coffee origins, field process, and a buyer inquiry path.
 
-## About this project
+## Current status
 
-This project was developed as part of an internship, with the goal of building a production-style marketing website for a coffee export and consulting business. It covers the full front-end workflow
-of a client site from page structure and routing to styling, responsive design, and content layout using a modern React toolchain.
+The frontend is implemented and ready for local development and production builds.
 
-**Internship goals covered by this project:**
+**Pages** — Six public pages (Home, About, Services, Origins, Field, Contact) plus a custom 404 page, wired with React Router.
 
-- Structuring a multi-page site with client-side routing
-- Building reusable layout and UI components (navbar, footer, shared layout)
-- Implementing a consistent design system with Tailwind CSS (custom theme, colors, typography)
-- Working with static assets and image-heavy content sections
-- Debugging and resolving real build/styling issues (e.g. Tailwind configuration, CSS variable wiring)
-- Following clean project structure and linting conventions
+**Design & UX**
 
-## Project structure
+- Full dark mode with a toggle that persists across visits (`src/use-theme.ts`).
+- Responsive shared navbar and footer with a mobile menu.
+- Consistent design system built on Tailwind CSS 4 custom tokens (colors, typography, spacing).
 
-- `src/main.tsx` — app entry point
-- `src/App.tsx` — route definitions and router setup
-- `src/routes/index.tsx` — homepage route component
-- `src/routes/*.tsx` — page route components for about, services, origins, process, contact, and not found
-- `src/components/site` — shared layout and site level components
-- `src/assets` — image assets used in the homepage
-- `public/` — static assets
+**Content & architecture**
 
-## Tech stack
+- The homepage includes hero stats, company background, services, coffee origins, testimonials, and a contact call to action.
+- Services, coffee regions, and the contact form are defined once and shared across pages (`src/data/services.ts`, `src/data/regions.ts`, `src/components/site/ContactForm.tsx`), so content stays consistent site-wide.
+- Contact details (phones, WhatsApp, email, address) are unified across all pages.
 
-- **React** + **TypeScript** — component structure and type safety
-- **Vite** — build tool and dev server
-- **react-router-dom** — client-side routing
-- **Tailwind CSS (v4)** — utility-first styling and custom design tokens
-- **ESLint** — code quality and linting
+**SEO, accessibility & performance**
 
-## Available scripts
+- `robots.txt`, `sitemap.xml`, an Open Graph share image (`og-image.jpg`), and a custom favicon are included.
+- Images have explicit dimensions and lazy loading to avoid layout shift; the mobile menu exposes proper ARIA state.
 
-- `npm run dev` — start the Vite development server
-- `npm run build` — build for production
-- `npm run preview` — preview the production build locally
-- `npm run lint` — run ESLint on the project
+**Forms** — The inquiry form (homepage and contact page) opens the visitor's email application with a pre-filled message addressed to `info@bcscoffee.et`.
 
-## Recommended workflow
+### Remaining work
 
-1. Install dependencies:
+The following items are waiting on client input and do not block the build:
+
+- **Form delivery** — The form uses a `mailto:` fallback and does not yet submit to a form service. Once the client provides a Web3Forms access key, swap the handler in `src/components/site/ContactForm.tsx`.
+- **Social links** — The footer social icons are still `href="#"` placeholders pending the client's profile URLs (`src/components/site/Footer.tsx`).
+- **Domain** — The SEO files assume `https://bcscoffee.et`; update `public/sitemap.xml` and `public/robots.txt` if the production domain differs.
+
+## Technology
+
+- React 19 and TypeScript
+- Vite 8
+- React Router
+- Tailwind CSS 4
+- Lucide React icons
+- ESLint
+
+## Routes
+
+| Path | Page |
+| --- | --- |
+| `/` | Home |
+| `/about` | Company background and approach |
+| `/services` | Coffee sourcing and consulting services |
+| `/origins` | Ethiopian coffee regions |
+| `/field` | Field process and quality workflow |
+| `/contact` | Buyer inquiry form |
+
+## Getting started
+
+Requirements: Node.js 20 or later and npm.
 
 ```bash
 npm install
+npm run dev
 ```
 
-2. Start development server:
+Vite prints the local development URL after the server starts.
 
-```bash
- npm run dev
+## Available scripts
+
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Start the Vite development server. |
+| `npm run build` | Type-check the app and create a production build. |
+| `npm run preview` | Serve the production build locally. |
+| `npm run lint` | Run ESLint across the project. |
+
+## Project structure
+
+```text
+src/
+├── assets/             # Coffee and farm imagery
+├── components/site/    # Shared layout, navigation, footer, and form components
+├── data/               # Service and coffee-region content
+├── routes/             # Page-level route components
+├── App.tsx             # Route definitions
+├── use-theme.ts        # Dark-mode theme hook
+└── main.tsx            # Application entry point
 ```
 
-3. Build for production:
+## Deployment notes
 
-```bash
-npm run build
-```
-
-## Notes
-
-This project currently uses `react-router-dom` for routing. The homepage is implemented in `src/routes/index.tsx`, while `src/App.tsx` is responsible for mounting the route structure.
-This repository represents ongoing internship work and may continue to be updated with new
-pages, features, and refinements as the project progresses.
+The public SEO files reference `https://bcscoffee.et`. Update `public/sitemap.xml` and `public/robots.txt` if the production domain changes.
