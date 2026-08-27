@@ -1,0 +1,237 @@
+{
+  "common": {
+    "learnMore": "Learn more",
+    "requestConsultation": "Request Consultation",
+    "sendInquiry": "Send Inquiry",
+    "sending": "Sending…",
+    "loading": "Loading…",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "submit": "Submit",
+    "yearsExperience": "Years Experience",
+    "verifiedExporters": "Verified Exporters",
+    "countriesServed": "Countries Served",
+    "tradeFacilitated": "Trade Facilitated",
+    "yearsOfTrust": "Years of Trust",
+    "coffeeRegions": "Coffee Regions",
+    "tonsShipped": "Tons Shipped"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "origins": "Origins",
+    "field": "From the Field",
+    "contact": "Contact",
+    "brandSubtitle": "Market Consulting",
+    "switchToLight": "Switch to light mode",
+    "switchToDark": "Switch to dark mode",
+    "toggleMenu": "Toggle menu"
+  },
+  "hero": {
+    "eyebrow": "Ethiopia · Since 2009",
+    "title": ["Connecting Ethiopian Coffee Excellence", "With Global Markets"],
+    "subtitle": "Trusted coffee consulting, exporter verification, quality sourcing, and market intelligence for international coffee buyers.",
+    "exploreCoffee": "Explore Ethiopian Coffee"
+  },
+  "about": {
+    "eyebrow": "About BCS",
+    "title": "Your Trusted Ethiopian Coffee Partner",
+    "description1": "BCS Coffee Market Consulting bridges the world's most discerning buyers with Ethiopia's finest verified exporters and producers. From single origin micro lots in Yirgacheffe to commercial grade containers from Sidama, we deliver clarity, integrity, and quality at every step.",
+    "description2": "Founded in Addis Ababa, our team blends deep cultural expertise with international trade experience, so you can source with confidence every harvest.",
+    "timeline": {
+      "2009": {
+        "title": "Founded in Addis Ababa",
+        "desc": "Started as a local broker bridging producers and roasters."
+      },
+      "2014": {
+        "title": "Global Expansion",
+        "desc": "First exports to Europe, Asia, and the Middle East."
+      },
+      "2019": {
+        "title": "100+ Export Partnerships",
+        "desc": "Verified network across all major Ethiopian coffee regions."
+      },
+      "2024": {
+        "title": "International Consulting",
+        "desc": "Full-spectrum advisory for buyers in 40+ countries."
+      }
+    }
+  },
+  "aboutPage": {
+    "eyebrow": "Who We Are",
+    "title": "Bridging Ethiopian Origins With Global Roasters",
+    "subtitle": "Born in Addis Ababa, trusted across 40+ countries.",
+    "storyTitle": "Our Story",
+    "storyP1": "BCS Coffee Market Consulting was founded in 2009 by a team of Ethiopian coffee professionals who saw a gap between the country's extraordinary coffee heritage and the international buyers seeking it. We've spent fifteen years closing that gap visit by visit, container by container.",
+    "storyP2": "Today our consultancy operates as the trusted intermediary between verified Ethiopian exporters and roasters in Europe, Asia, North America, and the Middle East facilitating over $50M in trade and shipping more than 5,000 tons.",
+    "heritageTitle": "Rooted in Ethiopian Heritage",
+    "heritageP1": "Ethiopia is coffee's birthplace. Our work honors that lineage by ensuring fair, transparent trade where producers, exporters, and buyers all win.",
+    "workWithUs": "Work With Us"
+  },
+  "services": {
+    "eyebrow": "What We Do",
+    "homeTitle": "End-to-End Coffee Services",
+    "homeSubtitle": "A complete consulting and trade desk for international buyers from sourcing decisions to shipping containers.",
+    "pageTitle": "End-to-End Coffee Trade Services",
+    "pageSubtitle": "Six core services that take you from sourcing strategy to a container at your warehouse door.",
+    "ctaTitle": "Ready to start sourcing?",
+    "ctaSubtitle": "Book a free 30-minute consultation with our team.",
+    "items": {
+      "exportConsulting": {
+        "title": "Coffee Export Consulting",
+        "desc": "Strategic sourcing advice tailored to your roastery's volume, profile, and shipping cadence."
+      },
+      "supplierVerification": {
+        "title": "Supplier Verification",
+        "desc": "Comprehensive due diligence licenses, export history, capacity audits, and reference checks."
+      },
+      "qualityControl": {
+        "title": "Quality Control & Grading",
+        "desc": "Q-grader cupping, screen-size analysis, moisture testing, and pre-shipment sample approval."
+      },
+      "marketResearch": {
+        "title": "Market Research",
+        "desc": "Differential pricing, harvest forecasts, regional yield reports, and competitor intelligence."
+      },
+      "logistics": {
+        "title": "Logistics Coordination",
+        "desc": "Phytosanitary, ECX certificates, ICO marks, FOB Djibouti coordination, and freight booking."
+      },
+      "priceNegotiation": {
+        "title": "Price Negotiation",
+        "desc": "Direct origin pricing with full transparency no hidden margins or kickbacks."
+      }
+    }
+  },
+  "origins": {
+    "eyebrow": "Coffee Origins",
+    "homeTitle": "Seven Regions, One Legendary Origin.",
+    "homeSubtitle": "Ethiopia is the birthplace of coffee — each region produces a distinct cup profile shaped by altitude, soil, and tradition.",
+    "pageTitle": "The Seven Regions of Ethiopian Coffee",
+    "pageSubtitle": "From the misty highlands of Yirgacheffe to the sun-baked plateaus of Harrar.",
+    "featuredRegion": "Featured Region",
+    "altitude": "Altitude",
+    "processing": "Processing",
+    "harvest": "Harvest",
+    "process": "Process",
+    "regions": {
+      "harrar": "Harrar",
+      "yirgacheffe": "Yirgacheffe",
+      "sidama": "Sidama",
+      "guji": "Guji",
+      "limu": "Limu",
+      "jimma": "Jimma",
+      "nekemte": "Nekemte"
+    },
+    "regionNotes": {
+      "harrar": "Blueberry, wine, mocha. Iconic dry-processed eastern coffee with a wild, fruited cup.",
+      "yirgacheffe": "Floral, citrus, tea-like body. The most celebrated Ethiopian origin — bright, jasmine-laced, refined.",
+      "sidama": "Berry, wine, sweet citrus. Diverse micro-climates produce remarkable lot-to-lot variation.",
+      "guji": "Berry, chocolate, jasmine. A rising star with intense fruit-forward profiles.",
+      "limu": "Balanced, spicy, winey. A reliable workhorse for blends and single-origin alike.",
+      "jimma": "Earthy, mild, full body. Ethiopia's largest producing region by volume.",
+      "nekemte": "Fruity, mocha, bold. Western-Ethiopian character — heavy body and chocolate."
+    }
+  },
+  "field": {
+    "eyebrow": "From the Field",
+    "title": "See Ethiopian Coffee at Its Origin",
+    "subtitle": "A closer look at the farms, people, and daily work behind every coffee we help bring to market.",
+    "lifeOnCoffeeLand": "Life on the coffee land",
+    "placesBehindCup": "The people and places behind the cup.",
+    "followWork": "Follow our work from Ethiopia's coffee-growing communities to the stations where each lot is prepared for the world.",
+    "fieldVideos": "Field videos",
+    "watchSpace": "Watch this space for stories from origin.",
+    "shareVideos": "We'll share short videos from farm visits, harvests, and coffee processing as they happen.",
+    "videosComingSoon": "Videos coming soon",
+    "moments": {
+      "atFarm": "At the farm",
+      "harvestSeason": "Harvest season",
+      "washingStations": "Washing stations",
+      "dryingCoffee": "Drying coffee",
+      "qualityLot": "Quality in every lot",
+      "coffeeCulture": "Coffee culture"
+    }
+  },
+  "contact": {
+    "eyebrow": "Get in Touch",
+    "homeTitle": "Let's Source Your Next Harvest.",
+    "homeSubtitle": "Tell us about your roastery, volume, and flavor goals. A consultant will respond within one business day.",
+    "pageTitle": "Let's Source Your Next Harvest",
+    "pageSubtitle": "Tell us about your roastery, volume, and flavor goals. A consultant will respond within one business day.",
+    "contactInfoTitle": "Contact Information",
+    "contactInfoDesc": "Reach out by email, phone, or WhatsApp — we're ready to support your next Ethiopian coffee sourcing plan.",
+    "headquarters": "Headquarters",
+    "phoneWhatsapp": "Phone & WhatsApp",
+    "email": "Email",
+    "chatWhatsapp": "Chat on WhatsApp",
+    "sendInquiryHeading": "Send an inquiry",
+    "form": {
+      "name": "Name",
+      "company": "Company",
+      "country": "Country",
+      "email": "Email",
+      "coffeeInterest": "Coffee Interest",
+      "coffeeInterestPlaceholder": "e.g. Yirgacheffe washed Grade 1, 5 tons",
+      "message": "Message",
+      "success": "Thank you! Your inquiry has been received. We will respond within one business day.",
+      "error": "Submission failed. Please try again.",
+      "emailUsDirectly": "Or email us directly."
+    }
+  },
+  "footer": {
+    "description": "Connecting Ethiopian coffee excellence with global markets through trusted consulting, sourcing, and export expertise since 2009.",
+    "company": "Company",
+    "about": "About",
+    "services": "Services",
+    "contact": "Contact",
+    "coffeeResources": "Coffee Resources",
+    "coffeeOrigins": "Coffee Origins",
+    "fromTheField": "From the Field",
+    "contactTitle": "Contact",
+    "copyright": "All rights reserved.",
+    "origin": "Origin: Ethiopia · Serving 40+ countries worldwide"
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "description": "The page you're looking for doesn't exist or has been moved.",
+    "backHome": "Back to Home"
+  },
+  "cookie": {
+    "title": "Cookie Preferences",
+    "message": "We use cookies to understand how you use our website and to improve your experience. Analytics cookies help us measure site performance. You can accept or decline — your choice.",
+    "accept": "Accept Analytics",
+    "decline": "Decline",
+    "dismiss": "Dismiss"
+  },
+  "whyUs": {
+    "eyebrow": "Why Us",
+    "title": "Why Buyers Choose BCS Coffee",
+    "subtitle": "We combine Ethiopian origin expertise with international trade experience so buyers can source coffee with confidence, quality, and transparency.",
+    "verifiedQuality": "Verified Quality",
+    "verifiedQualityDesc": "Every exporter and lot is reviewed through a rigorous verification process.",
+    "trustedRelationships": "Trusted Relationships",
+    "trustedRelationshipsDesc": "Long term partnerships with producers, exporters, and buyers ensure consistency and reliability.",
+    "exportConfidence": "Export Confidence",
+    "exportConfidenceDesc": "We manage compliance, paperwork, and logistics so your shipment arrives smoothly.",
+    "ourCommitment": "Our Commitment",
+    "commitmentTitle": "Ethiopian expertise, global markets.",
+    "commitmentDesc": "We pair regional coffee knowledge with international buyer needs, helping importers source the right beans, verify the right suppliers, and close deals on their terms.",
+    "seeLifeAtOrigin": "See Life at Origin"
+  },
+  "testimonials": {
+    "eyebrow": "Testimonials",
+    "title": "Trusted by Roasters, Buyers, and Importers",
+    "subtitle": "Real partner stories from buyers who source coffee through our verified Ethiopian network.",
+    "verifiedClient": "Verified client",
+    "quote1": "BCS helped us find the exact Yirgacheffe profile we needed with full exporter traceability.",
+    "name1": "Nora, European roastery owner",
+    "quote2": "The verification and shipping support saved us weeks and gave us confidence in every container.",
+    "name2": "Marco, specialty buyer",
+    "quote3": "Their market knowledge and network made our first Ethiopian origin purchase feel easy.",
+    "name3": "Leila, coffee importer"
+  }
+}

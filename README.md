@@ -1,93 +1,101 @@
 # BCS Coffee Market Consulting
 
-Marketing website for BCS Coffee Market Consulting, an Ethiopian coffee sourcing and consulting business. The site presents the company, its services, coffee origins, field process, and a buyer inquiry path.
-
-## Current status
-
-The frontend is implemented and ready for local development and production builds.
-
-**Pages** — Six public pages (Home, About, Services, Origins, Field, Contact) plus a custom 404 page, wired with React Router.
-
-**Design & UX**
-
-- Full dark mode with a toggle that persists across visits (`src/use-theme.ts`).
-- Responsive shared navbar and footer with a mobile menu.
-- Consistent design system built on Tailwind CSS 4 custom tokens (colors, typography, spacing).
-
-**Content & architecture**
-
-- The homepage includes hero stats, company background, services, coffee origins, testimonials, and a contact call to action.
-- Services, coffee regions, and the contact form are defined once and shared across pages (`src/data/services.ts`, `src/data/regions.ts`, `src/components/site/ContactForm.tsx`), so content stays consistent site-wide.
-- Contact details (phones, WhatsApp, email, address) are unified across all pages.
-
-**SEO, accessibility & performance**
-
-- `robots.txt`, `sitemap.xml`, an Open Graph share image (`og-image.jpg`), and a custom favicon are included.
-- Images have explicit dimensions and lazy loading to avoid layout shift; the mobile menu exposes proper ARIA state.
-
-**Forms** — The inquiry form (homepage and contact page) opens the visitor's email application with a pre-filled message addressed to `info@bcscoffee.et`.
-
-### Remaining work
-
-The following items are waiting on client input and do not block the build:
-
-- **Form delivery** — The form uses a `mailto:` fallback and does not yet submit to a form service. Once the client provides a Web3Forms access key, swap the handler in `src/components/site/ContactForm.tsx`.
-- **Social links** — The footer social icons are still `href="#"` placeholders pending the client's profile URLs (`src/components/site/Footer.tsx`).
-- **Domain** — The SEO files assume `https://bcscoffee.et`; update `public/sitemap.xml` and `public/robots.txt` if the production domain differs.
-
-## Technology
-
-- React 19 and TypeScript
-- Vite 8
-- React Router
-- Tailwind CSS 4
-- Lucide React icons
-- ESLint
-
-## Routes
-
-| Path | Page |
-| --- | --- |
-| `/` | Home |
-| `/about` | Company background and approach |
-| `/services` | Coffee sourcing and consulting services |
-| `/origins` | Ethiopian coffee regions |
-| `/field` | Field process and quality workflow |
-| `/contact` | Buyer inquiry form |
-
-## Getting started
-
-Requirements: Node.js 20 or later and npm.
-
-```bash
-npm install
-npm run dev
-```
-
-Vite prints the local development URL after the server starts.
-
-## Available scripts
-
-| Command | Description |
-| --- | --- |
-| `npm run dev` | Start the Vite development server. |
-| `npm run build` | Type-check the app and create a production build. |
-| `npm run preview` | Serve the production build locally. |
-| `npm run lint` | Run ESLint across the project. |
+A production-style marketing website and admin backend for BCS Coffee Market Consulting, built as a 2-month internship project.
 
 ## Project structure
 
-```text
-src/
-├── assets/             # Coffee and farm imagery
-├── components/site/    # Shared layout, navigation, footer, and form components
-├── data/               # Service and coffee-region content
-├── routes/             # Page-level route components
-├── App.tsx             # Route definitions
-├── use-theme.ts        # Dark-mode theme hook
-└── main.tsx            # Application entry point
+```
+├── client/                 # React frontend
+│   ├── src/
+│   │   ├── admin/          # Admin dashboard components
+│   │   ├── components/     # Shared UI components
+│   │   ├── data/           # Static data (services, regions)
+│   │   ├── i18n/           # Translations (EN, AM, FR, ZH)
+│   │   ├── lib/            # API client, analytics, monitoring
+│   │   ├── routes/         # Page route components
+│   │   ├── hooks/          # Custom React hooks
+│   │   ├── assets/         # Images
+│   │   ├── App.tsx         # Route definitions
+│   │   └── main.tsx        # Entry point
+│   ├── public/             # Static assets
+│   └── package.json
+├── server/                 # Node.js backend
+│   ├── src/
+│   │   ├── routes/         # API routes (auth, admin, public)
+│   │   ├── middleware/      # Auth middleware
+│   │   └── utils/          # Logger, helpers
+│   └── prisma/             # Database schema
+├── .gitignore
+└── README.md
 ```
 
-## Deployment notes
+## Features
 
-The public SEO files reference `https://bcscoffee.et`. Update `public/sitemap.xml` and `public/robots.txt` if the production domain changes.
+### Public Website (`client/`)
+- **6 pages** — Home, About, Services, Origins, From the Field, Contact
+- **4 languages** — English, Amharic, French, Chinese
+- **Dark mode** — persistent toggle with system preference detection
+- **Interactive Ethiopian coffee map** — SVG map with clickable region pins
+- **Contact form** — connected to backend API with validation
+- **Cookie consent** — privacy-conscious analytics opt-in
+- **SEO** — og:image, meta tags, sitemap.xml, robots.txt
+
+### Admin Dashboard (`client/` → `/admin`)
+- **Authentication** — JWT-based login with secure sessions
+- **Commodities management** — CRUD for coffee inventory, pricing, and stock
+- **Contact submissions** — view, filter, and manage inquiries
+- **Site content (CMS)** — edit website text without code changes
+- **Settings** — site configuration management
+
+### Backend API (`server/`)
+- **Node.js + Express.js** with TypeScript
+- **SQLite** database via Prisma ORM
+- **JWT authentication** with password hashing
+- **REST API** with admin and public routes
+- **Sentry integration** for production error monitoring
+
+## Tech stack
+
+| Layer | Technology |
+|-------|-----------|
+| Frontend | React 19, TypeScript, Vite, Tailwind CSS v4, i18next, Lucide React |
+| Backend | Node.js, Express.js, Prisma, SQLite, JWT |
+| DevOps | ESLint, Sentry (optional), Google Analytics (optional) |
+
+## Setup
+
+### Frontend
+```bash
+cd client
+npm install
+npm run dev        # Start dev server on port 5173
+npm run build      # Build for production
+npm run lint       # Run ESLint
+```
+
+### Backend
+```bash
+cd server
+npm install
+npx prisma generate
+npx prisma db push
+npm run db:seed    # Seed initial data
+npm run dev        # Start API server on port 3001
+```
+
+## Routes
+
+| Path | Description |
+|------|-------------|
+| `/` | Homepage |
+| `/about` | About BCS |
+| `/services` | Services overview |
+| `/origins` | Coffee origins & interactive map |
+| `/field` | From the Field — photo gallery |
+| `/contact` | Contact form & information |
+| `/admin` | Admin dashboard (login required) |
+
+## Admin credentials
+
+- **Email:** admin@bcscoffee.et
+- **Password:** admin123

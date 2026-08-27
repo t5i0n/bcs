@@ -1,0 +1,237 @@
+{
+  "common": {
+    "learnMore": "En savoir plus",
+    "requestConsultation": "Demander une Consultation",
+    "sendInquiry": "Envoyer une Demande",
+    "sending": "Envoi en cours…",
+    "loading": "Chargement…",
+    "cancel": "Annuler",
+    "save": "Enregistrer",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "submit": "Soumettre",
+    "yearsExperience": "Années d'Expérience",
+    "verifiedExporters": "Exportateurs Vérifiés",
+    "countriesServed": "Pays Desservis",
+    "tradeFacilitated": "Commerce Facilité",
+    "yearsOfTrust": "Années de Confiance",
+    "coffeeRegions": "Régions Caféières",
+    "tonsShipped": "Tonnes Expédiées"
+  },
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "services": "Services",
+    "origins": "Origines",
+    "field": "Du Terrain",
+    "contact": "Contact",
+    "brandSubtitle": "Conseil en Marché",
+    "switchToLight": "Passer en mode clair",
+    "switchToDark": "Passer en mode sombre",
+    "toggleMenu": "Basculer le menu"
+  },
+  "hero": {
+    "eyebrow": "Éthiopie · Depuis 2009",
+    "title": ["Connecter l'Excellence du Café Éthiopien", "Aux Marchés Mondiaux"],
+    "subtitle": "Conseil en café de confiance, vérification des exportateurs, approvisionnement de qualité et intelligence marché pour les acheteurs internationaux.",
+    "exploreCoffee": "Découvrir le Café Éthiopien"
+  },
+  "about": {
+    "eyebrow": "À propos de BCS",
+    "title": "Votre Partenaire de Confiance pour le Café Éthiopien",
+    "description1": "BCS Coffee Market Consulting met en relation les acheteurs les plus exigeants du monde avec les meilleurs exportateurs et producteurs vérifiés d'Éthiopie. Des micro-lots d'origine unique de Yirgacheffe aux conteneurs de grade commercial de Sidama, nous apportons clarté, intégrité et qualité à chaque étape.",
+    "description2": "Fondée à Addis-Abeba, notre équipe allie une expertise culturelle profonde à une expérience du commerce international, pour que vous puissiez vous approvisionner en toute confiance à chaque récolte.",
+    "timeline": {
+      "2009": {
+        "title": "Fondée à Addis-Abeba",
+        "desc": "Commencée en tant que courtier local reliant producteurs et torréfacteurs."
+      },
+      "2014": {
+        "title": "Expansion Mondiale",
+        "desc": "Premières exportations vers l'Europe, l'Asie et le Moyen-Orient."
+      },
+      "2019": {
+        "title": "100+ Partenariats d'Export",
+        "desc": "Réseau vérifié dans toutes les principales régions caféières d'Éthiopie."
+      },
+      "2024": {
+        "title": "Conseil International",
+        "desc": "Conseil complet pour les acheteurs dans plus de 40 pays."
+      }
+    }
+  },
+  "aboutPage": {
+    "eyebrow": "Qui Nous Sommes",
+    "title": "Relier les Origines Éthiopiennes Aux Rôtisseurs Mondiaux",
+    "subtitle": "Née à Addis-Abeba, de confiance dans plus de 40 pays.",
+    "storyTitle": "Notre Histoire",
+    "storyP1": "BCS Coffee Market Consulting a été fondée en 2009 par une équipe de professionnels du café éthiopien qui ont vu un fossé entre l'héritage extraordinaire du café du pays et les acheteurs internationaux qui le recherchent. Nous avons passé quinze ans à combler ce fossé, visite par visite, conteneur par conteneur.",
+    "storyP2": "Aujourd'hui, notre cabinet opère en tant qu'intermédiaire de confiance entre les exportateurs vérifiés d'Éthiopie et les rôtisseurs en Europe, en Asie, en Amérique du Nord et au Moyen-Orient, facilitant plus de 50 millions de dollars de commerce et expédiant plus de 5 000 tonnes.",
+    "heritageTitle": "Ancrés dans l'Héritage Éthiopien",
+    "heritageP1": "L'Éthiopie est le berceau du café. Notre travail honore cette lignée en garantissant un commerce équitable et transparent où producteurs, exportateurs et acheteurs sont tous gagnants.",
+    "workWithUs": "Travailler avec Nous"
+  },
+  "services": {
+    "eyebrow": "Ce Que Nous Faisons",
+    "homeTitle": "Services Café Complèts",
+    "homeSubtitle": "Un cabinet de conseil et de commerce complet pour les acheteurs internationaux, de l'approvisionnement à l'expédition.",
+    "pageTitle": "Services Commerciaux Café Complets",
+    "pageSubtitle": "Six services essentiels qui vous accompagnent de la stratégie d'approvisionnement au conteneur à votre porte d'entrepôt.",
+    "ctaTitle": "Prêt à commencer l'approvisionnement ?",
+    "ctaSubtitle": "Réservez une consultation gratuite de 30 minutes avec notre équipe.",
+    "items": {
+      "exportConsulting": {
+        "title": "Conseil en Export de Café",
+        "desc": "Conseils d'approvisionnement stratégiques adaptés au volume, au profil et au calendrier d'expédition de votre torréfaction."
+      },
+      "supplierVerification": {
+        "title": "Vérification des Fournisseurs",
+        "desc": "Diligence complète : licences, historique d'export, audits de capacité et vérifications de références."
+      },
+      "qualityControl": {
+        "title": "Contrôle Qualité & Classement",
+        "desc": "Dégustation par Q-grader, analyse de taille d'écran, tests d'humidité et approbation d'échantillons avant expédition."
+      },
+      "marketResearch": {
+        "title": "Études de Marché",
+        "desc": "Prix différentiels, prévisions de récolte, rapports de rendement régionaux et renseignements concurrentiels."
+      },
+      "logistics": {
+        "title": "Coordination Logistique",
+        "desc": "Phytosanitaire, certificats ECX, marques ICO, coordination FOB Djibouti et réservation de fret."
+      },
+      "priceNegotiation": {
+        "title": "Négociation de Prix",
+        "desc": "Prix direct à l'origine avec une transparence totale, sans marges cachées ni commissions."
+      }
+    }
+  },
+  "origins": {
+    "eyebrow": "Origines du Café",
+    "homeTitle": "Sept Régions, Une Origine Légendaire.",
+    "homeSubtitle": "L'Éthiopie est le berceau du café — chaque région produit un profil de tasse distinct façonné par l'altitude, le sol et la tradition.",
+    "pageTitle": "Les Sept Régions du Café Éthiopien",
+    "pageSubtitle": "Des hautes terres brumeuses de Yirgacheffe aux plateaux ensoleillés de Harrar.",
+    "featuredRegion": "Région Sélectionnée",
+    "altitude": "Altitude",
+    "processing": "Traitement",
+    "harvest": "Récolte",
+    "process": "Processus",
+    "regions": {
+      "harrar": "Harrar",
+      "yirgacheffe": "Yirgacheffe",
+      "sidama": "Sidama",
+      "guji": "Guji",
+      "limu": "Limu",
+      "jimma": "Jimma",
+      "nekemte": "Nekemte"
+    },
+    "regionNotes": {
+      "harrar": "Myrtille, vin, moka. Café est iconic de l'est éthiopien avec une tasse fruitée sauvage.",
+      "yirgacheffe": "Floral, agrume, corps type thé. L'origine éthiopienne la plus célébrée — brillante, parfumée au jasmin, raffinée.",
+      "sidama": "Fruit rouge, vin, agrume doux. Des micro-climats diversifiés produisent une variation remarquable.",
+      "guji": "Fruit rouge, chocolat, jasmin. Une étoile montante avec des profils intenses aux fruits.",
+      "limu": "Équilibré, épicé, vineux. Un travailleur fiable pour les mélanges et les origines uniques.",
+      "jimma": "Terreux, doux, corps plein. La plus grande région de production d'Éthiopie par volume.",
+      "nekemte": "Fruité, moka, audacieux. Caractère de l'ouest éthiopien — corps lourd et chocolat."
+    }
+  },
+  "field": {
+    "eyebrow": "Du Terrain",
+    "title": "Découvrez le Café Éthiopien à Son Origine",
+    "subtitle": "Un aperçu plus rapproché des fermes, des personnes et du travail quotidien derrière chaque café que nous aidons à mettre sur le marché.",
+    "lifeOnCoffeeLand": "La vie sur les terres caféières",
+    "placesBehindCup": "Les personnes et les lieux derrière la tasse.",
+    "followWork": "Suivez notre travail des communautés de culture du café en Éthiopie jusqu'aux stations où chaque lot est préparé pour le monde.",
+    "fieldVideos": "Vidéos du terrain",
+    "watchSpace": "Suivez cette espace pour des récits de l'origine.",
+    "shareVideos": "Nous partagerons de courtes vidéos des visites de fermes, des récoltes et du traitement du café au fur et à mesure.",
+    "videosComingSoon": "Vidéos bientôt disponibles",
+    "moments": {
+      "atFarm": "À la ferme",
+      "harvestSeason": "Saison de récolte",
+      "washingStations": "Stations de lavage",
+      "dryingCoffee": "Séchage du café",
+      "qualityLot": "Qualité dans chaque lot",
+      "coffeeCulture": "Culture du café"
+    }
+  },
+  "contact": {
+    "eyebrow": "Contactez-Nous",
+    "homeTitle": "Approvisionnez Votre Prochaine Récolte.",
+    "homeSubtitle": "Parlez-nous de votre torréfaction, de votre volume et de vos objectifs de saveur. Un consultant répondra dans un jour ouvrable.",
+    "pageTitle": "Approvisionnez Votre Prochaine Récolte",
+    "pageSubtitle": "Parlez-nous de votre torréfaction, de votre volume et de vos objectifs de saveur. Un consultant répondra dans un jour ouvrable.",
+    "contactInfoTitle": "Coordonnées",
+    "contactInfoDesc": "Contactez-nous par email, téléphone ou WhatsApp — nous sommes prêts à soutenir votre prochain plan d'approvisionnement en café éthiopien.",
+    "headquarters": "Siège Social",
+    "phoneWhatsapp": "Téléphone & WhatsApp",
+    "email": "Email",
+    "chatWhatsapp": "Discuter sur WhatsApp",
+    "sendInquiryHeading": "Envoyer une demande",
+    "form": {
+      "name": "Nom",
+      "company": "Entreprise",
+      "country": "Pays",
+      "email": "Email",
+      "coffeeInterest": "Intérêt Café",
+      "coffeeInterestPlaceholder": "ex. Yirgacheffe lavé Grade 1, 5 tonnes",
+      "message": "Message",
+      "success": "Merci ! Votre demande a été reçue. Nous répondrons dans un jour ouvrable.",
+      "error": "Échec de la soumission. Veuillez réessayer.",
+      "emailUsDirectly": "Ou envoyez-nous un email directement."
+    }
+  },
+  "footer": {
+    "description": "Connecter l'excellence du café éthiopien aux marchés mondiaux grâce au conseil, à l'approvisionnement et à l'expertise en export depuis 2009.",
+    "company": "Entreprise",
+    "about": "À propos",
+    "services": "Services",
+    "contact": "Contact",
+    "coffeeResources": "Ressources Café",
+    "coffeeOrigins": "Origines du Café",
+    "fromTheField": "Du Terrain",
+    "contactTitle": "Contact",
+    "copyright": "Tous droits réservés.",
+    "origin": "Origine : Éthiopie · Service dans plus de 40 pays"
+  },
+  "notFound": {
+    "title": "Page Non Trouvée",
+    "description": "La page que vous recherchez n'existe pas ou a été déplacée.",
+    "backHome": "Retour à l'Accueil"
+  },
+  "cookie": {
+    "title": "Préférences de Cookies",
+    "message": "Nous utilisons des cookies pour comprendre comment vous utilisez notre site web et améliorer votre expérience. Les cookies analytiques nous aident à mesurer les performances du site. Vous pouvez accepter ou refuser — c'est votre choix.",
+    "accept": "Accepter les Analyses",
+    "decline": "Refuser",
+    "dismiss": "Fermer"
+  },
+  "whyUs": {
+    "eyebrow": "Pourquoi Nous",
+    "title": "Pourquoi les Acheteurs Choisissent BCS Coffee",
+    "subtitle": "Nous combinons l'expertise des origines éthiopiennes avec l'expérience du commerce international pour que les acheteurs puissent se fournir en toute confiance.",
+    "verifiedQuality": "Qualité Vérifiée",
+    "verifiedQualityDesc": "Chaque exportateur et chaque lot est examiné via un processus de vérification rigoureux.",
+    "trustedRelationships": "Relations de Confiance",
+    "trustedRelationshipsDesc": "Des partenariats à long terme avec producteurs, exportateurs et acheteurs garantissent constance et fiabilité.",
+    "exportConfidence": "Confiance à l'Export",
+    "exportConfidenceDesc": "Nous gérons la conformité, les documents et la logistique pour que votre expédition arrive sans problème.",
+    "ourCommitment": "Notre Engagement",
+    "commitmentTitle": "Expertise éthiopienne, marchés mondiaux.",
+    "commitmentDesc": "Nous associons les connaissances caféières régionales aux besoins des acheteurs internationaux.",
+    "seeLifeAtOrigin": "Voir la Vie à l'Origine"
+  },
+  "testimonials": {
+    "eyebrow": "Témoignages",
+    "title": "La Confiance des Torréfacteurs, Acheteurs et Importateurs",
+    "subtitle": "Des histoires réelles d'acheteurs qui se fournissent via notre réseau éthiopien vérifié.",
+    "verifiedClient": "Client vérifié",
+    "quote1": "BCS nous a aidés à trouver le profil exact de Yirgacheffe dont nous avions besoin.",
+    "name1": "Nora, propriétaire de torréfaction européenne",
+    "quote2": "La vérification et le soutien logistique nous ont fait gagner des semaines.",
+    "name2": "Marco, acheteur spécialité",
+    "quote3": "Leur connaissance du marché a rendu notre premier achat en origine éthiopienne facile.",
+    "name3": "Leila, importatrice de café"
+  }
+}

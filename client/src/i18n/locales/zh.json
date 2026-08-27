@@ -1,0 +1,237 @@
+{
+  "common": {
+    "learnMore": "了解更多",
+    "requestConsultation": "预约咨询",
+    "sendInquiry": "发送询盘",
+    "sending": "发送中…",
+    "loading": "加载中…",
+    "cancel": "取消",
+    "save": "保存",
+    "delete": "删除",
+    "edit": "编辑",
+    "submit": "提交",
+    "yearsExperience": "年行业经验",
+    "verifiedExporters": "认证出口商",
+    "countriesServed": "服务国家",
+    "tradeFacilitated": "促成贸易额",
+    "yearsOfTrust": "年信任历程",
+    "coffeeRegions": "咖啡产区",
+    "tonsShipped": "吨发运量"
+  },
+  "nav": {
+    "home": "首页",
+    "about": "关于我们",
+    "services": "服务",
+    "origins": "产区",
+    "field": "产地实况",
+    "contact": "联系我们",
+    "brandSubtitle": "市场咨询",
+    "switchToLight": "切换至浅色模式",
+    "switchToDark": "切换至深色模式",
+    "toggleMenu": "切换菜单"
+  },
+  "hero": {
+    "eyebrow": "埃塞俄比亚 · 始于2009年",
+    "title": ["连接埃塞俄比亚咖啡卓越品质", "与全球市场"],
+    "subtitle": "值得信赖的咖啡咨询、出口商认证、优质采购和市场情报，服务国际咖啡买家。",
+    "exploreCoffee": "探索埃塞俄比亚咖啡"
+  },
+  "about": {
+    "eyebrow": "关于BCS",
+    "title": "您值得信赖的埃塞俄比亚咖啡合作伙伴",
+    "description1": "BCS咖啡市场咨询将全球最挑剔的买家与埃塞俄比亚最优质的认证出口商和生产商连接起来。从耶加雪菲的单品微批次到西达玛的商业级集装箱，我们在每一步为您提供清晰度、诚信和品质。",
+    "description2": "成立于亚的斯亚贝巴，我们的团队融合了深厚的文化专业知识和国际贸易经验，让您在每个收获季节都能自信采购。",
+    "timeline": {
+      "2009": {
+        "title": "成立于亚的斯亚贝巴",
+        "desc": "作为连接生产商和烘焙商的本地经纪商起步。"
+      },
+      "2014": {
+        "title": "全球拓展",
+        "desc": "首次出口至欧洲、亚洲和中东。"
+      },
+      "2019": {
+        "title": "100+出口合作伙伴",
+        "desc": "覆盖埃塞俄比亚所有主要咖啡产区的认证网络。"
+      },
+      "2024": {
+        "title": "国际咨询服务",
+        "desc": "为40多个国家的买家提供全方位咨询。"
+      }
+    }
+  },
+  "aboutPage": {
+    "eyebrow": "关于我们",
+    "title": "连接埃塞俄比亚产区与全球烘焙商",
+    "subtitle": "扎根亚的斯亚贝巴，信赖覆盖40多个国家。",
+    "storyTitle": "我们的故事",
+    "storyP1": "BCS咖啡市场咨询成立于2009年，由一群埃塞俄比亚咖啡专业人士创立，他们看到了这个国家非凡的咖啡遗产与寻求它的国际买家之间的鸿沟。十五年来，我们一次又一次地填补这个差距——逐次访问，逐个集装箱。",
+    "storyP2": "如今，我们的咨询公司作为埃塞俄比亚认证出口商与欧洲、亚洲、北美和中东烘焙商之间的可信中介，促成超过5000万美元的贸易，发运超过5000吨咖啡。",
+    "heritageTitle": "根植于埃塞俄比亚传统",
+    "heritageP1": "埃塞俄比亚是咖啡的发源地。我们的工作通过确保公平、透明的贸易来尊重这一传承——让生产商、出口商和买家都能共赢。",
+    "workWithUs": "与我们合作"
+  },
+  "services": {
+    "eyebrow": "我们的服务",
+    "homeTitle": "端到端咖啡服务",
+    "homeSubtitle": "为国际买家提供从采购决策到集装箱发运的完整咨询和贸易服务。",
+    "pageTitle": "端到端咖啡贸易服务",
+    "pageSubtitle": "六项核心服务，从采购策略到仓库门口的集装箱。",
+    "ctaTitle": "准备开始采购？",
+    "ctaSubtitle": "预约与我们团队进行免费30分钟咨询。",
+    "items": {
+      "exportConsulting": {
+        "title": "咖啡出口咨询",
+        "desc": "根据您烘焙厂的产量、口味和发运节奏量身定制的战略采购建议。"
+      },
+      "supplierVerification": {
+        "title": "供应商认证",
+        "desc": "全面尽职调查：许可证、出口历史、产能审计和背景核查。"
+      },
+      "qualityControl": {
+        "title": "质量控制与分级",
+        "desc": "Q-grader杯测、筛网分析、水分测试和发运前样品审批。"
+      },
+      "marketResearch": {
+        "title": "市场研究",
+        "desc": "差异定价、收获预测、产区产量报告和竞争情报。"
+      },
+      "logistics": {
+        "title": "物流协调",
+        "desc": "植物检疫、ECX证书、ICO标志、FOB吉布提协调和货运预订。"
+      },
+      "priceNegotiation": {
+        "title": "价格谈判",
+        "desc": "直接产地定价，完全透明——无隐藏利润或回扣。"
+      }
+    }
+  },
+  "origins": {
+    "eyebrow": "咖啡产区",
+    "homeTitle": "七大产区，一个传奇产地。",
+    "homeSubtitle": "埃塞俄比亚是咖啡的发源地——每个产区都因海拔、土壤和传统而形成独特的风味。",
+    "pageTitle": "埃塞俄比亚咖啡的七大产区",
+    "pageSubtitle": "从耶加雪菲雾气缭绕的高原到哈拉尔阳光炙烤的台地。",
+    "featuredRegion": "精选产区",
+    "altitude": "海拔",
+    "processing": "处理方式",
+    "harvest": "收获季节",
+    "process": "加工",
+    "regions": {
+      "harrar": "哈拉尔",
+      "yirgacheffe": "耶加雪菲",
+      "sidama": "西达玛",
+      "guji": "古吉",
+      "limu": "利姆",
+      "jimma": "吉马",
+      "nekemte": "纳克穆特"
+    },
+    "regionNotes": {
+      "harrar": "蓝莓、葡萄酒、摩卡。标志性的埃塞俄比亚东部干法处理咖啡，风味狂野、果香浓郁。",
+      "yirgacheffe": "花香、柑橘、茶感。最受推崇的埃塞俄比亚产区——明亮、茉莉花香、精致。",
+      "sidama": "浆果、葡萄酒、甜柑橘。多样的微气候造就了显著的批次间差异。",
+      "guji": "浆果、巧克力、茉莉花。新兴之星，具有浓郁的果味特征。",
+      "limu": "均衡、辛辣、酒香。混合咖啡和单品咖啡的可靠之选。",
+      "jimma": "泥土味、温和、醇厚。埃塞俄比亚产量最大的产区。",
+      "nekemte": "果味、摩卡、大胆。埃塞俄比亚西部特色——醇厚、巧克力风味。"
+    }
+  },
+  "field": {
+    "eyebrow": "产地实况",
+    "title": "探索埃塞俄比亚咖啡的原产地",
+    "subtitle": "近距离了解农场、人员和日常劳动——每一杯咖啡背后的辛勤付出。",
+    "lifeOnCoffeeLand": "咖啡土地上的生活",
+    "placesBehindCup": "杯中咖啡背后的人与地方。",
+    "followWork": "跟随我们的足迹，从埃塞俄比亚的咖啡种植社区到每个批次准备出口的处理站。",
+    "fieldVideos": "产地视频",
+    "watchSpace": "关注此页面，了解产地故事。",
+    "shareVideos": "我们将分享农场访问、收获和咖啡加工过程的短视频。",
+    "videosComingSoon": "视频即将推出",
+    "moments": {
+      "atFarm": "在农场",
+      "harvestSeason": "收获季节",
+      "washingStations": "水洗站",
+      "dryingCoffee": "咖啡干燥",
+      "qualityLot": "每个批次的品质",
+      "coffeeCulture": "咖啡文化"
+    }
+  },
+  "contact": {
+    "eyebrow": "联系我们",
+    "homeTitle": "采购您的下一批咖啡。",
+    "homeSubtitle": "告诉我们您的烘焙厂、采购量和口味目标。顾问将在一个工作日内回复。",
+    "pageTitle": "采购您的下一批咖啡",
+    "pageSubtitle": "告诉我们您的烘焙厂、采购量和口味目标。顾问将在一个工作日内回复。",
+    "contactInfoTitle": "联系方式",
+    "contactInfoDesc": "通过电子邮件、电话或WhatsApp联系我们——我们随时准备支持您的下一次埃塞俄比亚咖啡采购计划。",
+    "headquarters": "总部",
+    "phoneWhatsapp": "电话和WhatsApp",
+    "email": "电子邮件",
+    "chatWhatsapp": "WhatsApp聊天",
+    "sendInquiryHeading": "发送询盘",
+    "form": {
+      "name": "姓名",
+      "company": "公司",
+      "country": "国家",
+      "email": "电子邮件",
+      "coffeeInterest": "咖啡需求",
+      "coffeeInterestPlaceholder": "例如：耶加雪菲水洗1级，5吨",
+      "message": "留言",
+      "success": "感谢您！您的询盘已收到。我们将在一个工作日内回复。",
+      "error": "提交失败，请重试。",
+      "emailUsDirectly": "或直接发送邮件。"
+    }
+  },
+  "footer": {
+    "description": "自2009年以来，通过值得信赖的咨询、采购和出口专业知识，将埃塞俄比亚咖啡卓越品质与全球市场连接。",
+    "company": "公司",
+    "about": "关于我们",
+    "services": "服务",
+    "contact": "联系方式",
+    "coffeeResources": "咖啡资源",
+    "coffeeOrigins": "咖啡产区",
+    "fromTheField": "产地实况",
+    "contactTitle": "联系我们",
+    "copyright": "版权所有。",
+    "origin": "产地：埃塞俄比亚 · 服务40多个国家"
+  },
+  "notFound": {
+    "title": "页面未找到",
+    "description": "您查找的页面不存在或已被移除。",
+    "backHome": "返回首页"
+  },
+  "cookie": {
+    "title": "Cookie 偏好设置",
+    "message": "我们使用 Cookie 来了解您如何使用我们的网站并改善您的体验。分析 Cookie 帮助我们衡量网站性能。您可以选择接受或拒绝。",
+    "accept": "接受分析 Cookie",
+    "decline": "拒绝",
+    "dismiss": "关闭"
+  },
+  "whyUs": {
+    "eyebrow": "为什么选择我们",
+    "title": "买家选择BCS咖啡的原因",
+    "subtitle": "我们将埃塞俄比亚产地专业知识与国际贸易经验相结合，让买家能够自信地采购咖啡。",
+    "verifiedQuality": "认证品质",
+    "verifiedQualityDesc": "每个出口商和批次都经过严格的审核流程。",
+    "trustedRelationships": "值得信赖的合作关系",
+    "trustedRelationshipsDesc": "与生产商、出口商和买家的长期合作伙伴关系确保了一致性和可靠性。",
+    "exportConfidence": "出口信心",
+    "exportConfidenceDesc": "我们管理合规、文件和物流，确保您的货物顺利到达。",
+    "ourCommitment": "我们的承诺",
+    "commitmentTitle": "埃塞俄比亚专业知识，全球市场。",
+    "commitmentDesc": "我们将区域咖啡知识与国际买家需求相结合。",
+    "seeLifeAtOrigin": "了解产地生活"
+  },
+  "testimonials": {
+    "eyebrow": "客户评价",
+    "title": "烘焙商、买家和进口商的信赖之选",
+    "subtitle": "来自通过我们认证的埃塞俄比亚网络采购咖啡的真实合作伙伴故事。",
+    "verifiedClient": "认证客户",
+    "quote1": "BCS帮助我们找到了完全符合需求的耶加雪菲咖啡。",
+    "name1": "Nora，欧洲烘焙商",
+    "quote2": "认证和物流支持为我们节省了数周时间。",
+    "name2": "Marco，精品买家",
+    "quote3": "他们的市场知识让我们的首次埃塞俄比亚采购变得轻松。",
+    "name3": "Leila，咖啡进口商"
+  }
+}

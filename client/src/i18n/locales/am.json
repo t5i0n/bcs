@@ -1,0 +1,228 @@
+{
+  "common": {
+    "learnMore": "ተጨማሪ ይወቁ",
+    "requestConsultation": "ምክር ይጠይቁ",
+    "sendInquiry": "ጥርስና ይላኩ",
+    "sending": "በመላክ ላይ…",
+    "loading": "በመጫን ላይ…",
+    "cancel": "ሰርዝ",
+    "save": "አስቀምጥ",
+    "delete": "ሰርዝ",
+    "edit": "አስተካክል",
+    "submit": "ላክ",
+    "yearsExperience": "ዓመታት ተሞክሮ",
+    "verifiedExporters": "የተረጋገጡ አወቃቂዎች",
+    "countriesServed": "የተገለገሉ ሀገሮች",
+    "tradeFacilitated": "የተቻለ ንግድ",
+    "yearsOfTrust": "ዓመታት እምነት",
+    "coffeeRegions": "የቡና ክልሎች",
+    "tonsShipped": "ቶን የተላኩ"
+  },
+  "nav": {
+    "home": "መነሻ",
+    "about": "ስለ እኛ",
+    "services": "አገልግሎቶች",
+    "origins": "ምንጮች",
+    "field": "ከመሬቱ ላይ",
+    "contact": "ያግኙን",
+    "brandSubtitle": "የገበያ ምክር",
+    "switchToLight": "ወደ ብርህ ሁኔታ ቀይር",
+    "switchToDark": "ወደ ጨለማ ሁኔታ ቀይር",
+    "toggleMenu": "ዝርዝር ቀይር"
+  },
+  "hero": {
+    "eyebrow": "ኢትዮጵያ · ከ2009 ጀምሮ",
+    "title": ["የኢትዮጵያ ቡና ልዩነት ማገናኘት", "ከዓለም ገበያዎች ጋር"],
+    "subtitle": "ለዓለም አቀፍ ቡና ገዦች እምነት ያለው የቡና ምክር፣ አወቃቂ ማረጋገጫ፣ ጥራት ማቅናት እና የገበያ መረጃ።",
+    "exploreCoffee": "የኢትዮጵያ ቡና ያስሱ"
+  },
+  "about": {
+    "eyebrow": "ስለ BCS",
+    "title": "የእርስዎ ታማኝ የኢትዮጵያ ቡና አጋር",
+    "description1": "BCS Coffee Market Consulting ዓለም አቀፍ ቡና ገዦችን ከኢትዮጵያ ምርጥ የተረጋገጡ አወቃቂዎች እና ተንⓒаಗዎች ጋር ያገናኛል።",
+    "description2": "በአዲስ አበባ የተመሰረተ፣ ጥልቅ ባህላዊ ችሎታ ከዓለም አቀፍ ንግድ ተሞክሮ ጋር ያለን።",
+    "timeline": {
+      "2009": {
+        "title": "በአዲስ አበባ የተመሰረተ",
+        "desc": "ከ üretimi እና ከማድረግ መካከል የሚያገናኝ ቀጥታ ቸርቻ አስመስologiya አስመለከተ።"
+      },
+      "2014": {
+        "title": "ዓለም አቀፍ መስፋፋት",
+        "desc": "መጀመሪያ ወደ አስያ እና የመካከለኛው ምስራቅ የመላኩ።"
+      },
+      "2019": {
+        "title": "100+ የኔትወርክ አጋርነቶች",
+        "desc": "በሁሉም ዋና የኢትዮጵያ ቡና ክልሎች ውስጥ የተረጋገጡ አጋርነቶች።"
+      },
+      "2024": {
+        "title": "ዓለም አቀፍ ምክር",
+        "desc": "ለ40+ ሀገሮች ገዦች ሙሉ ድጋፍ ምክር።"
+      }
+    }
+  },
+  "aboutPage": {
+    "eyebrow": "ማን ነን",
+    "title": "የኢትዮጵያ ምንጮችን ከዓለም ቡና ማድረግ ባለሙያዎች ጋር ማገናኘት",
+    "subtitle": "በአዲስ አበባ ትክክለኛ፣ በ40+ ሀገሮች ተወዳጅ።",
+    "storyTitle": "ተሪካችን",
+    "storyP1": "BCS Coffee Market Consulting በ2009 በኢትዮጵያ ቡና ባለሙያዎች ቡድን የተመሰረተ ነው።",
+    "storyP2": "ዛሬ ምክር ቤታችን በኢትዮጵያ የተረጋገጡ አወቃቂዎች እና በዚህ ዓለም ቡና ማድረግ መካከል ታማኝ መካከለኛ ነው።",
+    "heritageTitle": "በኢትዮጵያ ቅርስ ውስጥ የተነሳ",
+    "heritageP1": "ኢትዮጵያ ቡና እናቴ ናት። ሥራችን ቅድመ በማድረግ ተመጣጣኝ እና ግልጽ ንግድ ያቀርባል።",
+    "workWithUs": "ከእኛ ጋር ይሰሩ"
+  },
+  "services": {
+    "eyebrow": "ምን እንሰራ",
+    "homeTitle": "ከመጀመሪያ እስከ መጨረሻ የቡና አገልግሎቶች",
+    "homeSubtitle": "ለዓለም አቀፍ ገዦች ከምርጥ ማጠቃለያ እስከ መላኩ ሙሉ ድጋፍ።",
+    "pageTitle": "ከመጀመሪያ እስከ መጨረሻ የቡና ንግድ አገልግሎቶች",
+    "pageSubtitle": "ስድስት ዋና አገልግሎቶች ከምርጥ ስልታዊነት እስከ በመጋዘን በር መስጠት።",
+    "ctaTitle": "ለማቅናት ዝግጁ ነዎት?",
+    "ctaSubtitle": "ከቡድናችን ጋር ትክክለኛ 30 ደቂቃ ምክር ይያዙ።",
+    "items": {
+      "exportConsulting": {
+        "title": "የቡና አወቃቀም ምክር",
+        "desc": "ከእርስዎ የቡና ማድረግ መጠን፣ ጣፋጭ እና ማቅናት ቅድመ በማድረግ ተጨማሪ ምክር።"
+      },
+      "supplierVerification": {
+        "title": "አቅራቢያ ማረጋገጫ",
+        "desc": "ሙሉ ምርመራ: ፈቃዶች፣ የአወቃቀም ታሪክ፣ ችሎታ ማረጋገጫ እና ማጣቀሻ ማረጋገጫ።"
+      },
+      "qualityControl": {
+        "title": "ጥራት ማረጋገጫ እና ማድረግ",
+        "desc": "Q-grader ቆላቂ ማረጋገጫ፣ የመረቢያ ትንታኔ፣ እርጥበት ሙስ原件 እና ከመላኩ በፊት ናሙና ማረጋገጫ።"
+      },
+      "marketResearch": {
+        "title": "የገበያ ምርምር",
+        "desc": "የተለየ ዋጋ፣ የዕርት ትንታኔ፣ የክልል ምርት ሪፖርት እና የተፎካካሪ መረጃ።"
+      },
+      "logistics": {
+        "title": "ሎجادስቲክስ ማስተካከያ",
+        "desc": "የዕፅዋት ጤና፣ ECX ሰርቲፊኬቶች፣ ICO ምልክቶች፣ FOB ጅቡቲ ማስተካከያ እና መላኩ ማስያዣ።"
+      },
+      "priceNegotiation": {
+        "title": "ዋጋ ትንታኔ",
+        "desc": "ከምንጭ ቀጥታ ዋጋ፣ ሙሉ ግልጽነት — ምንም ድብቅ ገንዘብ ወይም ተመላሽ።"
+      }
+    }
+  },
+  "origins": {
+    "eyebrow": "የቡና ምንጮች",
+    "homeTitle": "ሰባት ክልሎች፣ አንድ ታሪካዊ ምንጭ።",
+    "homeSubtitle": "ኢትዮጵያ ቡና እናቴ ናት — እያንዳንዱ ክልል በአርتفاع፣ መሬት እና ባህል የተፈጥረ ልዩ ቡና ቅርጽ ያቀርባል።",
+    "pageTitle": "የኢትዮጵያ ቡና ሰባት ክልሎች",
+    "pageSubtitle": "ከየር겟še አረፍታ እስከ ሐረር የፀሐይ ተጋታሚ ሸንተሮች።",
+    "featuredRegion": "ተመራጭ ክልል",
+    "altitude": "አርتفاع",
+    "processing": "ማቀ ማድረጊያ",
+    "harvest": "ማህበረሰብ",
+    "process": "ማድረጊያ",
+    "regions": {
+      "harrar": "ሐረር",
+      "yirgacheffe": "ይርጋጺፈ",
+      "sidama": "ስዳማ",
+      "guji": "ጉጂ",
+      "limu": "ሊሙ",
+      "jimma": "ጅማ",
+      "nekemte": "ነቀምት"
+    }
+  },
+  "field": {
+    "eyebrow": "ከመሬቱ ላይ",
+    "title": "የኢትዮጵያ ቡና በምንጩ ይወቁ",
+    "subtitle": "ንግዶቹን፣ ሰዎቹን እና በየቀኑ የሚሰሩትን በቀላሉ ይመልከቱ።",
+    "lifeOnCoffeeLand": "በቡና ምድር ላይ ሕይወት",
+    "placesBehindCup": "ከ珂ርፍ ጀርባ ያሉ ሰዎች እና ቦታዎች።",
+    "followWork": "ከኢትዮጵያ ቡና ማድረግ ማህበረሰቦች እስከ ማዕከላት ድጋፍ ይከትቱ።",
+    "fieldVideos": "የመሬት ቪዲዮዎች",
+    "watchSpace": "ከምንጭ ታሪኮች ይከትቱ።",
+    "shareVideos": "ከፋርም ጎብኝቶች፣ ማግኘት እና ቡና ማቀ ማድረጊያ ቪዲዮዎችን እን sẻ እንጂ።",
+    "videosComingSoon": "ቪዲዮዎች በቅርቡ ይመጣሉ",
+    "moments": {
+      "atFarm": "በፋርም ላይ",
+      "harvestSeason": "የማህበረሰብ ሥርዓት",
+      "washingStations": "የመታጠቢያ ማዕከላት",
+      "dryingCoffee": "ቡና ማድረጊያ",
+      "qualityLot": "በእያንዳንዱ ላይ ጥራት",
+      "coffeeCulture": "የቡና ባህል"
+    }
+  },
+  "contact": {
+    "eyebrow": "ያግኙን",
+    "homeTitle": "ቀጣዩን ማህበረሰብ ያግኙ።",
+    "homeSubtitle": "ስለ የእርስዎ ቡና ማድረግ፣ መጠን እና ጣፋጭ ዓላማዎች ይናገሩን። ምክር ባዚ በአንድ የስራ ቀን ይመለሳል።",
+    "pageTitle": "ቀጣዩን ማህበረሰብ ያግኙ",
+    "pageSubtitle": "ስለ የእርስዎ ቡና ማድረግ፣ መጠን እና ጣፋጭ ዓላማዎች ይናገሩን። ምክር ባዚ በአንድ የስራ ቀን ይመለሳል።",
+    "contactInfoTitle": "የመገናኛ መረጃ",
+    "contactInfoDesc": "በኢሜይል፣ ቴሌፎን ወይም WhatsApp ያግኙን — የቀጣዩን የኢትዮጵያ ቡና ምርጥ ስርዓት ድጋፍ ለማድረግ ዝግጁ ነን።",
+    "headquarters": "መ记忆",
+    "phoneWhatsapp": "ፎን እና WhatsApp",
+    "email": "ኢሜይል",
+    "chatWhatsapp": "በWhatsApp ይዌ Talk",
+    "sendInquiryHeading": "ጥርስና ይላኩ",
+    "form": {
+      "name": "ስም",
+      "company": "ኩባንያ",
+      "country": "ሀገር",
+      "email": "ኢሜይል",
+      "coffeeInterest": "የቡና ፍላጎት",
+      "coffeeInterestPlaceholder": "ለምሳሌ፣ የር겟še ቁጠባ 1፣ 5 ቶን",
+      "message": "መልዕክት",
+      "success": "አመሰግናለሁ! ጥርስናዎ ተቀምጧል። በአንድ የስራ ቀን ውስጥ እንመልስለን።",
+      "error": "ማስረከቢያ አልተሳካም። እባክዎን እንደገና ይሞክሩ።",
+      "emailUsDirectly": "ወይም በቀጥታ ኢሜይል ይላኩን።"
+    }
+  },
+  "footer": {
+    "description": "ከ2009 ጀምሮ እምነት ያለው ምክር፣ ማቅናት እና የአወቃቀም ችሎታ በኩራት ዓለም አቀፍ ገበያዎች ከኢትዮጵያ ቡና ልዩነት ጋር ያገናኛል።",
+    "company": "ኩባንያ",
+    "about": "ስለ እኛ",
+    "services": "አገልግሎቶች",
+    "contact": "ያግኙን",
+    "coffeeResources": "የቡና ሀብቶች",
+    "coffeeOrigins": "የቡና ምንጮች",
+    "fromTheField": "ከመሬቱ ላይ",
+    "contactTitle": "ያግኙን",
+    "copyright": "መዝግቢያ ሁሉም መብት የተጠበቀ ነው።",
+    "origin": "ምንጭ: ኢትዮጵያ · ከ40+ ሀገሮች በላይ እያገለገለ"
+  },
+  "notFound": {
+    "title": "ገጹ አልተገኘም",
+    "description": "የሚፈልጉት ገጹ የለውም ወይም ተቀይ떠ል።",
+    "backHome": "ወደ መነሻ ተመለስ"
+  },
+  "cookie": {
+    "title": "የኩኪ ምርጫዎች",
+    "message": "ድህረ ገጻችን እንዴት እንደሚጠቀሙ ለመረዳት እና ጉብኝትዎን ለማሻሻል ኩኪዎችን እንጠቀማለን።",
+    "accept": "ኩኪ ተቀበል",
+    "decline": "አይቀበል",
+    "dismiss": "ዝጋ"
+  },
+  "whyUs": {
+    "eyebrow": "ለምን እኛ",
+    "title": "ለምን ገዦች BCS Coffee ይመርጡ",
+    "subtitle": "የኢትዮጵያ ምንጭ ችሎታን ከዓለም አቀፍ ንግድ ተሞክሮ ጋር እንቀሳቅስ።",
+    "verifiedQuality": "የተረጋገጡ ጥራት",
+    "verifiedQualityDesc": "እያንዳንዱ አወቃቂ እና ሎት በጥብቅ የተረጋገጡ ሂደት ይገመገማል።",
+    "trustedRelationships": "እምነት ያላቸው ግንኙነቶች",
+    "trustedRelationshipsDesc": "ከተንⓒаагዎች፣ አወቃቂዎች እና ገዦች ጋር የረጅም ጊዜ አጋርነቶች ተመሳሳይነትን እና እምነትን ያረጋግጣሉ።",
+    "exportConfidence": "የአወቃቀም እምነት",
+    "exportConfidenceDesc": "መደረግ እና ማሳወቂያ እንዳይቆም እና ሽ CHtmlment በቀላሉ እንደድረስ እንመProjection።",
+    "ourCommitment": "ችሎታችን",
+    "commitmentTitle": "የኢትዮጵያ ችሎታ፣ ዓለም ገበያዎች።",
+    "commitmentDesc": "የክልል ቡና እውቀትን ከዓለም አቀፍ ገዦች ፍላጎት ጋር እንቀሳቅስ።",
+    "seeLifeAtOrigin": "በምንጭ ላይ ሕይወት ይመልከቱ"
+  },
+  "testimonials": {
+    "eyebrow": "ምስክርነቶች",
+    "title": "በቦሮ ማድረግ ባለሙያዎች፣ ገዦች እና ተገ払ዮች የተወዳጅ",
+    "subtitle": "በተረጋገጡ የኢትዮጵያ አጋርነት የቡና የሚገዙ እውነተኛ አጋር ታሪኮች።",
+    "verifiedClient": "የተረጋገጡ ተχemicientお客",
+    "quote1": "BCS ለእኛ የተፈለገውን የር겟še ቅርጽ ከሙሉ አወቃቀም ተከታይነት ጋር ማግኘት ረድቷል።",
+    "name1": "ኖራ፣ የአስያ ቦሮ ባለቤት",
+    "quote2": "ማረጋገጫ እና ማ точka ድጋፍ በሳምንታት ቀን listOf ረድቷል።",
+    "name2": "ማርኮ፣ ልዩ ገዦ",
+    "quote3": "የገበያ እውቀታቸው እና አጋርነታቸው የመጀመሪያ የኢትዮጵያ ምርት ገዢ አድርገዋል።",
+    "name3": "ሌይላ፣ ቡና ተገብሯ"
+  }
+}

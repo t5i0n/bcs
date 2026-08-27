@@ -1,0 +1,78 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// ─── Admin & Auth ──────────────────────────────────────────────
+
+model Admin {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  name      String
+  role      String   @default("staff") // "admin" | "staff"
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// ─── Coffee Commodities ────────────────────────────────────────
+
+model CoffeeCommodity {
+  id               String   @id @default(cuid())
+  name             String
+  organicCertified Boolean  @default(false)
+  sourceOfCoffee   String   // Region / origin
+  coffeeGrade      String   // Grade 1, Grade 2, etc.
+  coffeeType       String   // e.g., Washed, Natural
+  coffeeStatus     String   @default("Available") // Available, Sold Out, In Transit, Reserved
+  processingType   String   // Washed, Natural, Honey, Semi-washed
+  packagingContent String   // GrainPro, Burlap, etc.
+  packageUnit      String   // bags, cartons, etc.
+  weightUnitCode   String   @default("KG") // KG, LB
+  pricePerUnit     Float?
+  stockQuantity    Float    @default(0)
+  availableQty     Float    @default(0)
+  quantitySold     Float    @default(0)
+  minOrderQty      Float?
+  description      String?
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
+
+// ─── Contact Submissions ───────────────────────────────────────
+
+model ContactSubmission {
+  id             String   @id @default(cuid())
+  name           String
+  company        String?
+  country        String?
+  email          String
+  coffeeInterest String?
+  message        String
+  status         String   @default("new") // new, read, replied, archived
+  notes          String?  // Admin internal notes
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+// ─── Site Content (CMS-like) ───────────────────────────────────
+
+model SiteContent {
+  id        String   @id @default(cuid())
+  key       String   @unique // e.g., "home.hero.title", "about.intro"
+  value     String
+  section   String   // e.g., "home", "about", "services"
+  updatedAt DateTime @updatedAt
+}
+
+// ─── Site Settings ─────────────────────────────────────────────
+
+model SiteSetting {
+  id    String @id @default(cuid())
+  key   String @unique
+  value String
+}
