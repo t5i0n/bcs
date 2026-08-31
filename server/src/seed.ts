@@ -119,7 +119,7 @@ async function main() {
     { key: "site.name", value: "BCS Coffee Market Consulting" },
     { key: "site.email", value: "info@bcscoffee.et" },
     { key: "site.phone", value: "+251-973-053-737" },
-    { key: "site.whatsapp", value: "+251-912-345-678" },
+    { key: "site.whatsapp", value: "+251-951-626-242" },
     { key: "social.telegram", value: "" },
     { key: "social.linkedin", value: "" },
     { key: "social.instagram", value: "" },

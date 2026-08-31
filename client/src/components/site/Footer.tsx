@@ -96,7 +96,7 @@ export function Footer() {
             </li>
             <li className="flex gap-2.5">
               <MessageCircle className="w-4 h-4 mt-0.5 text-accent" />
-              +251-912-345-678
+              +251-951-626-242
             </li>
             <li className="flex gap-2.5">
               <Mail className="w-4 h-4 mt-0.5 text-accent" /> info@bcscoffee.et

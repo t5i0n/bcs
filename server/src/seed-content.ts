@@ -14,7 +14,7 @@ const contentEntries = [
   // Contact info (data, not translatable)
   { key: 'home.contact.headquarters', value: 'Addis Ababa, Ethiopia', section: 'home' },
   { key: 'home.contact.phone1', value: '+251-973-053-737', section: 'home' },
-  { key: 'home.contact.phone2', value: '+251-912-345-678', section: 'home' },
+  { key: 'home.contact.phone2', value: '+251-951-626-242', section: 'home' },
   { key: 'home.contact.email', value: 'info@bcscoffee.et', section: 'home' },
 
   // Timeline years (data, not translatable)

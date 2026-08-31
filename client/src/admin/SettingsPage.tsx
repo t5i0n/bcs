@@ -12,7 +12,7 @@ const SOCIAL_FIELDS = [
 const CONTACT_FIELDS = [
   { key: "site.email", label: "Email", placeholder: "info@bcscoffee.et" },
   { key: "site.phone", label: "Phone", placeholder: "+251-973-053-737" },
-  { key: "site.whatsapp", label: "WhatsApp", placeholder: "+251-912-345-678" },
+  { key: "site.whatsapp", label: "WhatsApp", placeholder: "+251-951-626-242" },
 ];
 
 export function SettingsPage() {

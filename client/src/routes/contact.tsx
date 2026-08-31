@@ -31,7 +31,7 @@ export default function ContactPage() {
               <InfoRow
                 icon={Phone}
                 title={t("contact.phoneWhatsapp")}
-                lines={["+251-973-053-737", "+251-912-345-678"]}
+                lines={["+251-973-053-737", "+251-951-626-242"]}
               />
               <InfoRow
                 icon={Mail}
@@ -40,7 +40,7 @@ export default function ContactPage() {
               />
             </div>
             <a
-              href="https://wa.me/251912345678"
+              href="https://wa.me/251951626242"
               className="inline-flex items-center gap-2 mt-8 px-6 py-3 rounded-full bg-[#25D366] text-white font-semibold hover:scale-105 transition"
             >
               <MessageCircle className="w-4 h-4" /> {t("contact.chatWhatsapp")}
