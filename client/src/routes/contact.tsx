@@ -2,6 +2,7 @@ import { Layout, PageHero } from "@/components/site/Layout";
 import { useTranslation } from "react-i18next";
 import { MapPin, Mail, Phone, MessageCircle } from "lucide-react";
 import { InfoRow } from "@/components/site/InfoRow";
+
 import { ContactForm } from "@/components/site/ContactForm";
 
 export default function ContactPage() {
@@ -26,7 +27,7 @@ export default function ContactPage() {
               <InfoRow
                 icon={MapPin}
                 title={t("contact.headquarters")}
-                lines={["Addis Ababa, Ethiopia"]}
+                lines={["Jemo Africa Building, Addis Ababa, Ethiopia"]}
               />
               <InfoRow
                 icon={Phone}
@@ -49,8 +50,8 @@ export default function ContactPage() {
 
           <div className="mt-8 rounded-3xl overflow-hidden border border-border h-64">
             <iframe
-              title="Map of Addis Ababa"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=38.70%2C8.95%2C38.85%2C9.05&layer=mapnik&marker=9.0054%2C38.7636"
+              title="Map of Jemo Africa Building"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=38.6704%2C8.9171%2C38.7704%2C9.0171&layer=mapnik&marker=8.9671%2C38.7204"
               className="w-full h-full grayscale-20"
               loading="lazy"
             />

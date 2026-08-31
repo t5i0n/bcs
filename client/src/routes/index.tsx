@@ -516,8 +516,8 @@ function ContactSection() {
 
           <div className="mt-8 rounded-2xl overflow-hidden border border-white/20 h-56">
             <iframe
-              title="Map of Addis Ababa"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=38.70%2C8.95%2C38.85%2C9.05&layer=mapnik&marker=9.0054%2C38.7636"
+              title="Map of Jemo Africa Building"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=38.6704%2C8.9171%2C38.7704%2C9.0171&layer=mapnik&marker=8.9671%2C38.7204"
               className="w-full h-full grayscale-20"
               loading="lazy"
             />
