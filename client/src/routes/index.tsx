@@ -458,7 +458,7 @@ function ContactSection() {
   const eyebrow = getContent('home.contact.badge', 'contact.eyebrow') || t('contact.eyebrow');
   const title = getContent('home.contact.title', 'contact.homeTitle') || t('contact.homeTitle');
   const description = getContent('home.contact.description', 'contact.homeSubtitle') || t('contact.homeSubtitle');
-  const headquarters = getContent('home.contact.headquarters', '', 'Addis Ababa, Ethiopia');
+  const headquarters = getContent('home.contact.headquarters', '', 'Jemo Around Africa Building, Ethiopia');
   const phone1 = getContent('home.contact.phone1', '', '+251-973-053-737');
   const phone2 = getContent('home.contact.phone2', '', '+251-951-626-242');
   const email = getContent('home.contact.email', '', 'info@bcscoffee.et');

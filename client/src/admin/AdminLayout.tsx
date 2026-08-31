@@ -1,7 +1,7 @@
 import { NavLink, Outlet } from "react-router-dom";
 import { useAdminAuth } from "./AuthContext";
 import {
-  Coffee,
+  Bean,
   LayoutDashboard,
   Package,
   MessageSquare,
@@ -36,7 +36,7 @@ export function AdminLayout() {
         {/* Logo */}
         <div className="flex items-center gap-3 px-5 h-16 border-b border-white/10">
           <div className="w-9 h-9 rounded-xl bg-accent text-accent-foreground grid place-items-center flex-shrink-0">
-            <Coffee className="w-5 h-5" />
+            <Bean className="w-5 h-5" />
           </div>
           {sidebarOpen && (
             <div className="overflow-hidden">

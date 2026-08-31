@@ -123,7 +123,10 @@ export function Navbar({ transparent = false }: { transparent?: boolean }) {
       </div>
 
       {open && (
-        <div id="mobile-menu" className="lg:hidden bg-background border-t border-border">
+        <div
+          id="mobile-menu"
+          className="lg:hidden bg-background border-t border-border"
+        >
           <div className="container-x py-4 flex flex-col gap-1">
             {links.map((l) => (
               <Link

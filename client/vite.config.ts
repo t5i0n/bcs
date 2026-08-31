@@ -5,6 +5,9 @@ import { fileURLToPath, URL } from "node:url";
 
 // https://vite.dev/config/
 export default defineConfig({
+  server: {
+    host: "0.0.0.0",
+  },
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: [

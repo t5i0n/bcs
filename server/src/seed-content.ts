@@ -12,7 +12,7 @@ const contentEntries = [
   { key: 'home.stats.trade', value: '$50M+', section: 'home' },
 
   // Contact info (data, not translatable)
-  { key: 'home.contact.headquarters', value: 'Addis Ababa, Ethiopia', section: 'home' },
+  { key: 'home.contact.headquarters', value: 'Jemo Around Africa Building, Ethiopia', section: 'home' },
   { key: 'home.contact.phone1', value: '+251-973-053-737', section: 'home' },
   { key: 'home.contact.phone2', value: '+251-951-626-242', section: 'home' },
   { key: 'home.contact.email', value: 'info@bcscoffee.et', section: 'home' },

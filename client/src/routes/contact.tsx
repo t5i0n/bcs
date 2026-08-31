@@ -27,7 +27,7 @@ export default function ContactPage() {
               <InfoRow
                 icon={MapPin}
                 title={t("contact.headquarters")}
-                lines={["Jemo Africa Building, Addis Ababa, Ethiopia"]}
+                lines={["Jemo Around Africa Building, Ethiopia"]}
               />
               <InfoRow
                 icon={Phone}

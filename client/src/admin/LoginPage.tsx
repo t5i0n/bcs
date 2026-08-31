@@ -1,6 +1,6 @@
 import { useState, type FormEvent } from "react";
 import { useAdminAuth } from "./AuthContext";
-import { Coffee, Loader2 } from "lucide-react";
+import { Bean, Loader2 } from "lucide-react";
 
 export function AdminLoginPage() {
   const { login } = useAdminAuth();
@@ -27,7 +27,7 @@ export function AdminLoginPage() {
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary text-primary-foreground mb-4">
-            <Coffee className="w-8 h-8" />
+            <Bean className="w-8 h-8" />
           </div>
           <h1 className="font-display text-3xl font-bold">BCS Coffee Admin</h1>
           <p className="mt-2 text-muted-foreground">Sign in to manage your business</p>
