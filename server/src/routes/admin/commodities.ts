@@ -13,10 +13,10 @@ const commoditySchema = z.object({
   sourceOfCoffee: z.string().min(1),
   coffeeGrade: z.string().min(1),
   coffeeType: z.string().min(1),
-  coffeeStatus: z.enum(["Available", "Sold Out", "In Transit", "Reserved"]).optional(),
+  coffeeStatus: z.enum(["Green Bean", "Roast and Grind", "Other"]).optional(),
   processingType: z.string().min(1),
-  packagingContent: z.string().min(1),
-  packageUnit: z.string().min(1),
+  packagingContent: z.string().optional(),
+  packageUnit: z.string().optional(),
   weightUnitCode: z.enum(["KG", "LB"]).optional(),
   pricePerUnit: z.number().nullable().optional(),
   stockQuantity: z.number().min(0).optional(),
@@ -80,7 +80,7 @@ router.delete("/:id", async (req, res) => {
 router.get("/stats/overview", async (_req, res) => {
   const [total, available, totalStock, totalSold] = await Promise.all([
     prisma.coffeeCommodity.count(),
-    prisma.coffeeCommodity.count({ where: { coffeeStatus: "Available" } }),
+    prisma.coffeeCommodity.count({ where: { coffeeStatus: "Green Bean" } }),
     prisma.coffeeCommodity.aggregate({ _sum: { stockQuantity: true } }),
     prisma.coffeeCommodity.aggregate({ _sum: { quantitySold: true } }),
   ]);

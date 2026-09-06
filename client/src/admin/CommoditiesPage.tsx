@@ -8,7 +8,7 @@ const EMPTY_FORM: CreateCommodityInput = {
   sourceOfCoffee: "",
   coffeeGrade: "",
   coffeeType: "",
-  coffeeStatus: "Available",
+  coffeeStatus: "Green Bean",
   processingType: "",
   packagingContent: "",
   packageUnit: "",
@@ -140,7 +140,7 @@ export function CommoditiesPage() {
             <thead>
               <tr className="bg-muted/50 text-left">
                 <th className="px-4 py-3 font-medium">Name</th>
-                <th className="px-4 py-3 font-medium">Origin</th>
+                <th className="px-4 py-3 font-medium">Source</th>
                 <th className="px-4 py-3 font-medium">Grade</th>
                 <th className="px-4 py-3 font-medium">Process</th>
                 <th className="px-4 py-3 font-medium">Status</th>
@@ -175,7 +175,7 @@ export function CommoditiesPage() {
                     </td>
                     <td className="px-4 py-3 tabular-nums">{c.stockQuantity.toLocaleString()}</td>
                     <td className="px-4 py-3 tabular-nums">
-                      {c.pricePerUnit != null ? `$${c.pricePerUnit}` : "—"}
+                      {c.pricePerUnit != null ? `ETB ${c.pricePerUnit.toLocaleString()}` : "—"}
                     </td>
                     <td className="px-4 py-3 text-right">
                       <div className="inline-flex gap-1">
@@ -219,11 +219,11 @@ export function CommoditiesPage() {
             <form onSubmit={handleSubmit} className="p-6 space-y-5">
               <div className="grid sm:grid-cols-2 gap-4">
                 <FieldInput label="Name" value={form.name} onChange={(v) => update("name", v)} required />
-                <FieldInput label="Source / Origin" value={form.sourceOfCoffee} onChange={(v) => update("sourceOfCoffee", v)} required />
-                <FieldInput label="Grade" value={form.coffeeGrade} onChange={(v) => update("coffeeGrade", v)} required placeholder="e.g. Grade 1" />
-                <FieldInput label="Coffee Type" value={form.coffeeType} onChange={(v) => update("coffeeType", v)} required placeholder="e.g. Single Origin" />
-                <FieldSelect label="Processing Type" value={form.processingType} onChange={(v) => update("processingType", v)} options={["Washed", "Natural", "Honey", "Semi-washed"]} />
-                <FieldSelect label="Status" value={form.coffeeStatus} onChange={(v) => update("coffeeStatus", v)} options={["Available", "Sold Out", "In Transit", "Reserved"]} />
+                <FieldSelect label="Source of Coffee" value={form.sourceOfCoffee} onChange={(v) => update("sourceOfCoffee", v)} options={["Commercial", "Grower", "Vertical", "Union", "Farmer", "Value Added"]} />
+                <FieldSelect label="Coffee Grade" value={form.coffeeGrade} onChange={(v) => update("coffeeGrade", v)} options={["1", "2", "3", "4", "5", "UG (Under Grade)", "NG (No Grade)", "Perberry Coffee"]} />
+                <FieldSelect label="Coffee Type" value={form.coffeeType} onChange={(v) => update("coffeeType", v)} options={["Yirgacheffe", "Sidama", "Guji", "Limu", "Jimma", "Nekemte", "Harrar"]} />
+                <FieldSelect label="Processing Type" value={form.processingType} onChange={(v) => update("processingType", v)} options={["Washed", "Unwashed"]} />
+                <FieldSelect label="Coffee Status" value={form.coffeeStatus} onChange={(v) => update("coffeeStatus", v)} options={["Green Bean", "Roast and Grind", "Other"]} />
                 <FieldInput label="Packaging Content" value={form.packagingContent} onChange={(v) => update("packagingContent", v)} placeholder="e.g. GrainPro lined bags" />
                 <FieldInput label="Package Unit" value={form.packageUnit} onChange={(v) => update("packageUnit", v)} placeholder="e.g. 60kg bags" />
                 <FieldSelect label="Weight Unit" value={form.weightUnitCode} onChange={(v) => update("weightUnitCode", v)} options={["KG", "LB"]} />
@@ -241,7 +241,7 @@ export function CommoditiesPage() {
               </div>
 
               <div className="grid sm:grid-cols-3 gap-4">
-                <FieldNumber label="Price per Unit ($)" value={form.pricePerUnit} onChange={(v) => update("pricePerUnit", v)} />
+                <FieldNumber label="Price per Unit (ETB)" value={form.pricePerUnit} onChange={(v) => update("pricePerUnit", v)} />
                 <FieldNumber label="Stock Quantity" value={form.stockQuantity} onChange={(v) => update("stockQuantity", v)} />
                 <FieldNumber label="Available Qty" value={form.availableQty} onChange={(v) => update("availableQty", v)} />
                 <FieldNumber label="Quantity Sold" value={form.quantitySold} onChange={(v) => update("quantitySold", v)} />
@@ -286,10 +286,9 @@ export function CommoditiesPage() {
 
 function StatusBadge({ status }: { status: string }) {
   const colors: Record<string, string> = {
-    Available: "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400",
-    "Sold Out": "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400",
-    "In Transit": "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400",
-    Reserved: "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400",
+    "Green Bean": "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400",
+    "Roast and Grind": "bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400",
+    Other: "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400",
   };
   return (
     <span className={`inline-block px-2 py-0.5 rounded-full text-xs font-medium ${colors[status] ?? "bg-muted text-muted-foreground"}`}>

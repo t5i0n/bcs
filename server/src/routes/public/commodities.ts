@@ -6,7 +6,7 @@ const router = Router();
 // GET /api/commodities — public listing (only available items, limited fields)
 router.get("/", async (_req, res) => {
   const commodities = await prisma.coffeeCommodity.findMany({
-    where: { coffeeStatus: "Available" },
+    where: { coffeeStatus: "Green Bean" },
     select: {
       id: true,
       name: true,

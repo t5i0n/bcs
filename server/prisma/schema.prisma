@@ -28,10 +28,10 @@ model CoffeeCommodity {
   sourceOfCoffee   String   // Region / origin
   coffeeGrade      String   // Grade 1, Grade 2, etc.
   coffeeType       String   // e.g., Washed, Natural
-  coffeeStatus     String   @default("Available") // Available, Sold Out, In Transit, Reserved
-  processingType   String   // Washed, Natural, Honey, Semi-washed
-  packagingContent String   // GrainPro, Burlap, etc.
-  packageUnit      String   // bags, cartons, etc.
+  coffeeStatus     String   @default("Green Bean") // Green Bean, Roast and Grind, Other
+  processingType   String   // Washed, Unwashed
+  packagingContent String?  // GrainPro, Burlap, etc.
+  packageUnit      String?  // bags, cartons, etc.
   weightUnitCode   String   @default("KG") // KG, LB
   pricePerUnit     Float?
   stockQuantity    Float    @default(0)
