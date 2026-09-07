@@ -1,6 +1,6 @@
 import { Layout, PageHero } from "@/components/site/Layout";
 import { useTranslation } from "react-i18next";
-import { MapPin, Mail, Phone, MessageCircle } from "lucide-react";
+import { MapPin, Mail, Phone, MessageCircle, Clock, ExternalLink } from "lucide-react";
 import { InfoRow } from "@/components/site/InfoRow";
 
 import { ContactForm } from "@/components/site/ContactForm";
@@ -39,6 +39,12 @@ export default function ContactPage() {
                 title={t("contact.email")}
                 lines={["info@bcscoffee.et"]}
               />
+              <InfoRow
+                icon={Clock}
+                title="Opening Hours"
+                lines={["Monday – Friday: 2:30 – 11:30 LT", "Saturday: 2:30 – 6:00 LT", "Sunday: Closed"]}
+              />
+
             </div>
             <a
               href="https://wa.me/251951626242"
@@ -48,13 +54,21 @@ export default function ContactPage() {
             </a>
           </div>
 
-          <div className="mt-8 rounded-3xl overflow-hidden border border-border h-64">
+          <div className="mt-8 rounded-3xl overflow-hidden border border-border">
             <iframe
-              title="Map of Jemo Africa Building"
+              title="Map of Africa Building, Jemo"
               src="https://www.openstreetmap.org/export/embed.html?bbox=38.6704%2C8.9171%2C38.7704%2C9.0171&layer=mapnik&marker=8.9671%2C38.7204"
-              className="w-full h-full grayscale-20"
+              className="w-full h-64 grayscale-20"
               loading="lazy"
             />
+            <a
+              href="https://www.openstreetmap.org/way/711723419#map=19/8.967076/38.720398"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 py-3 text-sm font-medium text-accent hover:bg-accent/10 transition"
+            >
+              <MapPin className="w-4 h-4" /> Get Directions <ExternalLink className="w-3.5 h-3.5" />
+            </a>
           </div>
         </div>
 

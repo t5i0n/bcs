@@ -10,6 +10,7 @@ import { useSiteContent } from "@/hooks/useSiteContent";
 import heroFarm from "@/assets/hero-farm.jpg";
 import farmers from "@/assets/farmers.jpg";
 import cherries from "@/assets/cherries.jpg";
+import { StackedCardCarousel } from "@/components/site/StackedCardCarousel";
 import {
   ArrowRight,
   ShieldCheck,
@@ -70,30 +71,38 @@ function Hero() {
       </div>
 
       <div className="container-x relative z-10 pt-32 pb-24 text-white">
-        <div className="max-w-3xl">
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur border border-white/20 text-xs uppercase tracking-[0.2em]">
-            <span className="w-1.5 h-1.5 bg-accent rounded-full" /> {eyebrow}
-          </span>
-          <h1 className="mt-6 font-display text-5xl md:text-7xl font-bold leading-[1.05] text-balance">
-            <span>{title1}</span>{title2 && <><br /><span className="text-accent italic">{title2}</span></>}
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg md:text-xl text-white/85 leading-relaxed text-balance">
-            {description}
-          </p>
-          <div className="mt-9 flex flex-wrap gap-4">
-            <a
-              href="#origins"
-              className="group inline-flex items-center gap-2 px-7 py-4 rounded-full bg-accent text-accent-foreground font-semibold shadow-gold hover:scale-105 transition"
-            >
-              {cta1}
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition" />
-            </a>
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 px-7 py-4 rounded-full border border-white/40 text-white font-semibold backdrop-blur bg-white/5 hover:bg-white/15 transition"
-            >
-              {cta2}
-            </Link>
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+          {/* Left: Text */}
+          <div className="flex-1 max-w-3xl">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur border border-white/20 text-xs uppercase tracking-[0.2em]">
+              <span className="w-1.5 h-1.5 bg-accent rounded-full" /> {eyebrow}
+            </span>
+            <h1 className="mt-6 font-display text-5xl md:text-7xl font-bold leading-[1.05] text-balance">
+              <span>{title1}</span>{title2 && <><br /><span className="text-accent italic">{title2}</span></>}
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg md:text-xl text-white/85 leading-relaxed text-balance">
+              {description}
+            </p>
+            <div className="mt-9 flex flex-wrap gap-4">
+              <a
+                href="#origins"
+                className="group inline-flex items-center gap-2 px-7 py-4 rounded-full bg-accent text-accent-foreground font-semibold shadow-gold hover:scale-105 transition"
+              >
+                {cta1}
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition" />
+              </a>
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 px-7 py-4 rounded-full border border-white/40 text-white font-semibold backdrop-blur bg-white/5 hover:bg-white/15 transition"
+              >
+                {cta2}
+              </Link>
+            </div>
+          </div>
+
+          {/* Right: Photo Carousel */}
+          <div className="flex-shrink-0 hidden md:block">
+            <StackedCardCarousel />
           </div>
         </div>
 

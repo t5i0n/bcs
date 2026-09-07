@@ -24,6 +24,7 @@
     "services": "Services",
     "origins": "Origins",
     "field": "From the Field",
+    "team": "Our Team",
     "contact": "Contact",
     "brandSubtitle": "Market Consulting",
     "switchToLight": "Switch to light mode",
@@ -194,6 +195,26 @@
     "contactTitle": "Contact",
     "copyright": "All rights reserved.",
     "origin": "Origin: Ethiopia · Serving 40+ countries worldwide"
+  },
+  "team": {
+    "eyebrow": "Our People",
+    "title": "Meet the Team Behind BCS Coffee",
+    "subtitle": "Passionate professionals dedicated to connecting Ethiopian coffee excellence with the world.",
+    "bekure": {
+      "name": "Bekure Yimam",
+      "role": "Founder & Managing Director",
+      "description": "With over 15 years in the Ethiopian coffee industry, Bekure leads BCS Coffee's mission to connect优质 origins with global markets. His deep relationships with farmers and exporters ensure every lot meets international standards."
+    },
+    "rose": {
+      "name": "Rose Ahmed",
+      "role": "Coffee Quality Specialist",
+      "description": "Our quality specialist brings Q-grader expertise and rigorous cupping protocols to every evaluation. They ensure that each shipment meets the precise flavor profiles our international clients expect."
+    },
+    "member3": {
+      "name": "Team Member",
+      "role": "Export & Logistics Coordinator",
+      "description": "Managing the complex journey from Ethiopian washing stations to global ports, our logistics coordinator handles ECX certifications, ICO markings, FOB arrangements, and every detail in between."
+    }
   },
   "notFound": {
     "title": "Page Not Found",

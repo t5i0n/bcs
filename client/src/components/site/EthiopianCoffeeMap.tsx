@@ -275,7 +275,7 @@ export function EthiopianCoffeeMap() {
             {t(`origins.regions.${REGIONS[active].key}`)}
           </h3>
           <p className="mt-2 text-white/80 italic">
-            &ldquo;{REGIONS[active].notes}&rdquo;
+            &ldquo;{t(`origins.regionNotes.${REGIONS[active].key}`)}&rdquo;
           </p>
 
           <div className="mt-7 grid grid-cols-3 gap-4">

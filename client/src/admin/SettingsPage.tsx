@@ -1,6 +1,7 @@
 import { useState, type FormEvent } from "react";
 import { useAdminAuth } from "./AuthContext";
-import { Save, Loader2, ExternalLink } from "lucide-react";
+import { useTheme } from "@/use-theme";
+import { Save, Loader2, ExternalLink, Sun, Moon } from "lucide-react";
 
 const SOCIAL_FIELDS = [
   { key: "social.telegram", label: "Telegram", placeholder: "https://t.me/..." },
@@ -17,6 +18,7 @@ const CONTACT_FIELDS = [
 
 export function SettingsPage() {
   const { admin } = useAdminAuth();
+  const { theme, toggleTheme } = useTheme();
   const [values, setValues] = useState<Record<string, string>>({});
   const [saving, setSaving] = useState(false);
   const [saved, setSaved] = useState(false);
@@ -51,6 +53,34 @@ export function SettingsPage() {
           <p className="text-xs text-muted-foreground mt-1 capitalize">Role: {admin.role}</p>
         </div>
       )}
+
+      {/* Appearance */}
+      <section className="mt-8">
+        <h2 className="font-display text-xl font-semibold mb-4">Appearance</h2>
+        <div className="flex items-center justify-between p-4 rounded-2xl bg-muted/50 border border-border">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-accent text-accent-foreground grid place-items-center">
+              {theme === "dark" ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
+            </div>
+            <div>
+              <p className="text-sm font-medium">Theme</p>
+              <p className="text-xs text-muted-foreground">Currently using {theme} mode</p>
+            </div>
+          </div>
+          <button
+            type="button"
+            onClick={toggleTheme}
+            className="relative inline-flex h-7 w-12 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background"
+            style={{ backgroundColor: theme === "dark" ? "oklch(0.55 0.15 145)" : "oklch(0.85 0.02 145)" }}
+          >
+            <span
+              className={`inline-block h-5 w-5 rounded-full bg-white shadow-sm transition-transform ${
+                theme === "dark" ? "translate-x-6" : "translate-x-1"
+              }`}
+            />
+          </button>
+        </div>
+      </section>
 
       <form onSubmit={handleSubmit} className="mt-8 space-y-8">
         <div className="grid md:grid-cols-2 gap-8">

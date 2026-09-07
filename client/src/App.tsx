@@ -6,6 +6,7 @@ import NotFoundPage from "./routes/not-found";
 import OriginsPage from "./routes/origins";
 import FieldPage from "./routes/field";
 import ServicesPage from "./routes/services";
+import TeamPage from "./routes/team";
 import AdminApp from "./admin";
 
 // Define the application's routes and map each URL path to its corresponding page component.
@@ -22,6 +23,7 @@ export default function App() {
       <Route path="/origins" element={<OriginsPage />} />
       <Route path="/field" element={<FieldPage />} />
       <Route path="/contact" element={<ContactPage />} />
+      <Route path="/team" element={<TeamPage />} />
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );

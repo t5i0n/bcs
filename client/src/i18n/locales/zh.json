@@ -24,6 +24,7 @@
     "services": "服务",
     "origins": "产区",
     "field": "产地实况",
+    "team": "我们的团队",
     "contact": "联系我们",
     "brandSubtitle": "市场咨询",
     "switchToLight": "切换至浅色模式",
@@ -195,6 +196,26 @@
     "copyright": "版权所有。",
     "origin": "产地：埃塞俄比亚 · 服务40多个国家"
   },
+  "team": {
+    "eyebrow": "我们的成员",
+    "title": "认识 BCS Coffee 团队",
+    "subtitle": "致力于将埃塞俄比亚咖啡精华与世界连接的热情专业人士。",
+    "bekure": {
+      "name": "Bekure Yimam",
+      "role": "创始人兼总经理",
+      "description": "在埃塞俄比亚咖啡行业拥有超过15年经验，Bekure领导BCS Coffee将优质产地与全球市场连接的使命。"
+    },
+    "rose": {
+      "name": "Rose Ahmed",
+      "role": "咖啡质量专家",
+      "description": "我们的质量专家带来Q级品鉴师专业知识和严格的杯测规程，确保每批货物都达到国际客户期望的精确风味特征。"
+    },
+    "member3": {
+      "name": "团队成员",
+      "role": "出口与物流协调员",
+      "description": "管理从埃塞俄比亚水洗站到全球港口的复杂旅程，我们的物流协调员处理ECX认证、ICO标记、FOB安排和每一个细节。"
+    }
+  },
   "notFound": {
     "title": "页面未找到",
     "description": "您查找的页面不存在或已被移除。",
@@ -219,7 +240,7 @@
     "exportConfidenceDesc": "我们管理合规、文件和物流，确保您的货物顺利到达。",
     "ourCommitment": "我们的承诺",
     "commitmentTitle": "埃塞俄比亚专业知识，全球市场。",
-    "commitmentDesc": "我们将区域咖啡知识与国际买家需求相结合。",
+    "commitmentDesc": "我们将区域咖啡知识与国际买家需求相结合，帮助进口商采购合适的咖啡豆、核实合适的供应商，并按照他们自己的条件达成交易。",
     "seeLifeAtOrigin": "了解产地生活"
   },
   "testimonials": {

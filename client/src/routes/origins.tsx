@@ -29,12 +29,12 @@ export default function OriginsPage() {
           <div className="grid md:grid-cols-2 gap-6">
             {REGIONS.map((r) => (
               <article
-                key={r.name}
+                key={r.key}
                 className="rounded-3xl border border-border bg-background p-8 hover:shadow-elegant transition"
               >
-                <h3 className="font-display text-3xl font-bold">{r.name}</h3>
+                <h3 className="font-display text-3xl font-bold">{t(`origins.regions.${r.key}`)}</h3>
                 <p className="mt-3 text-muted-foreground leading-relaxed">
-                  {r.notes}
+                  {t(`origins.regionNotes.${r.key}`)}
                 </p>
                 <div className="mt-6 grid grid-cols-3 gap-3 text-sm">
                   <Pill icon={Mountain} label={t("origins.altitude")} value={r.altitude} />

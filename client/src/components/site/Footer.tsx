@@ -9,7 +9,6 @@ export function Footer() {
 
   const description = getContent('footer.description', 'footer.description') || t('footer.description');
   const copyright = getContent('footer.copyright', 'footer.copyright') || t('footer.copyright');
-  const origin = getContent('footer.origin', 'footer.origin') || t('footer.origin');
 
   return (
     <footer className="bg-[oklch(0.22_0.03_145)] text-white/80">
@@ -73,6 +72,7 @@ export function Footer() {
           title={t("footer.company")}
           items={[
             { to: "/about", label: t("footer.about") },
+            { to: "/team", label: t("nav.team") },
             { to: "/services", label: t("footer.services") },
             { to: "/contact", label: t("footer.contact") },
           ]}
@@ -109,7 +109,17 @@ export function Footer() {
           <p>
             © {new Date().getFullYear()} BCS Coffee Market Consulting. {copyright}
           </p>
-          <p>{origin}</p>
+          <p>
+            Designed & Developed by{' '}
+            <a
+              href="https://www.linkedin.com/in/tsion-tesfaye-b0248a391/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BcFVSMoTcSY6GxdDsheowlA%3D%3D"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-accent transition underline underline-offset-2"
+            >
+              Tsion Tesfaye
+            </a>
+          </p>
         </div>
       </div>
     </footer>
