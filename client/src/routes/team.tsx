@@ -16,9 +16,7 @@ interface TeamMember {
   instagram?: string;
 }
 
-const TEAM_KEYS = ["bekure", "rose", "member3"] as const;
-
-const TEAM_META: Record<string, { initials: string; color: string; image?: string; linkedin?: string; instagram?: string }> = {
+const TEAM_KEYS = ["bekure", "rose", "member3"] as const;  const TEAM_META: Record<string, { initials: string; color: string; image?: string; linkedin?: string; instagram?: string; telegram?: string }> = {
   bekure: {
     initials: "BY",
     color: "bg-primary",
@@ -98,13 +96,6 @@ export default function TeamPage() {
                   </p>
 
                   <div className="flex items-center gap-3 mt-5 pt-4 border-t border-border">
-                    <a
-                      href={`mailto:${key === "bekure" ? "bekure@bcscoffee.et" : key === "rose" ? "rose@bcscoffee.et" : "team@bcscoffee.et"}`}
-                      className="w-9 h-9 rounded-full bg-accent/10 grid place-items-center text-accent hover:bg-accent hover:text-accent-foreground transition"
-                      aria-label={`Email ${name}`}
-                    >
-                      <Mail className="w-4 h-4" />
-                    </a>
                   {meta.linkedin && (
                     <a
                       href={meta.linkedin}
@@ -139,6 +130,7 @@ export default function TeamPage() {
                       </svg>
                     </a>
                   )}
+
                 </div>
               </div>
             </div>
