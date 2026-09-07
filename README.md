@@ -32,20 +32,34 @@ A production-style marketing website and admin backend for BCS Coffee Market Con
 ## Features
 
 ### Public Website (`client/`)
-- **6 pages** — Home, About, Services, Origins, From the Field, Contact
-- **4 languages** — English, Amharic, French, Chinese
-- **Dark mode** — persistent toggle with system preference detection
-- **Interactive Ethiopian coffee map** — SVG map with clickable region pins
+- **7 pages** — Home, About, Services, Origins, From the Field, Our Team, Contact
+- **4 languages** — English, Amharic, French, Chinese (all pages fully translated)
+- **Dark mode** — persistent toggle with system preference detection (available in Settings)
+- **Interactive Ethiopian coffee map** — SVG map with clickable region pins, translated descriptions
+- **Photo carousel** — auto-sliding photos on the home hero section with drag/swipe support
 - **Contact form** — connected to backend API with validation
+- **Opening hours** — displayed on the contact page with LT (Local Time) indicators
+- **Get Directions** — link to OpenStreetMap for the office location
 - **Cookie consent** — privacy-conscious analytics opt-in
 - **SEO** — og:image, meta tags, sitemap.xml, robots.txt
 
+### Our Team Page (`/team`)
+- **3 team members** with profile photos, roles, and descriptions
+- **Social links** — Email, LinkedIn, Instagram icons
+- **Fully translated** — names, roles, and descriptions change with language selector
+
 ### Admin Dashboard (`client/` → `/admin`)
 - **Authentication** — JWT-based login with secure sessions
-- **Commodities management** — CRUD for coffee inventory, pricing, and stock
+- **Commodities management** — CRUD for coffee inventory with dropdowns:
+  - Source of Coffee (Commercial, Grower, Vertical, Union, Farmer, Value Added)
+  - Coffee Grade (1-5, UG, NG, Perberry Coffee)
+  - Coffee Type (Yirgacheffe, Sidama, Guji, Limu, Jimma, Nekemte, Harrar)
+  - Coffee Status (Green Bean, Roast and Grind, Other)
+  - Processing Type (Washed, Unwashed)
+  - Price per Unit in ETB (Ethiopian Birr)
 - **Contact submissions** — view, filter, and manage inquiries
 - **Site content (CMS)** — edit website text without code changes
-- **Settings** — site configuration management
+- **Settings** — theme toggle, social media links, contact information
 
 ### Backend API (`server/`)
 - **Node.js + Express.js** with TypeScript
@@ -87,12 +101,13 @@ npm run dev        # Start API server on port 3001
 
 | Path | Description |
 |------|-------------|
-| `/` | Homepage |
+| `/` | Homepage with photo carousel |
 | `/about` | About BCS |
 | `/services` | Services overview |
 | `/origins` | Coffee origins & interactive map |
 | `/field` | From the Field — photo gallery |
-| `/contact` | Contact form & information |
+| `/team` | Our Team — meet the members |
+| `/contact` | Contact form, opening hours & directions |
 | `/admin` | Admin dashboard (login required) |
 
 ## Admin credentials
