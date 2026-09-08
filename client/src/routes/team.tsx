@@ -1,50 +1,34 @@
 import { Layout, PageHero } from "@/components/site/Layout";
 import { useTranslation } from "react-i18next";
-import { Mail } from "lucide-react";
 import bekurePhoto from "@/assets/bekure.jpg";
 import rosePhoto from "@/assets/rose.jpg";
 
 interface TeamMember {
-  name: string;
-  role: string;
-  description: string;
+  translationKey: "bekure" | "rose" | "member3";
   initials: string;
   color: string;
   photo?: string;
-  email: string;
   linkedin?: string;
 }
 
 const TEAM: TeamMember[] = [
   {
-    name: "Bekure Yimam",
-    role: "Founder & Managing Director",
-    description:
-      "With over 15 years in the Ethiopian coffee industry, Bekure leads BCS Coffee's mission to connect优质 origins with global markets. His deep relationships with farmers and exporters ensure every lot meets international standards.",
+    translationKey: "bekure",
     initials: "BY",
     color: "bg-primary",
     photo: bekurePhoto,
-    email: "bekure@bcscoffee.et",
     linkedin: "https://www.linkedin.com/in/bekure-yimam-1a484525a",
   },
   {
-    name: "Rose",
-    role: "Coffee Quality Specialist",
-    description:
-      "Our quality specialist brings Q-grader expertise and rigorous cupping protocols to every evaluation. They ensure that each shipment meets the precise flavor profiles our international clients expect.",
+    translationKey: "rose",
     initials: "RO",
     color: "bg-accent",
     photo: rosePhoto,
-    email: "rose@bcscoffee.et",
   },
   {
-    name: "Team Member",
-    role: "Export & Logistics Coordinator",
-    description:
-      "Managing the complex journey from Ethiopian washing stations to global ports, our logistics coordinator handles ECX certifications, ICO markings, FOB arrangements, and every detail in between.",
+    translationKey: "member3",
     initials: "TM",
     color: "bg-coffee",
-    email: "team@bcscoffee.et",
   },
 ];
 
@@ -87,7 +71,7 @@ export default function TeamPage() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {TEAM.map((member) => (
             <div
-              key={member.name}
+              key={member.translationKey}
               className="group rounded-3xl bg-card border border-border overflow-hidden shadow-elegant hover:shadow-lg transition-shadow"
             >
               <div className="p-6 pt-8">
@@ -98,30 +82,23 @@ export default function TeamPage() {
                 />
 
                 <h3 className="font-display text-xl font-bold text-center mt-4">
-                  {member.name}
+                  {t(`team.${member.translationKey}.name`)}
                 </h3>
                 <p className="text-sm text-accent font-medium mt-1 text-center">
-                  {member.role}
+                  {t(`team.${member.translationKey}.role`)}
                 </p>
                 <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
-                  {member.description}
+                  {t(`team.${member.translationKey}.description`)}
                 </p>
 
-                <div className="flex items-center gap-3 mt-5 pt-4 border-t border-border">
-                  <a
-                    href={`mailto:${member.email}`}
-                    className="w-9 h-9 rounded-full bg-accent/10 grid place-items-center text-accent hover:bg-accent hover:text-accent-foreground transition"
-                    aria-label={`Email ${member.name}`}
-                  >
-                    <Mail className="w-4 h-4" />
-                  </a>
+                <div className="flex items-center gap-3 mt-5 pt-4 border-t border-border min-h-5">
                   {member.linkedin && (
                     <a
                       href={member.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-9 h-9 rounded-full bg-accent/10 grid place-items-center text-accent hover:bg-accent hover:text-accent-foreground transition"
-                      aria-label={`${member.name} on LinkedIn`}
+                      aria-label={`${t(`team.${member.translationKey}.name`)} on LinkedIn`}
                     >
                       <svg
                         className="w-4 h-4"
