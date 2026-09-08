@@ -523,13 +523,21 @@ function ContactSection() {
             <MessageCircle className="w-4 h-4" /> {whatsapp}
           </a>
 
-          <div className="mt-8 rounded-2xl overflow-hidden border border-white/20 h-56">
+          <div className="mt-8 rounded-2xl overflow-hidden border border-white/20">
             <iframe
               title="Map of Jemo Africa Building"
               src="https://www.openstreetmap.org/export/embed.html?bbox=38.6704%2C8.9171%2C38.7704%2C9.0171&layer=mapnik&marker=8.9671%2C38.7204"
-              className="w-full h-full grayscale-20"
+              className="w-full h-56 grayscale-20"
               loading="lazy"
             />
+            <a
+              href="https://www.openstreetmap.org/way/711723419#map=19/8.967076/38.720398"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 py-3 text-sm font-medium text-white/80 hover:text-white hover:bg-white/10 transition"
+            >
+              <MapPin className="w-4 h-4" /> Get Directions
+            </a>
           </div>
         </div>
 

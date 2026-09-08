@@ -1,8 +1,8 @@
 import { Layout, PageHero } from "@/components/site/Layout";
 import { useTranslation } from "react-i18next";
 import { Mail } from "lucide-react";
-import bekureImg from "@/assets/bekure.jpg";
-import roseImg from "@/assets/rose.jpg";
+import bekurePhoto from "@/assets/bekure.jpg";
+import rosePhoto from "@/assets/rose.jpg";
 
 interface TeamMember {
   name: string;
@@ -10,45 +10,61 @@ interface TeamMember {
   description: string;
   initials: string;
   color: string;
-  email?: string;
-  image?: string;
+  photo?: string;
+  email: string;
   linkedin?: string;
-  instagram?: string;
 }
 
-const TEAM_KEYS = ["bekure", "rose", "member3"] as const;  const TEAM_META: Record<string, { initials: string; color: string; image?: string; linkedin?: string; instagram?: string; telegram?: string }> = {
-  bekure: {
+const TEAM: TeamMember[] = [
+  {
+    name: "Bekure Yimam",
+    role: "Founder & Managing Director",
+    description:
+      "With over 15 years in the Ethiopian coffee industry, Bekure leads BCS Coffee's mission to connect优质 origins with global markets. His deep relationships with farmers and exporters ensure every lot meets international standards.",
     initials: "BY",
     color: "bg-primary",
-    image: bekureImg,
+    photo: bekurePhoto,
+    email: "bekure@bcscoffee.et",
     linkedin: "https://www.linkedin.com/in/bekure-yimam-1a484525a",
-    instagram: "https://www.instagram.com/bekureyimam",
   },
-  rose: {
+  {
+    name: "Rose",
+    role: "Coffee Quality Specialist",
+    description:
+      "Our quality specialist brings Q-grader expertise and rigorous cupping protocols to every evaluation. They ensure that each shipment meets the precise flavor profiles our international clients expect.",
     initials: "RO",
     color: "bg-accent",
-    image: roseImg,
+    photo: rosePhoto,
+    email: "rose@bcscoffee.et",
   },
-  member3: {
+  {
+    name: "Team Member",
+    role: "Export & Logistics Coordinator",
+    description:
+      "Managing the complex journey from Ethiopian washing stations to global ports, our logistics coordinator handles ECX certifications, ICO markings, FOB arrangements, and every detail in between.",
     initials: "TM",
     color: "bg-coffee",
+    email: "team@bcscoffee.et",
   },
-};
+];
 
 function AvatarPlaceholder({
   initials,
   color,
-  image,
+  photo,
 }: {
   initials: string;
   color: string;
-  image?: string;
+  photo?: string;
 }) {
   return (
-    <div className={`w-24 h-24 mx-auto rounded-full ${color} flex items-center justify-center overflow-hidden ring-4 ring-background shadow-lg`}>      {image ? (
-        <img src={image} alt="Profile photo" className="w-full h-full object-cover" />
+    <div
+      className={`w-28 h-28 mx-auto rounded-full ${color} flex items-center justify-center overflow-hidden ring-4 ring-background shadow-lg`}
+    >
+      {photo ? (
+        <img src={photo} alt="" className="w-full h-full object-cover" />
       ) : (
-        <span className="text-white/90 font-display text-2xl font-bold select-none">
+        <span className="text-white/90 font-display text-3xl font-bold select-none">
           {initials}
         </span>
       )}
@@ -69,40 +85,43 @@ export default function TeamPage() {
 
       <section className="py-24 container-x">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {TEAM_KEYS.map((key) => {
-            const meta = TEAM_META[key];
-            const name = t(`team.${key}.name`);
-            const role = t(`team.${key}.role`);
-            const description = t(`team.${key}.description`);
-            return (
-              <div
-                key={key}
-                className="group rounded-3xl bg-card border border-border overflow-hidden shadow-elegant hover:shadow-lg transition-shadow"
-              >
-                <div className="p-6 pt-8">
-                  <AvatarPlaceholder
-                    initials={meta.initials}
-                    color={meta.color}
-                    image={meta.image}
-                  />
-                  <h3 className="font-display text-xl font-bold text-center mt-4">
-                    {name}
-                  </h3>
-                  <p className="text-sm text-accent font-medium mt-1 text-center">
-                    {role}
-                  </p>
-                  <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
-                    {description}
-                  </p>
+          {TEAM.map((member) => (
+            <div
+              key={member.name}
+              className="group rounded-3xl bg-card border border-border overflow-hidden shadow-elegant hover:shadow-lg transition-shadow"
+            >
+              <div className="p-6 pt-8">
+                <AvatarPlaceholder
+                  initials={member.initials}
+                  color={member.color}
+                  photo={member.photo}
+                />
 
-                  <div className="flex items-center gap-3 mt-5 pt-4 border-t border-border">
-                  {meta.linkedin && (
+                <h3 className="font-display text-xl font-bold text-center mt-4">
+                  {member.name}
+                </h3>
+                <p className="text-sm text-accent font-medium mt-1 text-center">
+                  {member.role}
+                </p>
+                <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
+                  {member.description}
+                </p>
+
+                <div className="flex items-center gap-3 mt-5 pt-4 border-t border-border">
+                  <a
+                    href={`mailto:${member.email}`}
+                    className="w-9 h-9 rounded-full bg-accent/10 grid place-items-center text-accent hover:bg-accent hover:text-accent-foreground transition"
+                    aria-label={`Email ${member.name}`}
+                  >
+                    <Mail className="w-4 h-4" />
+                  </a>
+                  {member.linkedin && (
                     <a
-                      href={meta.linkedin}
+                      href={member.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-9 h-9 rounded-full bg-accent/10 grid place-items-center text-accent hover:bg-accent hover:text-accent-foreground transition"
-                      aria-label={`${name} on LinkedIn`}
+                      aria-label={`${member.name} on LinkedIn`}
                     >
                       <svg
                         className="w-4 h-4"
@@ -113,29 +132,10 @@ export default function TeamPage() {
                       </svg>
                     </a>
                   )}
-                  {meta.instagram && (
-                    <a
-                      href={meta.instagram}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-9 h-9 rounded-full bg-accent/10 grid place-items-center text-accent hover:bg-accent hover:text-accent-foreground transition"
-                      aria-label={`${name} on Instagram`}
-                    >
-                      <svg
-                        className="w-4 h-4"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
-                      </svg>
-                    </a>
-                  )}
-
                 </div>
               </div>
             </div>
-            );
-          })}
+          ))}
         </div>
       </section>
     </Layout>
