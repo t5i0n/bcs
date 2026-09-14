@@ -51,8 +51,7 @@ export function requireAdmin(req: Request, res: Response, next: NextFunction) {
 
 /** Helper: sign a JWT for an admin user */
 export function signToken(payload: AuthPayload): string {
-  const expiresIn = (process.env.JWT_EXPIRES_IN || "7d") as string & { __brand: "StringValue" };
-  return jwt.sign(payload, SECRET, {
-    expiresIn,
-  });
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const options: any = { expiresIn: process.env.JWT_EXPIRES_IN || "7d" };
+  return jwt.sign(payload, SECRET, options);
 }
