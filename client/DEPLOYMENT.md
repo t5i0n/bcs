@@ -1,142 +1,189 @@
-# Deployment Guide
+# Deployment Guide — BCS Coffee Market Consulting
 
 ## Prerequisites
 
-- Node.js 18+ (recommended: 20+)
-- npm 9+
-- A domain name (assumed: `bcscoffeemarket.com`)
-- Sentry account (optional, for error monitoring)
+- **Node.js 20+** (required — ES modules and Express 5 need modern Node)
+- **npm 9+**
+- **Domain name:** `bcscoffeemarket.com`
+- Sentry account (optional — error monitoring)
 - Google Analytics account (optional)
+
+---
+
+## Architecture
+
+```
+                    ┌─────────────────────┐
+  Browser  ───────► │   Nginx / Apache     │
+                    │   (reverse proxy)    │
+                    └──────┬──────┬───────┘
+                           │      │
+              Static files │      │ /api proxy
+              (dist/)      │      │
+                           ▼      ▼
+                    ┌──────────┐ ┌──────────────┐
+                    │ Frontend │ │   Backend    │
+                    │ (React)  │ │ (Express)    │
+                    │  :443    │ │  :3001       │
+                    └──────────┘ └──────┬───────┘
+                                        │
+                                        ▼
+                                 ┌──────────────┐
+                                 │   SQLite DB   │
+                                 │  (dev.db)     │
+                                 └──────────────┘
+```
+
+- **Frontend:** React SPA served as static files from `client/dist/`
+- **Backend:** Express API running on port 3001, proxied through Nginx at `/api`
+- **Database:** SQLite (single file, fine for initial deployment)
 
 ---
 
 ## Environment Variables
 
-### Frontend (`VITE_*` variables)
+### Frontend (`client/.env`)
 
-Create a `.env` file in the project root:
-
-```env
-# Backend API URL (must include /api)
-VITE_API_URL=https://api.bcscoffeemarket.com/api
-
-# Google Analytics (optional — leave empty to disable)
-VITE_GA_MEASUREMENT_ID=G-XXXXXXXXXX
-
-# Sentry DSN (optional — leave empty to disable)
-VITE_SENTRY_DSN=https://xxxx@sentry.io/xxxx
-```
+| Variable | Required | Description |
+|----------|----------|-------------|
+| `VITE_API_URL` | Yes | Backend base URL **without** `/api` (e.g. `https://bcscoffeemarket.com`) |
+| `VITE_GA_MEASUREMENT_ID` | No | Google Analytics 4 measurement ID |
+| `VITE_SENTRY_DSN` | No | Sentry DSN for frontend error tracking |
 
 ### Backend (`server/.env`)
 
-```env
-# Database (SQLite for dev, switch to PostgreSQL for production)
-DATABASE_URL="file:./dev.db"
-
-# JWT authentication
-JWT_SECRET="your-strong-random-secret-here"
-JWT_EXPIRES_IN="7d"
-
-# Server port
-PORT=3001
-
-# CORS (must match your frontend domain)
-CORS_ORIGIN="https://bcscoffeemarket.com"
-
-# Sentry (optional)
-SENTRY_DSN="https://xxxx@sentry.io/xxxx"
-```
+| Variable | Required | Description |
+|----------|----------|-------------|
+| `DATABASE_URL` | Yes | SQLite path: `file:./dev.db` |
+| `JWT_SECRET` | Yes | Random secret — **server refuses to start without it in production** |
+| `JWT_EXPIRES_IN` | Yes | Token expiry (e.g. `7d`) |
+| `PORT` | Yes | Server port (e.g. `3001`) |
+| `NODE_ENV` | Yes | Set to `production` on the server |
+| `CORS_ORIGIN` | Yes | Comma-separated allowed origins (e.g. `https://bcscoffeemarket.com`) |
+| `SENTRY_DSN` | No | Sentry DSN for backend error tracking |
+| `LOG_LEVEL` | No | `debug`, `info`, `warn`, or `error` (default: `info`) |
 
 ---
 
-## Setup Steps
+## Step-by-Step Deployment
 
-### 1. Install dependencies
+### 1. Install Node.js 20+
 
 ```bash
-# Frontend
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+sudo apt-get install -y nodejs
+node --version  # Should show v20.x or higher
+```
+
+### 2. Install PM2 (process manager)
+
+```bash
+sudo npm install -g pm2
+```
+
+### 3. Upload / clone the project
+
+```bash
+cd /var/www
+git clone <your-repo-url> bcscoffee
+cd bcscoffee
+```
+
+### 4. Set up the frontend
+
+```bash
+cd client
+
+# Create production .env
+cat > .env << 'EOF'
+VITE_API_URL=https://bcscoffeemarket.com
+VITE_GA_MEASUREMENT_ID=
+VITE_SENTRY_DSN=
+EOF
+
+# Install and build
+npm install
+npm run build
+```
+
+The build output goes to `client/dist/`.
+
+### 5. Set up the backend
+
+```bash
+cd ../server
+
+# Create production .env
+JWT_SECRET=$(openssl rand -hex 32)
+cat > .env << EOF
+DATABASE_URL="file:./dev.db"
+JWT_SECRET="${JWT_SECRET}"
+JWT_EXPIRES_IN="7d"
+PORT=3001
+NODE_ENV=production
+CORS_ORIGIN="https://bcscoffeemarket.com"
+SENTRY_DSN=
+LOG_LEVEL=info
+EOF
+
+# Install dependencies (production only)
 npm install
 
-# Backend
-cd server && npm install
-```
-
-### 2. Set up the database
-
-```bash
-cd server
+# Generate Prisma Client (must run on the target server)
 npx prisma generate
+
+# Push the database schema
 npx prisma db push
+
+# Seed the database (safe to run multiple times)
 npm run db:seed
+
+# Seed CMS content
+npx tsx src/seed-content.ts
 ```
 
-### 3. Create admin account
-
-The seed script creates a default admin:
-- **Email:** admin@bcscoffeemarket.com
-- **Password:** admin123
-
-**Change the password immediately after first login.**
-
-### 4. Start development servers
+### 6. Build and start the backend
 
 ```bash
-# Terminal 1 — Frontend
-npm run dev
+# Compile TypeScript
+npx tsc
 
-# Terminal 2 — Backend
-cd server && npm run dev
-```
-
-### 5. Build for production
-
-```bash
-# Frontend
-npm run build
-
-# Backend (compiles TypeScript)
-cd server && npx tsc
-```
-
----
-
-## Production Deployment
-
-### Frontend
-
-Upload the `dist/` folder to your hosting provider (Vercel, Netlify, Nginx, etc.).
-
-**SPA routing:** Ensure all routes fall back to `index.html` (client-side routing).
-
-### Backend
-
-Run the compiled server with Node.js:
-
-```bash
-cd server
+# Test that it starts
 node dist/index.js
-```
+# Press Ctrl+C after confirming it starts
 
-Use a process manager like PM2:
-
-```bash
+# Start with PM2
 pm2 start dist/index.js --name bcs-api
+pm2 save
+pm2 startup  # Follow the instructions it prints
 ```
 
-### Reverse Proxy (Nginx example)
+### 7. Configure Nginx
 
 ```nginx
+server {
+    listen 80;
+    server_name bcscoffeemarket.com www.bcscoffeemarket.com;
+    return 301 https://bcscoffeemarket.com$request_uri;
+}
+
 server {
     listen 443 ssl http2;
     server_name bcscoffeemarket.com;
 
-    # Frontend
+    # SSL (use Certbot — see step 8)
+    ssl_certificate     /etc/letsencrypt/live/bcscoffeemarket.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/bcscoffeeterms.com/privkey.pem;
+
+    # Frontend — serve the React SPA
+    root /var/www/bcscoffee/client/dist;
+    index index.html;
+
     location / {
-        root /var/www/bcscoffee/dist;
         try_files $uri $uri/ /index.html;
     }
 
-    # API proxy
+    # Backend API — proxy to Express
     location /api {
         proxy_pass http://127.0.0.1:3001;
         proxy_set_header Host $host;
@@ -144,54 +191,84 @@ server {
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header X-Forwarded-Proto $scheme;
     }
+
+    # Security headers
+    add_header X-Frame-Options "SAMEORIGIN" always;
+    add_header X-Content-Type-Options "nosniff" always;
+
+    # Gzip compression
+    gzip on;
+    gzip_types text/plain text/css application/json application/javascript text/xml;
 }
 ```
 
----
+```bash
+sudo nginx -t          # Test the config
+sudo systemctl restart nginx
+```
 
-## Google Search Console
+### 8. Set up SSL with Certbot
 
-1. Go to [Google Search Console](https://search.google.com/search-console)
-2. Add property for `https://bcscoffeemarket.com`
-3. Verify via DNS TXT record or HTML meta tag
-4. Submit the sitemap: `https://bcscoffeemarket.com/sitemap.xml`
+```bash
+sudo apt install -y certbot python3-certbot-nginx
+sudo certbot --nginx -d bcscoffeemarket.com -d www.bcscoffeemarket.com
+```
 
----
+### 9. Point your domain DNS
 
-## Google Analytics
+At your domain registrar, create:
 
-1. Create a GA4 property at [analytics.google.com](https://analytics.google.com)
-2. Copy your Measurement ID (format: `G-XXXXXXXXXX`)
-3. Add it to `.env` as `VITE_GA_MEASUREMENT_ID`
-4. Rebuild and deploy
-
-Analytics only loads after the user accepts cookies (cookie consent banner).
-
----
-
-## Error Monitoring (Sentry)
-
-1. Create a project at [sentry.io](https://sentry.io)
-2. Copy the DSN for both frontend and backend
-3. Add to `.env` files (see above)
-4. Errors are only reported if the user has accepted analytics cookies
+| Type | Name | Value |
+|------|------|-------|
+| A | @ | Your server IP |
+| A | www | Your server IP |
 
 ---
 
 ## Post-Deployment Checklist
 
-- [ ] Change default admin password
-- [ ] Set real social media links in Footer
-- [ ] Configure Web3Forms or upgrade contact form
-- [ ] Verify domain in Google Search Console
-- [ ] Submit sitemap
-- [ ] Test all routes work with SPA fallback
-- [ ] Verify HTTPS is active
-- [ ] Test cookie consent banner
+- [ ] Change the default admin password (login at `/admin`)
+- [ ] Set real social media links in admin Settings
+- [ ] Verify `https://bcscoffeemarket.com` loads correctly
+- [ ] Verify `https://bcscoffeemarket.com/admin` login works
+- [ ] Test the contact form submission
+- [ ] Test all public routes: `/about`, `/services`, `/origins`, `/field`, `/contact`, `/team`
 - [ ] Verify dark mode persistence
 - [ ] Test all 4 language translations
 - [ ] Test Arabic RTL layout
-- [ ] Verify contact form submissions reach admin
-- [ ] Check admin dashboard login works
-- [ ] Verify Sentry error monitoring (if configured)
-- [ ] Verify Google Analytics (if configured)
+- [ ] Verify HTTPS is active and auto-renews
+- [ ] Submit sitemap to Google Search Console
+
+---
+
+## Useful Commands
+
+```bash
+# Check backend status
+pm2 status
+pm2 logs bcs-api
+
+# Restart backend
+pm2 restart bcs-api
+
+# View backend logs
+pm2 logs bcs-api --lines 50
+
+# Rebuild frontend after changes
+cd client && npm run build
+
+# Rebuild backend after changes
+cd server && npx tsc && pm2 restart bcs-api
+
+# Check database
+cd server && npx prisma studio
+```
+
+---
+
+## Limitations / Notes
+
+- **SQLite** is single-file and single-writer. Fine for initial deployment. If traffic grows, switch to PostgreSQL.
+- **Rate limiting** is in-memory (resets on server restart). Fine for a single server.
+- **Video files** in `client/public/` are ~1.2 GB total. These get included in the frontend build. Consider moving them to external hosting (YouTube, Vimeo, or a CDN) to reduce build size and improve load times.
+- **No file upload routes** currently exist, but `multer` is installed. If uploads are added later, ensure the server filesystem is writable.

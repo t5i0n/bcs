@@ -25,7 +25,6 @@ if (process.env.SENTRY_DSN) {
     environment: process.env.NODE_ENV || "development",
     tracesSampleRate: process.env.NODE_ENV === "production" ? 0.1 : 1.0,
   });
-  app.use(Sentry.Handlers.requestHandler());
   logger.info("Sentry error monitoring initialized");
 }
 
@@ -70,7 +69,7 @@ app.use((_req, res) => {
 
 // ─── Error Handler ─────────────────────────────────────────────
 if (process.env.SENTRY_DSN) {
-  app.use(Sentry.Handlers.errorHandler());
+  Sentry.setupExpressErrorHandler(app);
 }
 app.use((err: Error, _req: express.Request, res: express.Response, _next: express.NextFunction) => {
   logger.error("Unhandled error", { message: err.message, stack: err.stack });
