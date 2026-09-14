@@ -40,8 +40,9 @@
   "about": {
     "eyebrow": "关于BCS",
     "title": "您值得信赖的埃塞俄比亚咖啡合作伙伴",
-    "description1": "BCS咖啡市场咨询将全球最挑剔的买家与埃塞俄比亚最优质的认证出口商和生产商连接起来。从耶加雪菲的单品微批次到西达玛的商业级集装箱，我们在每一步为您提供清晰度、诚信和品质。",
-    "description2": "成立于亚的斯亚贝巴，我们的团队融合了深厚的文化专业知识和国际贸易经验，让您在每个收获季节都能自信采购。",
+    "description1": "在BCS Coffee Marketing & Consulting，我们专注于将全球市场与埃塞俄比亚最优质的阿拉比卡咖啡产区连接起来，包括耶加雪菲、西达玛、古吉、利姆、吉马、特皮贝贝卡和内克姆特。凭借深厚的本地知识和对卓越品质的热情，我们是生产商与全球买家之间的重要纽带。",
+    "description2": "我们的使命是简化咖啡贸易，确保时间、质量、数量和价格符合买卖双方的期望。秉持透明、一致和市场洞察的承诺，我们帮助客户获得优质咖啡，同时支持埃塞俄比亚生产商的可持续发展。",
+    "description3": "在BCS，我们不仅是服务提供商，更是您的信赖伙伴。与我们合作不仅是完成一笔交易，更是与一支致力于成为您在埃塞俄比亚咖啡行业中最可靠、最具战略价值盟友的团队建立长期伙伴关系。",
     "timeline": {
       "2009": {
         "title": "成立于亚的斯亚贝巴",
@@ -79,7 +80,7 @@
     "pageTitle": "端到端咖啡贸易服务",
     "pageSubtitle": "六项核心服务，从采购策略到仓库门口的集装箱。",
     "ctaTitle": "准备开始采购？",
-    "ctaSubtitle": "预约与我们团队进行免费30分钟咨询。",
+    "ctaSubtitle": "预约与我们团队进行免费咨询。",
     "items": {
       "exportConsulting": {
         "title": "咖啡出口咨询",
@@ -104,6 +105,10 @@
       "priceNegotiation": {
         "title": "价格谈判",
         "desc": "直接产地定价，完全透明——无隐藏利润或回扣。"
+      },
+      "certificateConsulting": {
+        "title": "咖啡认证咨询",
+        "desc": "有机、公平贸易、雨林联盟和EUDR合规认证的专业指导。"
       }
     }
   },
@@ -146,13 +151,22 @@
     "followWork": "跟随我们的足迹，从埃塞俄比亚的咖啡种植社区到每个批次准备出口的处理站。",
     "fieldVideos": "产地视频",
     "watchSpace": "关注此页面，了解产地故事。",
-    "shareVideos": "我们将分享农场访问、收获和咖啡加工过程的短视频。",
+    "shareVideos": "通过沿途拍摄的短视频，探索我们的农场参观、收获和咖啡加工过程。",
+    "videoMoments": {
+      "coffeeLandscape": "咖啡种植园风光",
+      "coffeeHarvest": "咖啡收获",
+      "handpickedCherries": "手工采摘的咖啡果"
+    },
     "videosComingSoon": "视频即将推出",
     "moments": {
       "atFarm": "在农场",
       "harvestSeason": "收获季节",
       "washingStations": "水洗站",
       "dryingCoffee": "咖啡干燥",
+      "dryingWashedCoffee": "干燥洗好的咖啡",
+      "sortingCoffeeCherries": "咖啡樱桃分拣",
+      "takingCoffeeForSorting": "运送咖啡进行分拣",
+      "washingCoffee": "咖啡清洗",
       "qualityLot": "每个批次的品质",
       "coffeeCulture": "咖啡文化"
     }
@@ -194,6 +208,9 @@
     "fromTheField": "产地实况",
     "contactTitle": "联系我们",
     "copyright": "版权所有。",
+    "companyName": "BCS 咖啡市场咨询",
+    "creditPrefix": "由",
+    "creditSuffix": "设计与开发",
     "origin": "产地：埃塞俄比亚 · 服务40多个国家"
   },
   "team": {
@@ -202,18 +219,23 @@
     "subtitle": "致力于将埃塞俄比亚咖啡精华与世界连接的热情专业人士。",
     "bekure": {
       "name": "Bekure Yimam",
-      "role": "创始人兼总经理",
-      "description": "在埃塞俄比亚咖啡行业拥有超过15年经验，Bekure领导BCS Coffee将优质产地与全球市场连接的使命。"
+      "role": "BCS Coffee & Consulting 所有者兼常务董事",
+      "description": "BCS Coffee & Consulting 的所有者。监督公司的整体管理和运营。负责咖啡咨询、商业战略、市场营销、财务咨询、IFRS咨询以及进出口咨询。监督员工并与客户、供应商和业务伙伴协调。"
     },
     "rose": {
       "name": "Rose Ahmed",
-      "role": "咖啡质量专家",
-      "description": "我们的质量专家带来Q级品鉴师专业知识和严格的杯测规程，确保每批货物都达到国际客户期望的精确风味特征。"
+      "role": "咖啡文件管理员",
+      "description": "处理咖啡相关文件和记录。准备咖啡样品和国际运输的文件。支持出口文件并维护咖啡相关记录。"
     },
     "member3": {
-      "name": "团队成员",
-      "role": "出口与物流协调员",
-      "description": "管理从埃塞俄比亚水洗站到全球港口的复杂旅程，我们的物流协调员处理ECX认证、ICO标记、FOB安排和每一个细节。"
+      "name": "Ferehiwot Dires",
+      "role": "财务主管",
+      "description": "处理公司的财务活动和记录。管理财务交易、费用、付款和收据。维护财务文件并支持会计和预算。"
+    },
+    "member4": {
+      "name": "Zehara Bedru",
+      "role": "咖啡样品处理与办公室支持专员",
+      "description": "处理、过滤、分类和准备咖啡样品以供评估。去除有缺陷/不需要的材料并准备适合评估的咖啡豆。将咖啡样品打包提交给评估部门。处理电脑-based、行政和经理分配的其他任务。"
     }
   },
   "notFound": {
@@ -244,15 +266,8 @@
     "seeLifeAtOrigin": "了解产地生活"
   },
   "testimonials": {
-    "eyebrow": "客户评价",
-    "title": "烘焙商、买家和进口商的信赖之选",
-    "subtitle": "来自通过我们认证的埃塞俄比亚网络采购咖啡的真实合作伙伴故事。",
-    "verifiedClient": "认证客户",
-    "quote1": "BCS帮助我们找到了完全符合需求的耶加雪菲咖啡。",
-    "name1": "Nora，欧洲烘焙商",
-    "quote2": "认证和物流支持为我们节省了数周时间。",
-    "name2": "Marco，精品买家",
-    "quote3": "他们的市场知识让我们的首次埃塞俄比亚采购变得轻松。",
-    "name3": "Leila，咖啡进口商"
+    "eyebrow": "我们的合作伙伴",
+    "title": "烘焙商、出口商和我们代理及合作公司的信赖之选",
+    "subtitle": ""
   }
 }

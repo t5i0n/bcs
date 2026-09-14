@@ -8,8 +8,19 @@ import { SERVICES } from "@/data/services";
 import { EthiopianCoffeeMap } from "@/components/site/EthiopianCoffeeMap";
 import { useSiteContent } from "@/hooks/useSiteContent";
 import heroFarm from "@/assets/hero-farm.jpg";
-import farmers from "@/assets/farmers.jpg";
+import teamPhoto from "@/assets/team.jpg";
 import cherries from "@/assets/cherries.jpg";
+import hajiLogo from "@/assets/haji-abatu-logo.png";
+import kkgtLogo from "@/assets/kkgt-logo.png";
+import zelalemLogo from "@/assets/zelalem-logo.png";
+import gujiLogo from "@/assets/guji-logo.jpg";
+import bukuAbalLogo from "@/assets/buku-abal-logo.png";
+import birbsaLogo from "@/assets/birbsa-logo.png";
+import meOlyadLogo from "@/assets/me-olyad-logo.png";
+import birhanLogo from "@/assets/birhan-logo.png";
+import emulkeyerLogo from "@/assets/emulkeyer-logo.png";
+import edemealemLogo from "@/assets/edemealem-logo.svg";
+import sakichaLogo from "@/assets/Sakicha Trading PLC.png";
 import { StackedCardCarousel } from "@/components/site/StackedCardCarousel";
 import {
   ArrowRight,
@@ -17,7 +28,6 @@ import {
   MapPin,
   Star,
   Sparkles,
-  MessageSquare,
   Phone,
   Mail,
   MessageCircle,
@@ -39,27 +49,53 @@ export default function HomePage() {
 
 function Hero() {
   const { t } = useTranslation();
-  const { getContent } = useSiteContent('home');
+  const { getContent } = useSiteContent("home");
 
   // CMS keys map to i18n fallbacks
-  const eyebrow = getContent('home.hero.badge', 'hero.eyebrow') || t('hero.eyebrow');
-  const heroTitle = t('hero.title', { returnObjects: true });
-  const title1 = getContent('home.hero.title1', '', Array.isArray(heroTitle) ? heroTitle[0] : heroTitle);
-  const title2 = getContent('home.hero.title2', '', Array.isArray(heroTitle) ? heroTitle[1] : '');
-  const description = getContent('home.hero.description', 'hero.subtitle') || t('hero.subtitle');
-  const cta1 = getContent('home.hero.cta1', 'hero.exploreCoffee') || t('hero.exploreCoffee');
-  const cta2 = getContent('home.hero.cta2', 'common.requestConsultation') || t('common.requestConsultation');
+  const heroTitle = t("hero.title", { returnObjects: true });
+  const title1 = getContent(
+    "home.hero.title1",
+    "",
+    Array.isArray(heroTitle) ? heroTitle[0] : heroTitle,
+  );
+  const title2 = getContent(
+    "home.hero.title2",
+    "",
+    Array.isArray(heroTitle) ? heroTitle[1] : "",
+  );
+  const description =
+    getContent("home.hero.description", "hero.subtitle") || t("hero.subtitle");
+  const cta1 =
+    getContent("home.hero.cta1", "hero.exploreCoffee") ||
+    t("hero.exploreCoffee");
+  const cta2 =
+    getContent("home.hero.cta2", "common.requestConsultation") ||
+    t("common.requestConsultation");
 
   const stats = [
-    { v: getContent('home.stats.years', '', '15+'), l: t('common.yearsExperience') },
-    { v: getContent('home.stats.exporters', '', '100+'), l: t('common.verifiedExporters') },
-    { v: getContent('home.stats.countries', '', '40+'), l: t('common.countriesServed') },
-    { v: getContent('home.stats.trade', '', '$50M+'), l: t('common.tradeFacilitated') },
+    {
+      v: getContent("home.stats.years", "", "15+"),
+      l: t("common.yearsExperience"),
+    },
+    {
+      v: getContent("home.stats.exporters", "", "100+"),
+      l: t("common.verifiedExporters"),
+    },
+    {
+      v: getContent("home.stats.countries", "", "40+"),
+      l: t("common.countriesServed"),
+    },
+    {
+      v: getContent("home.stats.trade", "", "$50M+"),
+      l: t("common.tradeFacilitated"),
+    },
   ];
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
-      <div className="absolute inset-0">          <img
+      <div className="absolute inset-0">
+        {" "}
+        <img
           src={heroFarm}
           alt="Ethiopian coffee farm at sunrise"
           width={1920}
@@ -74,11 +110,14 @@ function Hero() {
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
           {/* Left: Text */}
           <div className="flex-1 max-w-3xl">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur border border-white/20 text-xs uppercase tracking-[0.2em]">
-              <span className="w-1.5 h-1.5 bg-accent rounded-full" /> {eyebrow}
-            </span>
             <h1 className="mt-6 font-display text-5xl md:text-7xl font-bold leading-[1.05] text-balance">
-              <span>{title1}</span>{title2 && <><br /><span className="text-accent italic">{title2}</span></>}
+              <span>{title1}</span>
+              {title2 && (
+                <>
+                  <br />
+                  <span className="text-accent italic">{title2}</span>
+                </>
+              )}
             </h1>
             <p className="mt-6 max-w-2xl text-lg md:text-xl text-white/85 leading-relaxed text-balance">
               {description}
@@ -145,17 +184,48 @@ function SectionEyebrow({
 
 function AboutSection() {
   const { t } = useTranslation();
-  const { getContent } = useSiteContent('home');
+  const { getContent } = useSiteContent("home");
 
-  const eyebrow = getContent('home.about.badge', 'about.eyebrow') || t('about.eyebrow');
-  const title = getContent('home.about.title', 'about.title') || t('about.title');
-  const description1 = getContent('home.about.description', 'about.description1') || t('about.description1');
-  const description2 = getContent('home.about.mission', 'about.description2') || t('about.description2');
+  const eyebrow =
+    getContent("home.about.badge", "about.eyebrow") || t("about.eyebrow");
+  const title =
+    getContent("home.about.title", "about.title") || t("about.title");
+  const description1 =
+    getContent("home.about.description", "about.description1") ||
+    t("about.description1");
+  const description2 =
+    getContent("home.about.mission", "about.description2") ||
+    t("about.description2");
+  const description3 = t("about.description3");
   const timeline = [
-    { year: '2009', titleKey: 'home.timeline.2009.title', descKey: 'home.timeline.2009.description', i18nTitle: 'about.timeline.2009.title', i18nDesc: 'about.timeline.2009.desc' },
-    { year: '2014', titleKey: 'home.timeline.2014.title', descKey: 'home.timeline.2014.description', i18nTitle: 'about.timeline.2014.title', i18nDesc: 'about.timeline.2014.desc' },
-    { year: '2019', titleKey: 'home.timeline.2019.title', descKey: 'home.timeline.2019.description', i18nTitle: 'about.timeline.2019.title', i18nDesc: 'about.timeline.2019.desc' },
-    { year: '2024', titleKey: 'home.timeline.2024.title', descKey: 'home.timeline.2024.description', i18nTitle: 'about.timeline.2024.title', i18nDesc: 'about.timeline.2024.desc' },
+    {
+      year: "2009",
+      titleKey: "home.timeline.2009.title",
+      descKey: "home.timeline.2009.description",
+      i18nTitle: "about.timeline.2009.title",
+      i18nDesc: "about.timeline.2009.desc",
+    },
+    {
+      year: "2014",
+      titleKey: "home.timeline.2014.title",
+      descKey: "home.timeline.2014.description",
+      i18nTitle: "about.timeline.2014.title",
+      i18nDesc: "about.timeline.2014.desc",
+    },
+    {
+      year: "2019",
+      titleKey: "home.timeline.2019.title",
+      descKey: "home.timeline.2019.description",
+      i18nTitle: "about.timeline.2019.title",
+      i18nDesc: "about.timeline.2019.desc",
+    },
+    {
+      year: "2024",
+      titleKey: "home.timeline.2024.title",
+      descKey: "home.timeline.2024.description",
+      i18nTitle: "about.timeline.2024.title",
+      i18nDesc: "about.timeline.2024.desc",
+    },
   ];
 
   return (
@@ -164,8 +234,8 @@ function AboutSection() {
         <div className="relative">
           <div className="relative rounded-3xl overflow-hidden shadow-elegant">
             <img
-              src={farmers}
-              alt="Ethiopian coffee farmers"
+              src={teamPhoto}
+              alt="BCS team"
               width={1280}
               height={1280}
               loading="lazy"
@@ -201,6 +271,9 @@ function AboutSection() {
           <p className="mt-4 text-muted-foreground leading-relaxed">
             {description2}
           </p>
+          <p className="mt-4 text-muted-foreground leading-relaxed">
+            {description3}
+          </p>
 
           <div className="mt-10 space-y-6">
             {timeline.map((m, i) => (
@@ -215,7 +288,9 @@ function AboutSection() {
                   <h4 className="font-display text-lg font-semibold">
                     {getContent(m.titleKey, m.i18nTitle) || t(m.i18nTitle)}
                   </h4>
-                  <p className="text-sm text-muted-foreground mt-1">{getContent(m.descKey, m.i18nDesc) || t(m.i18nDesc)}</p>
+                  <p className="text-sm text-muted-foreground mt-1">
+                    {getContent(m.descKey, m.i18nDesc) || t(m.i18nDesc)}
+                  </p>
                 </div>
               </div>
             ))}
@@ -228,11 +303,17 @@ function AboutSection() {
 
 function ServicesSection() {
   const { t } = useTranslation();
-  const { getContent } = useSiteContent('home');
+  const { getContent } = useSiteContent("home");
 
-  const eyebrow = getContent('home.services.badge', 'services.eyebrow') || t('services.eyebrow');
-  const title = getContent('home.services.title', 'services.homeTitle') || t('services.homeTitle');
-  const description = getContent('home.services.description', 'services.homeSubtitle') || t('services.homeSubtitle');
+  const eyebrow =
+    getContent("home.services.badge", "services.eyebrow") ||
+    t("services.eyebrow");
+  const title =
+    getContent("home.services.title", "services.homeTitle") ||
+    t("services.homeTitle");
+  const description =
+    getContent("home.services.description", "services.homeSubtitle") ||
+    t("services.homeSubtitle");
 
   return (
     <section id="services" className="py-24 md:py-32 bg-cream">
@@ -242,9 +323,7 @@ function ServicesSection() {
           <h2 className="mt-3 font-display text-4xl md:text-5xl font-bold text-balance">
             {title}
           </h2>
-          <p className="mt-4 text-muted-foreground text-lg">
-            {description}
-          </p>
+          <p className="mt-4 text-muted-foreground text-lg">{description}</p>
         </div>
 
         <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -257,10 +336,16 @@ function ServicesSection() {
                 <s.icon className="w-6 h-6" />
               </div>
               <h3 className="font-display text-xl font-semibold">
-                {getContent(`home.services.${index + 1}.title`, `services.items.${s.key}.title`) || t(`services.items.${s.key}.title`)}
+                {getContent(
+                  `home.services.${index + 1}.title`,
+                  `services.items.${s.key}.title`,
+                ) || t(`services.items.${s.key}.title`)}
               </h3>
               <p className="mt-2.5 text-muted-foreground text-sm leading-relaxed">
-                {getContent(`home.services.${index + 1}.description`, `services.items.${s.key}.desc`) || t(`services.items.${s.key}.desc`)}
+                {getContent(
+                  `home.services.${index + 1}.description`,
+                  `services.items.${s.key}.desc`,
+                ) || t(`services.items.${s.key}.desc`)}
               </p>
               <Link
                 to="/services"
@@ -278,11 +363,16 @@ function ServicesSection() {
 
 function OriginsSection() {
   const { t } = useTranslation();
-  const { getContent } = useSiteContent('home');
+  const { getContent } = useSiteContent("home");
 
-  const eyebrow = getContent('home.origins.badge', 'origins.eyebrow') || t('origins.eyebrow');
-  const title = getContent('home.origins.title', 'origins.homeTitle') || t('origins.homeTitle');
-  const description = getContent('home.origins.description', 'origins.homeSubtitle') || t('origins.homeSubtitle');
+  const eyebrow =
+    getContent("home.origins.badge", "origins.eyebrow") || t("origins.eyebrow");
+  const title =
+    getContent("home.origins.title", "origins.homeTitle") ||
+    t("origins.homeTitle");
+  const description =
+    getContent("home.origins.description", "origins.homeSubtitle") ||
+    t("origins.homeSubtitle");
 
   return (
     <section id="origins" className="py-24 md:py-32 bg-background">
@@ -292,9 +382,7 @@ function OriginsSection() {
           <h2 className="mt-3 font-display text-4xl md:text-5xl font-bold text-balance">
             {title}
           </h2>
-          <p className="mt-4 text-muted-foreground text-lg">
-            {description}
-          </p>
+          <p className="mt-4 text-muted-foreground text-lg">{description}</p>
         </div>
         <div className="mt-14">
           <EthiopianCoffeeMap />
@@ -306,40 +394,52 @@ function OriginsSection() {
 
 function WhyUsSection() {
   const { t } = useTranslation();
-  const { getContent } = useSiteContent('home');
+  const { getContent } = useSiteContent("home");
 
-  const eyebrow = getContent('home.whyUs.badge', 'whyUs.eyebrow') || t('whyUs.eyebrow');
-  const title = getContent('home.whyUs.title', 'whyUs.title') || t('whyUs.title');
-  const description = getContent('home.whyUs.description', 'whyUs.subtitle') || t('whyUs.subtitle');
+  const eyebrow =
+    getContent("home.whyUs.badge", "whyUs.eyebrow") || t("whyUs.eyebrow");
+  const title =
+    getContent("home.whyUs.title", "whyUs.title") || t("whyUs.title");
+  const description =
+    getContent("home.whyUs.description", "whyUs.subtitle") ||
+    t("whyUs.subtitle");
 
   const features = [
     {
       icon: Sparkles,
-      titleKey: 'home.whyUs.1.title',
-      descKey: 'home.whyUs.1.description',
-      i18nTitle: 'whyUs.verifiedQuality',
-      i18nDesc: 'whyUs.verifiedQualityDesc',
+      titleKey: "home.whyUs.1.title",
+      descKey: "home.whyUs.1.description",
+      i18nTitle: "whyUs.verifiedQuality",
+      i18nDesc: "whyUs.verifiedQualityDesc",
     },
     {
       icon: Star,
-      titleKey: 'home.whyUs.2.title',
-      descKey: 'home.whyUs.2.description',
-      i18nTitle: 'whyUs.trustedRelationships',
-      i18nDesc: 'whyUs.trustedRelationshipsDesc',
+      titleKey: "home.whyUs.2.title",
+      descKey: "home.whyUs.2.description",
+      i18nTitle: "whyUs.trustedRelationships",
+      i18nDesc: "whyUs.trustedRelationshipsDesc",
     },
     {
       icon: ShieldCheck,
-      titleKey: 'home.whyUs.3.title',
-      descKey: 'home.whyUs.3.description',
-      i18nTitle: 'whyUs.exportConfidence',
-      i18nDesc: 'whyUs.exportConfidenceDesc',
+      titleKey: "home.whyUs.3.title",
+      descKey: "home.whyUs.3.description",
+      i18nTitle: "whyUs.exportConfidence",
+      i18nDesc: "whyUs.exportConfidenceDesc",
     },
   ];
 
-  const commitmentBadge = getContent('home.whyUs.commitment.badge', 'whyUs.ourCommitment') || t('whyUs.ourCommitment');
-  const commitmentTitle = getContent('home.whyUs.commitment.title', 'whyUs.commitmentTitle') || t('whyUs.commitmentTitle');
-  const commitmentDesc = getContent('home.whyUs.commitment.description', 'whyUs.commitmentDesc') || t('whyUs.commitmentDesc');
-  const commitmentCta = getContent('home.whyUs.commitment.cta', 'whyUs.seeLifeAtOrigin') || t('whyUs.seeLifeAtOrigin');
+  const commitmentBadge =
+    getContent("home.whyUs.commitment.badge", "whyUs.ourCommitment") ||
+    t("whyUs.ourCommitment");
+  const commitmentTitle =
+    getContent("home.whyUs.commitment.title", "whyUs.commitmentTitle") ||
+    t("whyUs.commitmentTitle");
+  const commitmentDesc =
+    getContent("home.whyUs.commitment.description", "whyUs.commitmentDesc") ||
+    t("whyUs.commitmentDesc");
+  const commitmentCta =
+    getContent("home.whyUs.commitment.cta", "whyUs.seeLifeAtOrigin") ||
+    t("whyUs.seeLifeAtOrigin");
 
   return (
     <section className="py-24 md:py-32 bg-cream">
@@ -364,10 +464,12 @@ function WhyUsSection() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-lg">
-                    {getContent(item.titleKey, item.i18nTitle) || t(item.i18nTitle)}
+                    {getContent(item.titleKey, item.i18nTitle) ||
+                      t(item.i18nTitle)}
                   </h3>
                   <p className="mt-2 text-muted-foreground leading-relaxed">
-                    {getContent(item.descKey, item.i18nDesc) || t(item.i18nDesc)}
+                    {getContent(item.descKey, item.i18nDesc) ||
+                      t(item.i18nDesc)}
                   </p>
                 </div>
               </div>
@@ -388,9 +490,7 @@ function WhyUsSection() {
           <h3 className="mt-6 font-display text-4xl font-bold">
             {commitmentTitle}
           </h3>
-          <p className="mt-6 text-white/90 leading-relaxed">
-            {commitmentDesc}
-          </p>
+          <p className="mt-6 text-white/90 leading-relaxed">{commitmentDesc}</p>
           <Link
             to="/field"
             className="mt-8 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.18em] text-white/90 hover:text-white"
@@ -405,20 +505,34 @@ function WhyUsSection() {
 
 function TestimonialsSection() {
   const { t } = useTranslation();
-  const { getContent } = useSiteContent('home');
+  const { getContent } = useSiteContent("home");
 
-  const eyebrow = getContent('home.testimonials.badge', 'testimonials.eyebrow') || t('testimonials.eyebrow');
-  const title = getContent('home.testimonials.title', 'testimonials.title') || t('testimonials.title');
-  const description = getContent('home.testimonials.description', 'testimonials.subtitle') || t('testimonials.subtitle');
+  const eyebrow =
+    getContent("home.testimonials.badge", "testimonials.eyebrow") ||
+    t("testimonials.eyebrow");
+  const title =
+    getContent("home.testimonials.title", "testimonials.title") ||
+    t("testimonials.title");
+  const description =
+    getContent("home.testimonials.description", "testimonials.subtitle") ||
+    t("testimonials.subtitle");
 
-  const testimonials = [
-    { nameKey: 'home.testimonials.1.name', quoteKey: 'home.testimonials.1.quote', i18nName: 'testimonials.name1', i18nQuote: 'testimonials.quote1' },
-    { nameKey: 'home.testimonials.2.name', quoteKey: 'home.testimonials.2.quote', i18nName: 'testimonials.name2', i18nQuote: 'testimonials.quote2' },
-    { nameKey: 'home.testimonials.3.name', quoteKey: 'home.testimonials.3.quote', i18nName: 'testimonials.name3', i18nQuote: 'testimonials.quote3' },
+  const partners = [
+    { logo: hajiLogo, name: "Haji Abatu Abdela Coffee Export" },
+    { logo: kkgtLogo, name: "KKGT Import & Export" },
+    { logo: zelalemLogo, name: "Zelalem Eshetu Coffee Exporter" },
+    { logo: gujiLogo, name: "Guji Coffee Export" },
+    { logo: bukuAbalLogo, name: "Buku Abal Trading PLC" },
+    { logo: sakichaLogo, name: "Sakicha Trading PLC" },
+    { logo: birbsaLogo, name: "Birbsa Trading PLC" },
+    { logo: meOlyadLogo, name: "Me-Olyad Trading PLC" },
+    { logo: birhanLogo, name: "Birhan Coffee" },
+    { logo: emulkeyerLogo, name: "Emulkeyer Nuru Import Export" },
+    { logo: edemealemLogo, name: "Edemealem Tilahun Group" },
   ];
 
   return (
-    <section className="py-24 md:py-32 bg-background">
+    <section className="py-24 md:py-32 bg-background overflow-hidden">
       <div className="container-x">
         <div className="max-w-2xl mx-auto text-center">
           <SectionEyebrow>{eyebrow}</SectionEyebrow>
@@ -429,28 +543,31 @@ function TestimonialsSection() {
             {description}
           </p>
         </div>
+      </div>
 
-        <div className="mt-14 grid gap-6 lg:grid-cols-3">
-          {testimonials.map((item) => (
+      {/* Scrolling logos carousel */}
+      <div className="mt-14 relative">
+        {/* Gradient masks for smooth edges */}
+        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-background to-transparent z-10" />
+        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-background to-transparent z-10" />
+
+        {/* Scrolling container */}
+        <div className="flex w-max animate-scroll">
+          {[...partners, ...partners, ...partners].map((partner, i) => (
             <div
-              key={item.nameKey}
-              className="rounded-3xl bg-cream p-8 border border-border shadow-elegant"
+              key={i}
+              className="flex-shrink-0 mx-8 flex flex-col items-center gap-4"
             >
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 rounded-2xl bg-accent text-accent-foreground grid place-items-center">
-                  <MessageSquare className="w-5 h-5" />
-                </div>
-                <div>
-                  <p className="font-semibold">
-                    {getContent(item.nameKey, item.i18nName) || t(item.i18nName)}
-                  </p>
-                  <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                    {t("testimonials.verifiedClient")}
-                  </p>
-                </div>
+              <div className="w-40 h-40 rounded-2xl bg-white border border-border shadow-sm flex items-center justify-center p-4 hover:shadow-md transition-shadow">
+                <img
+                  src={partner.logo}
+                  alt={partner.name}
+                  className="max-w-full max-h-full object-contain"
+                  loading="lazy"
+                />
               </div>
-              <p className="text-muted-foreground leading-relaxed">
-                &ldquo;{getContent(item.quoteKey, item.i18nQuote) || t(item.i18nQuote)}&rdquo;
+              <p className="text-sm font-medium text-muted-foreground whitespace-nowrap">
+                {partner.name}
               </p>
             </div>
           ))}
@@ -462,16 +579,27 @@ function TestimonialsSection() {
 
 function ContactSection() {
   const { t } = useTranslation();
-  const { getContent } = useSiteContent('home');
+  const { getContent } = useSiteContent("home");
 
-  const eyebrow = getContent('home.contact.badge', 'contact.eyebrow') || t('contact.eyebrow');
-  const title = getContent('home.contact.title', 'contact.homeTitle') || t('contact.homeTitle');
-  const description = getContent('home.contact.description', 'contact.homeSubtitle') || t('contact.homeSubtitle');
-  const headquarters = getContent('home.contact.headquarters', '', 'Jemo Around Africa Building, Ethiopia');
-  const phone1 = getContent('home.contact.phone1', '', '+251-973-053-737');
-  const phone2 = getContent('home.contact.phone2', '', '+251-951-626-242');
-  const email = getContent('home.contact.email', '', 'info@bcscoffee.et');
-  const whatsapp = getContent('home.contact.whatsapp', 'contact.chatWhatsapp') || t('contact.chatWhatsapp');
+  const eyebrow =
+    getContent("home.contact.badge", "contact.eyebrow") || t("contact.eyebrow");
+  const title =
+    getContent("home.contact.title", "contact.homeTitle") ||
+    t("contact.homeTitle");
+  const description =
+    getContent("home.contact.description", "contact.homeSubtitle") ||
+    t("contact.homeSubtitle");
+  const headquarters = getContent(
+    "home.contact.headquarters",
+    "",
+    "Jemo Around Africa Building, Ethiopia",
+  );
+  const phone1 = getContent("home.contact.phone1", "", "+251-973-053-737");
+  const phone2 = getContent("home.contact.phone2", "", "+251-951-626-242");
+  const email = getContent("home.contact.email", "", "info@bcscoffeemarket.com");
+  const whatsapp =
+    getContent("home.contact.whatsapp", "contact.chatWhatsapp") ||
+    t("contact.chatWhatsapp");
 
   return (
     <section
@@ -522,6 +650,17 @@ function ContactSection() {
           >
             <MessageCircle className="w-4 h-4" /> {whatsapp}
           </a>
+          <a
+            href="weixin://dl/chat?%2B251973053737"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 mt-3 px-6 py-3 rounded-full bg-[#07C160] text-white font-semibold hover:scale-105 transition"
+          >
+            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 0 0 .167-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.722.722 0 0 1 .598.082l1.584.926a.272.272 0 0 0 .14.045c.134 0 .24-.108.24-.243 0-.06-.023-.12-.038-.177l-.327-1.233a.49.49 0 0 1 .176-.553C23.452 18.12 24 16.52 24 14.782c0-3.237-3.024-5.838-7.062-5.924zm-2.85 2.87c.535 0 .969.44.969.983a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.983a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982z" />
+            </svg>
+            Chat on WeChat: +251-973-053-737
+          </a>
 
           <div className="mt-8 rounded-2xl overflow-hidden border border-white/20">
             <iframe
@@ -546,5 +685,3 @@ function ContactSection() {
     </section>
   );
 }
-
-

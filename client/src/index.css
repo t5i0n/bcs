@@ -175,6 +175,19 @@
   animation: ken-burns 20s ease-out infinite alternate;
 }
 
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+@utility animate-scroll {
+  animation: scroll 45s linear infinite;
+}
+
 section {
   scroll-margin-top: 5rem;
 }

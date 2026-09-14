@@ -2,9 +2,11 @@ import { Layout, PageHero } from "@/components/site/Layout";
 import { useTranslation } from "react-i18next";
 import bekurePhoto from "@/assets/bekure.jpg";
 import rosePhoto from "@/assets/rose.jpg";
+import ferehiwotPhoto from "@/assets/ferehiwot.jpg";
+import zeharaPhoto from "@/assets/zehara.jpg";
 
 interface TeamMember {
-  translationKey: "bekure" | "rose" | "member3";
+  translationKey: "bekure" | "rose" | "member3" | "member4";
   initials: string;
   color: string;
   photo?: string;
@@ -27,8 +29,15 @@ const TEAM: TeamMember[] = [
   },
   {
     translationKey: "member3",
-    initials: "TM",
+    initials: "FD",
     color: "bg-coffee",
+    photo: ferehiwotPhoto,
+  },
+  {
+    translationKey: "member4",
+    initials: "ZB",
+    color: "bg-accent",
+    photo: zeharaPhoto,
   },
 ];
 

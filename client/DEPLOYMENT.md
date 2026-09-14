@@ -4,7 +4,7 @@
 
 - Node.js 18+ (recommended: 20+)
 - npm 9+
-- A domain name (assumed: `bcscoffee.et`)
+- A domain name (assumed: `bcscoffeemarket.com`)
 - Sentry account (optional, for error monitoring)
 - Google Analytics account (optional)
 
@@ -18,7 +18,7 @@ Create a `.env` file in the project root:
 
 ```env
 # Backend API URL (must include /api)
-VITE_API_URL=https://api.bcscoffee.et/api
+VITE_API_URL=https://api.bcscoffeemarket.com/api
 
 # Google Analytics (optional — leave empty to disable)
 VITE_GA_MEASUREMENT_ID=G-XXXXXXXXXX
@@ -41,7 +41,7 @@ JWT_EXPIRES_IN="7d"
 PORT=3001
 
 # CORS (must match your frontend domain)
-CORS_ORIGIN="https://bcscoffee.et"
+CORS_ORIGIN="https://bcscoffeemarket.com"
 
 # Sentry (optional)
 SENTRY_DSN="https://xxxx@sentry.io/xxxx"
@@ -73,7 +73,7 @@ npm run db:seed
 ### 3. Create admin account
 
 The seed script creates a default admin:
-- **Email:** admin@bcscoffee.et
+- **Email:** admin@bcscoffeemarket.com
 - **Password:** admin123
 
 **Change the password immediately after first login.**
@@ -128,7 +128,7 @@ pm2 start dist/index.js --name bcs-api
 ```nginx
 server {
     listen 443 ssl http2;
-    server_name bcscoffee.et;
+    server_name bcscoffeemarket.com;
 
     # Frontend
     location / {
@@ -152,9 +152,9 @@ server {
 ## Google Search Console
 
 1. Go to [Google Search Console](https://search.google.com/search-console)
-2. Add property for `https://bcscoffee.et`
+2. Add property for `https://bcscoffeemarket.com`
 3. Verify via DNS TXT record or HTML meta tag
-4. Submit the sitemap: `https://bcscoffee.et/sitemap.xml`
+4. Submit the sitemap: `https://bcscoffeemarket.com/sitemap.xml`
 
 ---
 

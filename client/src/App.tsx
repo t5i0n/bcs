@@ -1,4 +1,6 @@
 import { Route, Routes } from "react-router-dom";
+import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import AboutPage from "./routes/about";
 import ContactPage from "./routes/contact";
 import HomePage from "./routes/index";
@@ -11,6 +13,12 @@ import AdminApp from "./admin";
 
 // Define the application's routes and map each URL path to its corresponding page component.
 export default function App() {
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    document.title = `${t("footer.companyName")} — Ethiopian Coffee Export & Sourcing`;
+  }, [t]);
+
   return (
     <Routes>
       {/* Admin routes — separate layout, auth-gated */}

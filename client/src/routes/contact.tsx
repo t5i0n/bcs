@@ -1,6 +1,13 @@
 import { Layout, PageHero } from "@/components/site/Layout";
 import { useTranslation } from "react-i18next";
-import { MapPin, Mail, Phone, MessageCircle, Clock, ExternalLink } from "lucide-react";
+import {
+  MapPin,
+  Mail,
+  Phone,
+  MessageCircle,
+  Clock,
+  ExternalLink,
+} from "lucide-react";
 import { InfoRow } from "@/components/site/InfoRow";
 
 import { ContactForm } from "@/components/site/ContactForm";
@@ -37,14 +44,17 @@ export default function ContactPage() {
               <InfoRow
                 icon={Mail}
                 title={t("contact.email")}
-                lines={["info@bcscoffee.et"]}
+                lines={["info@bcscoffeemarket.com"]}
               />
               <InfoRow
                 icon={Clock}
                 title="Opening Hours"
-                lines={["Monday – Friday: 2:30 – 11:30 LT", "Saturday: 2:30 – 6:00 LT", "Sunday: Closed"]}
+                lines={[
+                  "Monday – Friday: 2:30 – 11:30 LT",
+                  "Saturday: 2:30 – 6:00 LT",
+                  "Sunday: Closed",
+                ]}
               />
-
             </div>
             <a
               href="https://wa.me/251951626242"
@@ -67,7 +77,8 @@ export default function ContactPage() {
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 py-3 text-sm font-medium text-accent hover:bg-accent/10 transition"
             >
-              <MapPin className="w-4 h-4" /> Get Directions <ExternalLink className="w-3.5 h-3.5" />
+              <MapPin className="w-4 h-4" /> Get Directions{" "}
+              <ExternalLink className="w-3.5 h-3.5" />
             </a>
           </div>
         </div>

@@ -5,6 +5,7 @@ import {
   TrendingUp,
   Truck,
   Search,
+  Award,
   type LucideIcon,
 } from "lucide-react";
 
@@ -21,6 +22,12 @@ export const SERVICES: Service[] = [
     title: "Coffee Export Consulting",
     desc: "Strategic sourcing advice tailored to your roastery's volume, profile, and shipping cadence.",
     key: "exportConsulting",
+  },
+  {
+    icon: Award,
+    title: "Coffee Certificate Consulting",
+    desc: "Expert guidance on Organic, Fairtrade, Rainforest Alliance, and EUDR compliance certifications.",
+    key: "certificateConsulting",
   },
   {
     icon: ShieldCheck,

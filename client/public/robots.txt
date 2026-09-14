@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://bcscoffee.et/sitemap.xml
+Sitemap: https://bcscoffeemarket.com/sitemap.xml

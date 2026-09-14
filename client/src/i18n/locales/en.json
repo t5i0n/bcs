@@ -40,8 +40,9 @@
   "about": {
     "eyebrow": "About BCS",
     "title": "Your Trusted Ethiopian Coffee Partner",
-    "description1": "BCS Coffee Market Consulting bridges the world's most discerning buyers with Ethiopia's finest verified exporters and producers. From single origin micro lots in Yirgacheffe to commercial grade containers from Sidama, we deliver clarity, integrity, and quality at every step.",
-    "description2": "Founded in Addis Ababa, our team blends deep cultural expertise with international trade experience, so you can source with confidence every harvest.",
+    "description1": "At BCS Coffee Marketing & Consulting, we specialized in connecting the world to the finest Ethiopian Arabica coffee origins - including Yirgacheffe, Sidama, Guji, Limmu, Djimma, Tepi Bebeka, and Nekemte. Rooted in deep local knowledge and a passion for excellence, we serve as the vital link between producers and global buyers.",
+    "description2": "Our mission is to streamline the coffee trade by ensuring that time, quality, quantity, and pricing align with the expectations of both sellers and buyers. With a commitment to transparency, consistency, and marketing insight, we help our clients access premium coffee while supporting sustainable growth for Ethiopian producers.",
+    "description3": "At BCS, we're more than a service provider - we are YOUR TRUSTED PARTNER. When you work with us, you're not just making a transaction - you're building a lasting partnership with a team committed to being your most reliable and strategic ally in the Ethiopian coffee industry.",
     "timeline": {
       "2009": {
         "title": "Founded in Addis Ababa",
@@ -79,7 +80,7 @@
     "pageTitle": "End-to-End Coffee Trade Services",
     "pageSubtitle": "Six core services that take you from sourcing strategy to a container at your warehouse door.",
     "ctaTitle": "Ready to start sourcing?",
-    "ctaSubtitle": "Book a free 30-minute consultation with our team.",
+    "ctaSubtitle": "Book a free consultation with our team.",
     "items": {
       "exportConsulting": {
         "title": "Coffee Export Consulting",
@@ -104,6 +105,10 @@
       "priceNegotiation": {
         "title": "Price Negotiation",
         "desc": "Direct origin pricing with full transparency no hidden margins or kickbacks."
+      },
+      "certificateConsulting": {
+        "title": "Coffee Certificate Consulting",
+        "desc": "Expert guidance on Organic, Fairtrade, Rainforest Alliance, and EUDR compliance certifications."
       }
     }
   },
@@ -146,13 +151,22 @@
     "followWork": "Follow our work from Ethiopia's coffee-growing communities to the stations where each lot is prepared for the world.",
     "fieldVideos": "Field videos",
     "watchSpace": "Watch this space for stories from origin.",
-    "shareVideos": "We'll share short videos from farm visits, harvests, and coffee processing as they happen.",
+    "shareVideos": "Explore our farm visits, harvests, and coffee processing through short videos captured along the way.",
+    "videoMoments": {
+      "coffeeLandscape": "Coffee landscape",
+      "coffeeHarvest": "Coffee harvest",
+      "handpickedCherries": "Hand-picked coffee cherries"
+    },
     "videosComingSoon": "Videos coming soon",
     "moments": {
       "atFarm": "At the farm",
       "harvestSeason": "Harvest season",
       "washingStations": "Washing stations",
       "dryingCoffee": "Drying coffee",
+      "dryingWashedCoffee": "Drying washed coffee",
+      "sortingCoffeeCherries": "Sorting coffee cherries",
+      "takingCoffeeForSorting": "Taking coffee for sorting",
+      "washingCoffee": "Washing coffee",
       "qualityLot": "Quality in every lot",
       "coffeeCulture": "Coffee culture"
     }
@@ -194,6 +208,9 @@
     "fromTheField": "From the Field",
     "contactTitle": "Contact",
     "copyright": "All rights reserved.",
+    "companyName": "BCS Coffee Market Consulting",
+    "creditPrefix": "Designed & Developed by",
+    "creditSuffix": "",
     "origin": "Origin: Ethiopia · Serving 40+ countries worldwide"
   },
   "team": {
@@ -202,18 +219,23 @@
     "subtitle": "Passionate professionals dedicated to connecting Ethiopian coffee excellence with the world.",
     "bekure": {
       "name": "Bekure Yimam",
-      "role": "Founder & Managing Director",
-      "description": "With over 15 years in the Ethiopian coffee industry, Bekure leads BCS Coffee's mission to connect优质 origins with global markets. His deep relationships with farmers and exporters ensure every lot meets international standards."
+      "role": "Owner & Managing Director, BCS Coffee & Consulting",
+      "description": "Owner of BCS Coffee & Consulting. Oversees the company's overall management and operations. Handles coffee consulting, business strategy, marketing, finance consulting, IFRS consulting, and export & import consulting. Supervises staff and coordinates with clients, suppliers, and business partners."
     },
     "rose": {
       "name": "Rose Ahmed",
-      "role": "Coffee Quality Specialist",
-      "description": "Our quality specialist brings Q-grader expertise and rigorous cupping protocols to every evaluation. They ensure that each shipment meets the precise flavor profiles our international clients expect."
+      "role": "Coffee Documentation Officer",
+      "description": "Handles coffee-related documentation and records. Prepares documents for coffee samples and international shipments. Supports export documentation and maintains coffee-related records."
     },
     "member3": {
-      "name": "Team Member",
-      "role": "Export & Logistics Coordinator",
-      "description": "Managing the complex journey from Ethiopian washing stations to global ports, our logistics coordinator handles ECX certifications, ICO markings, FOB arrangements, and every detail in between."
+      "name": "Ferehiwot Dires",
+      "role": "Finance Officer",
+      "description": "Handles the company's financial activities and records. Manages financial transactions, expenses, payments, and receipts. Maintains financial documentation and supports accounting and budgeting."
+    },
+    "member4": {
+      "name": "Zehara Bedru",
+      "role": "Coffee Sample Processing & Office Support Officer",
+      "description": "Processes, filters, sorts, and prepares coffee samples for evaluation. Removes defective/unwanted materials and prepares suitable coffee beans for evaluation. Packs coffee samples for submission to the evaluation department. Handles computer-based, administrative, and other tasks assigned by the manager."
     }
   },
   "notFound": {
@@ -244,15 +266,8 @@
     "seeLifeAtOrigin": "See Life at Origin"
   },
   "testimonials": {
-    "eyebrow": "Testimonials",
-    "title": "Trusted by Roasters, Buyers, and Importers",
-    "subtitle": "Real partner stories from buyers who source coffee through our verified Ethiopian network.",
-    "verifiedClient": "Verified client",
-    "quote1": "BCS helped us find the exact Yirgacheffe profile we needed with full exporter traceability.",
-    "name1": "Nora, European roastery owner",
-    "quote2": "The verification and shipping support saved us weeks and gave us confidence in every container.",
-    "name2": "Marco, specialty buyer",
-    "quote3": "Their market knowledge and network made our first Ethiopian origin purchase feel easy.",
-    "name3": "Leila, coffee importer"
+    "eyebrow": "Our Partners",
+    "title": "Trusted by Roasters, Exporters and Companies We Act For and Alongside",
+    "subtitle": ""
   }
 }

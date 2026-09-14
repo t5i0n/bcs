@@ -1,59 +1,76 @@
 import { Layout, PageHero } from "@/components/site/Layout";
 import { useTranslation } from "react-i18next";
-import ceremony from "@/assets/ceremony.jpg";
-import cherries from "@/assets/cherries.jpg";
-import drying from "@/assets/drying.jpg";
-import farmers from "@/assets/farmers.jpg";
-import grading from "@/assets/grading.jpg";
-import washing from "@/assets/washing.jpg";
+import coffeeHarvestPoster from "@/assets/coffee-harvest-poster.jpg";
+import coffeeLandscapePoster from "@/assets/coffee-landscape-poster.jpg";
+import takingCoffeePoster from "@/assets/coffee-taking-for-sorting-video-poster.png";
+import sortingCherriesPoster from "@/assets/coffee-sorting-cherries-video-poster.png";
+import washingCoffeePoster from "@/assets/coffee-washing-video-poster.png";
+import dryingWashedCoffeePoster from "@/assets/coffee-drying-washed-video-poster.png";
+import dryingProcessPoster from "@/assets/coffee-drying-process-video-poster.png";
+import coffeeVideoPoster from "@/assets/coffee-video-poster.jpg";
+import dryingPoster from "@/assets/coffee-drying-video-poster.png";
+import handpickedCherriesPoster from "@/assets/handpicked-cherries-poster.jpg";
 
 export default function FieldPage() {
   const { t } = useTranslation();
 
-  const moments = [
+  const fieldVideos = [
     {
-      image: farmers,
-      title: t("field.moments.atFarm"),
-      alt: "Coffee farmers at work in Ethiopia",
-      width: 1280,
-      height: 1280,
+      src: "/field-videos/coffee-landscape.MOV",
+      poster: coffeeLandscapePoster,
+      title: t("field.videoMoments.coffeeLandscape"),
     },
     {
-      image: cherries,
-      title: t("field.moments.harvestSeason"),
-      alt: "Freshly picked coffee cherries",
-      width: 1280,
-      height: 960,
+      src: "/field-videos/coffee-harvest.MOV",
+      poster: coffeeHarvestPoster,
+      title: t("field.videoMoments.coffeeHarvest"),
     },
     {
-      image: washing,
-      title: t("field.moments.washingStations"),
-      alt: "Coffee processing at a washing station",
-      width: 1280,
-      height: 960,
+      src: "/field-videos/handpicked-cherries.MOV",
+      poster: handpickedCherriesPoster,
+      title: t("field.videoMoments.handpickedCherries"),
     },
     {
-      image: drying,
+      src: "/field-videos/Taking Coffee for Sorting.MOV",
+      poster: takingCoffeePoster,
+      title: t("field.moments.takingCoffeeForSorting"),
+    },
+    {
+      src: "/field-videos/Sorting coffee cherries.MOV",
+      poster: sortingCherriesPoster,
+      title: t("field.moments.sortingCoffeeCherries"),
+    },
+    {
+      src: "/field-videos/Cleaning:Washing coffee.MOV",
+      poster: washingCoffeePoster,
+      title: t("field.moments.washingCoffee"),
+    },
+    {
+      src: "/field-videos/drying process.MOV",
+      poster: dryingProcessPoster,
+      title: t("field.moments.dryingWashedCoffee"),
+    },
+    {
+      src: "/field-videos/dry.MOV",
+      poster: dryingWashedCoffeePoster,
+      title: t("field.moments.dryingWashedCoffee"),
+    },
+    {
+      src: "/field-videos/coffee drying.MOV",
+      poster: dryingPoster,
       title: t("field.moments.dryingCoffee"),
-      alt: "Coffee drying in the sun",
-      width: 1280,
-      height: 960,
-    },
-    {
-      image: grading,
-      title: t("field.moments.qualityLot"),
-      alt: "Coffee grading process",
-      width: 1280,
-      height: 960,
-    },
-    {
-      image: ceremony,
-      title: t("field.moments.coffeeCulture"),
-      alt: "Traditional Ethiopian coffee ceremony",
-      width: 1280,
-      height: 960,
     },
   ];
+
+  const startPreview = (video: HTMLVideoElement | null) => {
+    if (video) void video.play().catch(() => undefined);
+  };
+
+  const stopPreview = (video: HTMLVideoElement | null) => {
+    if (!video) return;
+    video.pause();
+    video.currentTime = 0;
+  };
 
   return (
     <Layout>
@@ -78,21 +95,48 @@ export default function FieldPage() {
           </div>
 
           <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {moments.map((moment) => (
+            {fieldVideos.map((video) => (
               <figure
-                key={moment.title}
-                className="group relative aspect-4/3 overflow-hidden rounded-3xl bg-cream shadow-elegant"
+                key={video.src}
+                tabIndex={0}
+                className="group relative aspect-4/3 overflow-hidden rounded-3xl bg-black shadow-elegant outline-none focus-visible:ring-4 focus-visible:ring-accent"
+                onMouseEnter={(event) =>
+                  startPreview(event.currentTarget.querySelector("video"))
+                }
+                onMouseLeave={(event) =>
+                  stopPreview(event.currentTarget.querySelector("video"))
+                }
+                onFocus={(event) =>
+                  startPreview(event.currentTarget.querySelector("video"))
+                }
+                onBlur={(event) =>
+                  stopPreview(event.currentTarget.querySelector("video"))
+                }
+                onTouchStart={(event) =>
+                  startPreview(event.currentTarget.querySelector("video"))
+                }
+                onTouchEnd={(event) =>
+                  stopPreview(event.currentTarget.querySelector("video"))
+                }
               >
                 <img
-                  src={moment.image}
-                  alt={moment.alt}
-                  width={moment.width}
-                  height={moment.height}
+                  src={video.poster}
+                  alt={video.title}
+                  className="h-full w-full object-cover transition-opacity duration-500 group-hover:opacity-0 group-focus:opacity-0"
                   loading="lazy"
-                  className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
                 />
+                <video
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  className="absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100 group-focus:opacity-100"
+                  aria-label={video.title}
+                >
+                  <source src={video.src} type="video/quicktime" />
+                </video>
                 <figcaption className="absolute inset-x-0 bottom-0 bg-linear-to-t from-black/75 to-transparent px-6 pb-5 pt-14 text-lg font-display font-semibold text-white">
-                  {moment.title}
+                  {video.title}
                 </figcaption>
               </figure>
             ))}
@@ -114,18 +158,16 @@ export default function FieldPage() {
             </p>
           </div>
           <div className="relative aspect-video overflow-hidden rounded-3xl shadow-elegant">
-            <img
-              src={drying}
-              alt="Coffee drying at origin"
-              width={1280}
-              height={960}
-              className="h-full w-full object-cover"
-            />
-            <div className="absolute inset-0 grid place-items-center bg-black/30">
-              <span className="rounded-full bg-accent text-accent-foreground px-6 py-3 text-sm font-semibold shadow-gold">
-                {t("field.videosComingSoon")}
-              </span>
-            </div>
+            <video
+              controls
+              preload="metadata"
+              poster={coffeeVideoPoster}
+              className="h-full w-full object-cover bg-black"
+              aria-label={t("field.fieldVideos")}
+            >
+              <source src="/videos/bcs coffee vid.mov" type="video/quicktime" />
+              Your browser does not support embedded video.
+            </video>
           </div>
         </div>
       </section>

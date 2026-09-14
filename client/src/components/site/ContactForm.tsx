@@ -4,7 +4,7 @@ import { Field } from "./Field";
 import { publicContactApi } from "@/lib/api";
 import { CheckCircle, AlertCircle, Loader2 } from "lucide-react";
 
-const CONTACT_EMAIL = "info@bcscoffee.et";
+const CONTACT_EMAIL = "info@bcscoffeemarket.com";
 
 export function ContactForm({ heading }: { heading?: string }) {
   const { t } = useTranslation();

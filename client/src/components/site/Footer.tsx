@@ -52,19 +52,18 @@ export function Footer() {
                 <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.607H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
               </svg>
             </a>
-            {/* Instagram */}
-            <a
-              href="https://www.instagram.com/bcscoffeemarket?igsi=MTY0Nm9rNHNhcnhsNQ=="
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-9 h-9 grid place-items-center rounded-full bg-white/10 hover:bg-accent hover:text-accent-foreground transition"
-              aria-label="Instagram"
-              title="Instagram"
-            >
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
-              </svg>
-            </a>
+              {/* WeChat */}
+              <a
+                href="tel:+251973053737"
+                className="w-9 h-9 grid place-items-center rounded-full bg-white/10 hover:bg-accent hover:text-accent-foreground transition"
+                aria-label="WeChat: +251-973-053-737"
+                title="WeChat: +251-973-053-737"
+              >
+                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M9.6 4C5.4 4 2 6.8 2 10.2c0 2 1.1 3.8 2.9 4.9l-.7 2.6 2.8-1.5c.8.2 1.7.4 2.6.4.2 0 .4 0 .6-.1-.1-.4-.2-.8-.2-1.2 0-3.1 3-5.6 6.7-5.6.5 0 1 0 1.5.1C17.4 6.5 13.9 4 9.6 4Zm-3.1 5.3a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm6.2 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z" />
+                  <path d="M22 14.7c0-2.8-2.8-5-6.3-5s-6.3 2.2-6.3 5 2.8 5 6.3 5c.7 0 1.4-.1 2-.3l2.3 1.2-.6-2.1c1.6-.9 2.6-2.2 2.6-3.8Zm-8.7-.7a.85.85 0 1 1 0-1.7.85.85 0 0 1 0 1.7Zm4.8 0a.85.85 0 1 1 0-1.7.85.85 0 0 1 0 1.7Z" />
+                </svg>
+              </a>
           </div>
         </div>
 
@@ -99,7 +98,7 @@ export function Footer() {
               +251-951-626-242
             </li>
             <li className="flex gap-2.5">
-              <Mail className="w-4 h-4 mt-0.5 text-accent" /> info@bcscoffee.et
+              <Mail className="w-4 h-4 mt-0.5 text-accent" /> info@bcscoffeemarket.com
             </li>
           </ul>
         </div>
@@ -107,10 +106,10 @@ export function Footer() {
       <div className="border-t border-white/10">
         <div className="container-x py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/60">
           <p>
-            © {new Date().getFullYear()} BCS Coffee Market Consulting. {copyright}
+            © {new Date().getFullYear()} {t("footer.companyName")}. {copyright}
           </p>
           <p>
-            Designed & Developed by{' '}
+            {t("footer.creditPrefix")}{' '}
             <a
               href="https://www.linkedin.com/in/tsion-tesfaye-b0248a391/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BcFVSMoTcSY6GxdDsheowlA%3D%3D"
               target="_blank"
@@ -118,7 +117,7 @@ export function Footer() {
               className="hover:text-accent transition underline underline-offset-2"
             >
               Tsion Tesfaye
-            </a>
+            </a>{' '}{t("footer.creditSuffix")}
           </p>
         </div>
       </div>

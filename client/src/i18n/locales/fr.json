@@ -43,8 +43,9 @@
   "about": {
     "eyebrow": "À propos de BCS",
     "title": "Votre Partenaire de Confiance pour le Café Éthiopien",
-    "description1": "BCS Coffee Market Consulting met en relation les acheteurs les plus exigeants du monde avec les meilleurs exportateurs et producteurs vérifiés d'Éthiopie. Des micro-lots d'origine unique de Yirgacheffe aux conteneurs de grade commercial de Sidama, nous apportons clarté, intégrité et qualité à chaque étape.",
-    "description2": "Fondée à Addis-Abeba, notre équipe allie une expertise culturelle profonde à une expérience du commerce international, pour que vous puissiez vous approvisionner en toute confiance à chaque récolte.",
+    "description1": "Chez BCS Coffee Marketing & Consulting, nous sommes spécialisés dans la mise en relation du monde avec les meilleures origines de café Arabica éthiopien, notamment Yirgacheffe, Sidama, Guji, Limmu, Djimma, Tepi Bebeka et Nekemte. Ancrés dans une connaissance locale approfondie et une passion pour l'excellence, nous sommes le lien essentiel entre les producteurs et les acheteurs internationaux.",
+    "description2": "Notre mission est de fluidifier le commerce du café en veillant à ce que les délais, la qualité, les volumes et les prix répondent aux attentes des vendeurs comme des acheteurs. Grâce à notre engagement envers la transparence, la régularité et notre expertise marketing, nous aidons nos clients à accéder à des cafés d'exception tout en soutenant la croissance durable des producteurs éthiopiens.",
+    "description3": "Chez BCS, nous sommes plus qu'un prestataire de services : nous sommes VOTRE PARTENAIRE DE CONFIANCE. En travaillant avec nous, vous ne réalisez pas seulement une transaction : vous construisez un partenariat durable avec une équipe déterminée à être votre allié le plus fiable et stratégique dans l'industrie du café éthiopien.",
     "timeline": {
       "2009": {
         "title": "Fondée à Addis-Abeba",
@@ -82,7 +83,7 @@
     "pageTitle": "Services Commerciaux Café Complets",
     "pageSubtitle": "Six services essentiels qui vous accompagnent de la stratégie d'approvisionnement au conteneur à votre porte d'entrepôt.",
     "ctaTitle": "Prêt à commencer l'approvisionnement ?",
-    "ctaSubtitle": "Réservez une consultation gratuite de 30 minutes avec notre équipe.",
+    "ctaSubtitle": "Réservez une consultation gratuite avec notre équipe.",
     "items": {
       "exportConsulting": {
         "title": "Conseil en Export de Café",
@@ -107,6 +108,10 @@
       "priceNegotiation": {
         "title": "Négociation de Prix",
         "desc": "Prix direct à l'origine avec une transparence totale, sans marges cachées ni commissions."
+      },
+      "certificateConsulting": {
+        "title": "Conseil en Certifications Café",
+        "desc": "Accueil expert sur les certifications Organic, Fairtrade, Rainforest Alliance et conformité EUDR."
       }
     }
   },
@@ -149,13 +154,22 @@
     "followWork": "Suivez notre travail des communautés de culture du café en Éthiopie jusqu'aux stations où chaque lot est préparé pour le monde.",
     "fieldVideos": "Vidéos du terrain",
     "watchSpace": "Suivez cet espace pour des récits de l'origine.",
-    "shareVideos": "Nous partagerons de courtes vidéos des visites de fermes, des récoltes et du traitement du café au fur et à mesure.",
+    "shareVideos": "Explorez nos visites de fermes, les récoltes et le traitement du café à travers de courtes vidéos capturées au fil du parcours.",
+    "videoMoments": {
+      "coffeeLandscape": "Paysage caféier",
+      "coffeeHarvest": "Récolte du café",
+      "handpickedCherries": "Cerises de café cueillies à la main"
+    },
     "videosComingSoon": "Vidéos bientôt disponibles",
     "moments": {
       "atFarm": "À la ferme",
       "harvestSeason": "Saison de récolte",
       "washingStations": "Stations de lavage",
       "dryingCoffee": "Séchage du café",
+      "dryingWashedCoffee": "Séchage du café lavé",
+      "sortingCoffeeCherries": "Tri des cerises de café",
+      "takingCoffeeForSorting": "Transport du café pour le tri",
+      "washingCoffee": "Lavage du café",
       "qualityLot": "Qualité dans chaque lot",
       "coffeeCulture": "Culture du café"
     }
@@ -197,6 +211,9 @@
     "fromTheField": "Du Terrain",
     "contactTitle": "Contact",
     "copyright": "Tous droits réservés.",
+    "companyName": "BCS Conseil en Marché du Café",
+    "creditPrefix": "Conçu et développé par",
+    "creditSuffix": "",
     "origin": "Origine : Éthiopie · Service dans plus de 40 pays"
   },
   "team": {
@@ -205,18 +222,23 @@
     "subtitle": "Des professionnels passionnés dédiés à connecter l'excellence du café éthiopien avec le monde.",
     "bekure": {
       "name": "Bekure Yimam",
-      "role": "Fondateur & Directeur Général",
-      "description": "Avec plus de 15 ans dans l'industrie du café éthiopien, Bekure dirige la mission de BCS Coffee de connecter优质 les origines avec les marchés mondiaux."
+      "role": "Propriétaire & Directeur Général, BCS Coffee & Consulting",
+      "description": "Propriétaire de BCS Coffee & Consulting. Supervise la gestion et les opérations globales de l'entreprise. Gère le conseil en café, la stratégie commerciale, le marketing, le conseil financier, le conseil IFRS et le conseil en import-export. Supervise le personnel et coordonne avec les clients, les fournisseurs et les partenaires commerciaux."
     },
     "rose": {
       "name": "Rose Ahmed",
-      "role": "Spécialiste Qualité Café",
-      "description": "Notre spécialiste qualité apporte une expertise de dégustateur Q et des protocoles de cupping rigoureux à chaque évaluation."
+      "role": "Responsable de Documentation Café",
+      "description": "Gère la documentation et les dossiers liés au café. Prépare les documents pour les échantillons de café et les expéditions internationales. Soutient la documentation export et maintient les dossiers liés au café."
     },
     "member3": {
-      "name": "Membre de l'Équipe",
-      "role": "Coordonnateur Export & Logistique",
-      "description": "Gestion du parcours complexe des stations de lavage éthiopiennes aux ports mondiaux, notre coordinateur logistique gère les certifications ECX, les marquages ICO, les arrangements FOB et chaque détail."
+      "name": "Ferehiwot Dires",
+      "role": "Responsable Financier",
+      "description": "Gère les activités et les dossiers financiers de l'entreprise. Gère les transactions financières, les dépenses, les paiements et les reçus. Maintient la documentation financière et soutient la comptabilité et le budgétisation."
+    },
+    "member4": {
+      "name": "Zehara Bedru",
+      "role": "Responsable du Traitement des Échantillons Café et Soutien Bureautique",
+      "description": "Traite, filtre, trie et prépare les échantillons de café pour l'évaluation. Élimine les matériaux défectueux/non désirés et prépare les haricots de café appropriés pour l'évaluation. Emballe les échantillons de café pour soumission au département d'évaluation. Gère les tâches informatiques, administratives et autres assignées par le manager."
     }
   },
   "notFound": {
@@ -247,15 +269,8 @@
     "seeLifeAtOrigin": "Voir la Vie à l'Origine"
   },
   "testimonials": {
-    "eyebrow": "Témoignages",
-    "title": "La Confiance des Torréfacteurs, Acheteurs et Importateurs",
-    "subtitle": "Des histoires réelles d'acheteurs qui se fournissent via notre réseau éthiopien vérifié.",
-    "verifiedClient": "Client vérifié",
-    "quote1": "BCS nous a aidés à trouver le profil exact de Yirgacheffe dont nous avions besoin.",
-    "name1": "Nora, propriétaire de torréfaction européenne",
-    "quote2": "La vérification et le soutien logistique nous ont fait gagner des semaines.",
-    "name2": "Marco, acheteur spécialité",
-    "quote3": "Leur connaissance du marché a rendu notre premier achat en origine éthiopienne facile.",
-    "name3": "Leila, importatrice de café"
+    "eyebrow": "Nos Partenaires",
+    "title": "La Confiance des Torréfacteurs, Exportateurs et Entreprises pour lesquelles Nous Agissons",
+    "subtitle": ""
   }
 }

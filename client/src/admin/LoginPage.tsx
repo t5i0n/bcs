@@ -52,7 +52,7 @@ export function AdminLoginPage() {
                 onChange={(e) => setEmail(e.target.value)}
                 required
                 className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:outline-none focus:ring-2 focus:ring-ring transition"
-                placeholder="admin@bcscoffee.et"
+                placeholder="admin@bcscoffeemarket.com"
               />
             </div>
             <div>

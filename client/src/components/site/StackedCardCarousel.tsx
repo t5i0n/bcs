@@ -1,23 +1,25 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import heroFarm from "@/assets/hero-farm.jpg";
-import farmers from "@/assets/farmers.jpg";
-import drying from "@/assets/drying.jpg";
-import washing from "@/assets/washing.jpg";
-import cherries from "@/assets/cherries.jpg";
-import grading from "@/assets/grading.jpg";
-import ceremony from "@/assets/ceremony.jpg";
-import exportImg from "@/assets/export.jpg";
+import coffeeCherriesTree from "@/assets/coffee-cherries-tree.jpg";
+import bean2 from "@/assets/bean-2.jpg";
+import bean3 from "@/assets/bean-3.jpg";
+import bean4 from "@/assets/bean-4.jpg";
+import farmVid from "@/assets/farm-vid.jpg";
+import house from "@/assets/house.jpg";
+import wash from "@/assets/wash.png";
+import dry from "@/assets/Dry.png";
+import dry2 from "@/assets/Dry 2.png";
 
 const PHOTOS = [
-  { src: heroFarm, alt: "Ethiopian coffee farm at sunrise" },
-  { src: farmers, alt: "Ethiopian coffee farmers at harvest" },
-  { src: cherries, alt: "Freshly picked coffee cherries" },
-  { src: washing, alt: "Coffee washing station" },
-  { src: drying, alt: "Coffee beans drying in the sun" },
-  { src: grading, alt: "Coffee grading and sorting" },
-  { src: ceremony, alt: "Traditional Ethiopian coffee ceremony" },
-  { src: exportImg, alt: "Coffee export and logistics" },
+  { src: house, alt: "Traditional farmhouse in the coffee region" },
+  { src: coffeeCherriesTree, alt: "Ripe coffee cherries on the tree" },
+  { src: bean2, alt: "Close-up of ripe coffee cherries" },
+  { src: bean3, alt: "Coffee tree with ripening cherries" },
+  { src: bean4, alt: "Perfectly ripe red coffee cherries" },
+  { src: farmVid, alt: "Sunset over the Ethiopian highlands" },
+  { src: wash, alt: "Washing coffee at the processing station" },
+  { src: dry, alt: "Coffee drying beds in the highlands" },
+  { src: dry2, alt: "Coffee cherries drying on raised beds" },
 ];
 
 const INTERVAL = 3500;

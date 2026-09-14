@@ -11,7 +11,7 @@ const SOCIAL_FIELDS = [
 ];
 
 const CONTACT_FIELDS = [
-  { key: "site.email", label: "Email", placeholder: "info@bcscoffee.et" },
+  { key: "site.email", label: "Email", placeholder: "info@bcscoffeemarket.com" },
   { key: "site.phone", label: "Phone", placeholder: "+251-973-053-737" },
   { key: "site.whatsapp", label: "WhatsApp", placeholder: "+251 95 162 6242" },
 ];

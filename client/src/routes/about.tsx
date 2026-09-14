@@ -1,5 +1,5 @@
-import farmers from "@/assets/farmers.jpg";
-import ceremony from "@/assets/ceremony.jpg";
+import teamPhoto from "@/assets/team.jpg";
+import ethiopianHeritage from "@/assets/ethiopian heritage.png";
 import { Layout, PageHero } from "@/components/site/Layout";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -15,8 +15,8 @@ export default function AboutPage() {
       />
       <section className="py-24 container-x grid lg:grid-cols-2 gap-14 items-center">
         <img
-          src={farmers}
-          alt="Ethiopian coffee farmers"
+          src={teamPhoto}
+          alt="BCS team"
           width={1280}
           height={1280}
           loading="lazy"
@@ -57,8 +57,8 @@ export default function AboutPage() {
         <div className="container-x grid lg:grid-cols-2 gap-14 items-center">
           <div className="lg:order-2">
             <img
-              src={ceremony}
-              alt="Ethiopian coffee ceremony"
+              src={ethiopianHeritage}
+              alt="Ethiopian heritage"
               width={1280}
               height={960}
               loading="lazy"

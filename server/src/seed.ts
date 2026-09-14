@@ -8,7 +8,7 @@ async function main() {
   console.log("🌱 Seeding database...");
 
   // Create default admin
-  const adminEmail = "admin@bcscoffee.et";
+  const adminEmail = "admin@bcscoffeemarket.com";
   const adminPassword = "admin123"; // Change in production!
 
   const existingAdmin = await prisma.admin.findUnique({ where: { email: adminEmail } });
@@ -117,7 +117,7 @@ async function main() {
   // Create default site settings
   const defaultSettings = [
     { key: "site.name", value: "BCS Coffee Market Consulting" },
-    { key: "site.email", value: "info@bcscoffee.et" },
+    { key: "site.email", value: "info@bcscoffeemarket.com" },
     { key: "site.phone", value: "+251-973-053-737" },
     { key: "site.whatsapp", value: "+251-951-626-242" },
     { key: "social.telegram", value: "" },
