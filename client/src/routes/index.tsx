@@ -21,6 +21,8 @@ import birhanLogo from "@/assets/birhan-logo.png";
 import emulkeyerLogo from "@/assets/emulkeyer-logo.png";
 import edemealemLogo from "@/assets/edemealem-logo.svg";
 import sakichaLogo from "@/assets/Sakicha Trading PLC.png";
+import toweLogo from "@/assets/Towe coffee export plc.png";
+import africaPlcLogo from "@/assets/Africa.jpg";
 import { StackedCardCarousel } from "@/components/site/StackedCardCarousel";
 import {
   ArrowRight,
@@ -529,6 +531,8 @@ function TestimonialsSection() {
     { logo: birhanLogo, name: "Birhan Coffee" },
     { logo: emulkeyerLogo, name: "Emulkeyer Nuru Import Export" },
     { logo: edemealemLogo, name: "Edemealem Tilahun Group" },
+    { logo: toweLogo, name: "Towe Coffee Export PLC" },
+    { logo: africaPlcLogo, name: "Africa PLC" },
   ];
 
   return (
@@ -559,12 +563,25 @@ function TestimonialsSection() {
               className="flex-shrink-0 mx-8 flex flex-col items-center gap-4"
             >
               <div className="w-40 h-40 rounded-2xl bg-white border border-border shadow-sm flex items-center justify-center p-4 hover:shadow-md transition-shadow">
-                <img
-                  src={partner.logo}
-                  alt={partner.name}
-                  className="max-w-full max-h-full object-contain"
-                  loading="lazy"
-                />
+                {partner.logo ? (
+                  <img
+                    src={partner.logo}
+                    alt={partner.name}
+                    className="max-w-full max-h-full object-contain"
+                    loading="lazy"
+                  />
+                ) : (
+                  <div className="flex h-full w-full items-center justify-center rounded-xl border border-dashed border-muted-foreground/30 bg-muted/40 text-center">
+                    <div>
+                      <div className="text-[10px] font-semibold uppercase tracking-[0.25em] text-muted-foreground/80">
+                        Logo
+                      </div>
+                      <div className="mt-2 text-sm font-bold uppercase tracking-[0.18em] text-foreground/80">
+                        Africa PLC
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
               <p className="text-sm font-medium text-muted-foreground whitespace-nowrap">
                 {partner.name}
@@ -596,7 +613,11 @@ function ContactSection() {
   );
   const phone1 = getContent("home.contact.phone1", "", "+251-973-053-737");
   const phone2 = getContent("home.contact.phone2", "", "+251-951-626-242");
-  const email = getContent("home.contact.email", "", "info@bcscoffeemarket.com");
+  const email = getContent(
+    "home.contact.email",
+    "",
+    "info@bcscoffeemarket.com",
+  );
   const whatsapp =
     getContent("home.contact.whatsapp", "contact.chatWhatsapp") ||
     t("contact.chatWhatsapp");
@@ -649,17 +670,6 @@ function ContactSection() {
             className="inline-flex items-center gap-2 mt-8 px-6 py-3 rounded-full bg-[#25D366] text-white font-semibold hover:scale-105 transition"
           >
             <MessageCircle className="w-4 h-4" /> {whatsapp}
-          </a>
-          <a
-            href="weixin://dl/chat?%2B251973053737"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 mt-3 px-6 py-3 rounded-full bg-[#07C160] text-white font-semibold hover:scale-105 transition"
-          >
-            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 0 0 .167-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.722.722 0 0 1 .598.082l1.584.926a.272.272 0 0 0 .14.045c.134 0 .24-.108.24-.243 0-.06-.023-.12-.038-.177l-.327-1.233a.49.49 0 0 1 .176-.553C23.452 18.12 24 16.52 24 14.782c0-3.237-3.024-5.838-7.062-5.924zm-2.85 2.87c.535 0 .969.44.969.983a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm4.844 0c.535 0 .969.44.969.983a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982z" />
-            </svg>
-            Chat on WeChat: +251-973-053-737
           </a>
 
           <div className="mt-8 rounded-2xl overflow-hidden border border-white/20">
