@@ -32,7 +32,17 @@ if (process.env.SENTRY_DSN) {
 // ─── Global Middleware ─────────────────────────────────────────
 app.use(helmet());
 app.use(cors({
-  origin: process.env.CORS_ORIGIN || "http://localhost:5173",
+  origin: (origin, callback) => {
+    const allowedOrigins = (process.env.CORS_ORIGIN || "http://localhost:5173")
+      .split(",")
+      .map((o) => o.trim());
+    // Allow requests with no origin (mobile apps, curl, server-to-server)
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
   credentials: true,
 }));
 app.use(express.json({ limit: "10kb" }));
@@ -53,13 +63,21 @@ app.use("/api/admin/commodities", adminCommodityRoutes);
 app.use("/api/admin/contacts", adminContactRoutes);
 app.use("/api/admin/content", adminContentRoutes);
 
+// ─── 404 Handler ──────────────────────────────────────────────
+app.use((_req, res) => {
+  res.status(404).json({ error: "Not found" });
+});
+
 // ─── Error Handler ─────────────────────────────────────────────
 if (process.env.SENTRY_DSN) {
   app.use(Sentry.Handlers.errorHandler());
 }
-app.use((err: Error, _req: express.Request, res: express.Response) => {
+app.use((err: Error, _req: express.Request, res: express.Response, _next: express.NextFunction) => {
   logger.error("Unhandled error", { message: err.message, stack: err.stack });
-  res.status(500).json({ error: "Internal server error" });
+  const statusCode = (err as unknown as { statusCode?: number }).statusCode || 500;
+  res.status(statusCode).json({
+    error: process.env.NODE_ENV === "production" ? "Internal server error" : err.message,
+  });
 });
 
 // ─── Start Server ──────────────────────────────────────────────

@@ -1,7 +1,12 @@
 import type { Request, Response, NextFunction } from "express";
 import jwt from "jsonwebtoken";
 
-const JWT_SECRET = process.env.JWT_SECRET || "dev-secret-change-in-production";
+const JWT_SECRET = process.env.JWT_SECRET;
+if (!JWT_SECRET && process.env.NODE_ENV === "production") {
+  console.error("FATAL: JWT_SECRET is not set. Refusing to start in production.");
+  process.exit(1);
+}
+const SECRET = JWT_SECRET || "dev-secret-change-in-production";
 
 export interface AuthPayload {
   id: string;
@@ -28,7 +33,7 @@ export function requireAuth(req: Request, res: Response, next: NextFunction) {
 
   const token = header.slice(7);
   try {
-    const payload = jwt.verify(token, JWT_SECRET) as AuthPayload;
+    const payload = jwt.verify(token, SECRET) as AuthPayload;
     req.admin = payload;
     next();
   } catch {
@@ -46,7 +51,7 @@ export function requireAdmin(req: Request, res: Response, next: NextFunction) {
 
 /** Helper: sign a JWT for an admin user */
 export function signToken(payload: AuthPayload): string {
-  return jwt.sign(payload, JWT_SECRET, {
+  return jwt.sign(payload, SECRET, {
     expiresIn: process.env.JWT_EXPIRES_IN || "7d",
   });
 }

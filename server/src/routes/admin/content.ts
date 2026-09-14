@@ -1,7 +1,10 @@
 import { Router } from "express";
+import { z } from "zod";
 import { prisma } from "../../db.js";
+import { requireAuth } from "../../middleware/auth.js";
 
 const router = Router();
+router.use(requireAuth);
 
 // ─── List all content entries ───────────────────────────────
 router.get("/", async (_req, res) => {
@@ -33,14 +36,21 @@ router.get("/key/:key", async (req, res) => {
   res.json({ entry });
 });
 
+const contentEntrySchema = z.object({
+  key: z.string().min(1).max(200),
+  value: z.string(),
+  section: z.string().min(1).max(50),
+});
+
 // ─── Create or update content entry (upsert by key) ────────
 router.post("/", async (req, res) => {
-  const { key, value, section } = req.body;
-
-  if (!key || !value || !section) {
-    res.status(400).json({ error: "key, value, and section are required" });
+  const parsed = contentEntrySchema.safeParse(req.body);
+  if (!parsed.success) {
+    res.status(400).json({ error: "Validation failed", details: parsed.error.flatten().fieldErrors });
     return;
   }
+
+  const { key, value, section } = parsed.data;
 
   const entry = await prisma.siteContent.upsert({
     where: { key },
@@ -60,8 +70,15 @@ router.put("/bulk", async (req, res) => {
     return;
   }
 
+  const entryArraySchema = z.array(contentEntrySchema);
+  const parsed = entryArraySchema.safeParse(entries);
+  if (!parsed.success) {
+    res.status(400).json({ error: "Validation failed", details: parsed.error.flatten().fieldErrors });
+    return;
+  }
+
   const results = await Promise.all(
-    entries.map(({ key, value, section }: { key: string; value: string; section: string }) =>
+    parsed.data.map(({ key, value, section }) =>
       prisma.siteContent.upsert({
         where: { key },
         update: { value, section },

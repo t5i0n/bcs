@@ -1,17 +1,34 @@
 import { Router } from "express";
 import bcrypt from "bcryptjs";
+import { z } from "zod";
 import { prisma } from "../db.js";
 import { signToken, requireAuth } from "../middleware/auth.js";
+import rateLimit from "express-rate-limit";
 
 const router = Router();
 
-// POST /api/auth/login
-router.post("/login", async (req, res) => {
-  const { email, password } = req.body;
+// Rate limit: 10 login attempts per IP per 15 minutes
+const loginLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 10,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { error: "Too many login attempts. Please try again later." },
+});
 
-  if (!email || !password) {
+const loginSchema = z.object({
+  email: z.string().email(),
+  password: z.string().min(1),
+});
+
+// POST /api/auth/login
+router.post("/login", loginLimiter, async (req, res) => {
+  const parsed = loginSchema.safeParse(req.body);
+  if (!parsed.success) {
     return res.status(400).json({ error: "Email and password are required" });
   }
+
+  const { email, password } = parsed.data;
 
   const admin = await prisma.admin.findUnique({ where: { email } });
   if (!admin) {

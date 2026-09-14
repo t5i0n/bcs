@@ -1,3 +1,4 @@
+// VITE_API_URL should be the base URL without /api (e.g. http://localhost:3001)
 const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:3001";
 
 async function request<T>(
@@ -119,6 +120,19 @@ export const publicContactApi = {
     }),
 };
 
+// ─── Admin Content API ────────────────────────────────────────
+
+export const adminContentApi = {
+  list: () =>
+    request<{ entries: ContentEntry[] }>("/api/admin/content"),
+
+  bulkUpdate: (entries: { key: string; value: string; section: string }[]) =>
+    request<{ updated: number }>("/api/admin/content/bulk", {
+      method: "PUT",
+      body: JSON.stringify({ entries }),
+    }),
+};
+
 // ─── Public Content API ────────────────────────────────────────
 
 export const publicContentApi = {
@@ -157,6 +171,14 @@ export interface Commodity {
 }
 
 export type CreateCommodityInput = Omit<Commodity, "id" | "createdAt" | "updatedAt">;
+
+export interface ContentEntry {
+  id: string;
+  key: string;
+  value: string;
+  section: string;
+  updatedAt: string;
+}
 
 export interface ContactSubmission {
   id: string;

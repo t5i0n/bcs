@@ -1,7 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { Save, Loader2, FileText, ChevronDown, ChevronUp } from "lucide-react";
-
-const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:3001";
+import { adminContentApi } from "@/lib/api";
 
 interface ContentEntry {
   id: string;
@@ -9,35 +8,6 @@ interface ContentEntry {
   value: string;
   section: string;
   updatedAt: string;
-}
-
-async function apiGet<T>(path: string): Promise<T> {
-  const token = localStorage.getItem("admin_token");
-  const res = await fetch(`${API_BASE}${path}`, {
-    headers: {
-      "Content-Type": "application/json",
-      ...(token && { Authorization: `Bearer ${token}` }),
-    },
-  });
-  if (!res.ok) throw new Error(`Request failed: ${res.status}`);
-  return res.json();
-}
-
-async function apiPut(path: string, body: unknown) {
-  const token = localStorage.getItem("admin_token");
-  const res = await fetch(`${API_BASE}${path}`, {
-    method: "PUT",
-    headers: {
-      "Content-Type": "application/json",
-      ...(token && { Authorization: `Bearer ${token}` }),
-    },
-    body: JSON.stringify(body),
-  });
-  if (!res.ok) {
-    const data = await res.json().catch(() => ({}));
-    throw new Error(data.error || `Request failed: ${res.status}`);
-  }
-  return res.json();
 }
 
 const SECTIONS = [
@@ -81,7 +51,7 @@ export function ContentPage() {
   useEffect(() => {
     let cancelled = false;
     setLoading(true);
-    apiGet<{ entries: ContentEntry[] }>("/api/admin/content")
+    adminContentApi.list()
       .then((data) => {
         if (!cancelled && mountedRef.current) setEntries(data.entries);
       })
@@ -97,7 +67,7 @@ export function ContentPage() {
 
   function reload() {
     setLoading(true);
-    apiGet<{ entries: ContentEntry[] }>("/api/admin/content")
+    adminContentApi.list()
       .then((data) => {
         setEntries(data.entries);
       })
@@ -120,13 +90,13 @@ export function ContentPage() {
         setSaving(false);
         return;
       }
-      await apiPut("/api/admin/content/bulk", {
-        entries: dirtyEntries.map(({ key, value, section }) => ({
+      await adminContentApi.bulkUpdate(
+        dirtyEntries.map(({ key, value, section }) => ({
           key,
           value,
           section,
         })),
-      });
+      );
       setDirtyKeys(new Set());
       reload();
     } catch (err) {
