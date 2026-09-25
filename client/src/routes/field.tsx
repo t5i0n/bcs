@@ -16,47 +16,47 @@ export default function FieldPage() {
 
   const fieldVideos = [
     {
-      src: "/field-videos/coffee-landscape.MOV",
+      src: "/field-videos/coffee-landscape.mp4",
       poster: coffeeLandscapePoster,
       title: t("field.videoMoments.coffeeLandscape"),
     },
     {
-      src: "/field-videos/coffee-harvest.MOV",
+      src: "/field-videos/coffee-harvest.mp4",
       poster: coffeeHarvestPoster,
       title: t("field.videoMoments.coffeeHarvest"),
     },
     {
-      src: "/field-videos/handpicked-cherries.MOV",
+      src: "/field-videos/handpicked-cherries.mp4",
       poster: handpickedCherriesPoster,
       title: t("field.videoMoments.handpickedCherries"),
     },
     {
-      src: "/field-videos/Taking Coffee for Sorting.MOV",
+      src: "/field-videos/Taking Coffee for Sorting.mp4",
       poster: takingCoffeePoster,
       title: t("field.moments.takingCoffeeForSorting"),
     },
     {
-      src: "/field-videos/Sorting coffee cherries.MOV",
+      src: "/field-videos/Sorting coffee cherries.mp4",
       poster: sortingCherriesPoster,
       title: t("field.moments.sortingCoffeeCherries"),
     },
     {
-      src: "/field-videos/Cleaning:Washing coffee.MOV",
+      src: "/field-videos/Cleaning:Washing coffee.mp4",
       poster: washingCoffeePoster,
       title: t("field.moments.washingCoffee"),
     },
     {
-      src: "/field-videos/drying process.MOV",
+      src: "/field-videos/drying process.mp4",
       poster: dryingProcessPoster,
       title: t("field.moments.dryingWashedCoffee"),
     },
     {
-      src: "/field-videos/dry.MOV",
+      src: "/field-videos/dry.mp4",
       poster: dryingWashedCoffeePoster,
       title: t("field.moments.dryingWashedCoffee"),
     },
     {
-      src: "/field-videos/coffee drying.MOV",
+      src: "/field-videos/coffee drying.mp4",
       poster: dryingPoster,
       title: t("field.moments.dryingCoffee"),
     },
@@ -133,7 +133,7 @@ export default function FieldPage() {
                   className="absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100 group-focus:opacity-100"
                   aria-label={video.title}
                 >
-                  <source src={video.src} type="video/quicktime" />
+                  <source src={video.src} type="video/mp4" />
                 </video>
                 <figcaption className="absolute inset-x-0 bottom-0 bg-linear-to-t from-black/75 to-transparent px-6 pb-5 pt-14 text-lg font-display font-semibold text-white">
                   {video.title}
@@ -165,7 +165,7 @@ export default function FieldPage() {
               className="h-full w-full object-cover bg-black"
               aria-label={t("field.fieldVideos")}
             >
-              <source src="/videos/bcs coffee vid.mov" type="video/quicktime" />
+              <source src="/videos/bcs coffee vid.mp4" type="video/mp4" />
               Your browser does not support embedded video.
             </video>
           </div>

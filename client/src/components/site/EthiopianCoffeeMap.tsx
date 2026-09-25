@@ -170,7 +170,7 @@ export function EthiopianCoffeeMap() {
   return (
     <div className="grid lg:grid-cols-[1.1fr_1fr] gap-10 items-start">
       {/* Map */}
-      <div className="relative aspect-square max-w-xl mx-auto lg:mx-0 rounded-3xl bg-cream border border-border p-8 overflow-hidden">
+      <div className="relative aspect-square w-full max-w-xl mx-auto lg:mx-0 rounded-3xl bg-cream border border-border p-3 sm:p-5 lg:p-8 overflow-hidden">
         <div
           className="absolute inset-0 opacity-20"
           style={{
@@ -180,7 +180,7 @@ export function EthiopianCoffeeMap() {
         />
         <svg
           viewBox={`0 0 ${MAP_WIDTH} ${MAP_HEIGHT}`}
-          className="absolute inset-0 w-full h-full p-4"
+          className="absolute inset-0 w-full h-full p-0 sm:p-2 lg:p-4"
           preserveAspectRatio="xMidYMid meet"
         >
           {/* Ethiopia outline */}
@@ -215,11 +215,7 @@ export function EthiopianCoffeeMap() {
             );
             // Resolve against REGIONS by name (not array position) so pin
             // order and REGIONS order don't have to match to stay in sync.
-            const regionIndex = REGIONS.findIndex(
-              (r) =>
-                r.key ===
-                region.key,
-            );
+            const regionIndex = REGIONS.findIndex((r) => r.key === region.key);
             const isActive = regionIndex !== -1 && active === regionIndex;
             return (
               <g

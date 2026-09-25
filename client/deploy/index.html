@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script>
+      // Apply the saved (or system) theme before first paint to avoid a flash.
+      (function () {
+        try {
+          var stored = localStorage.getItem("theme");
+          if (
+            stored === "dark" ||
+            (!stored &&
+              window.matchMedia("(prefers-color-scheme: dark)").matches)
+          ) {
+            document.documentElement.classList.add("dark");
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BCS Coffee Market Consulting</title>
+    <meta
+      name="description"
+      content="Trusted Ethiopian coffee consulting, exporter verification, quality sourcing, and market intelligence for international buyers."
+    />
+    <meta name="author" content="BCS Coffee Market Consulting" />
+    <meta property="og:title" content="BCS Coffee Market Consulting" />
+    <meta
+      property="og:description"
+      content="Connecting Ethiopian coffee excellence with global markets since 2009."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://bcscoffeemarket.com/og-image.jpg" />
+    <meta property="og:url" content="https://bcscoffeemarket.com/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://bcscoffeemarket.com/og-image.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
+    />
+    <script type="module" crossorigin src="/assets/index-8kOL5SA3.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-Ca9ihfAT.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
