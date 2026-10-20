@@ -1,6 +1,6 @@
 <?php
 
-$config = require __DIR__ . '/config.php';
+require_once __DIR__ . '/bootstrap.php';
 
 function base64UrlEncode(string $data): string
 {

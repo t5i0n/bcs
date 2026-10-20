@@ -2,13 +2,29 @@
 
 header('Content-Type: application/json');
 
+require_once __DIR__ . '/bootstrap.php';
 require_once __DIR__ . '/database.php';
 require_once __DIR__ . '/auth.php';
+require_once __DIR__ . '/ratelimit.php';
 
 $method = $_SERVER['REQUEST_METHOD'];
 $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 $body = json_decode(file_get_contents('php://input'), true) ?? [];
+
+// Optional CORS (only needed if a different origin calls the API, e.g. local dev).
+$origin = $_SERVER['HTTP_ORIGIN'] ?? '';
+if ($origin !== '' && in_array($origin, $config['allowed_origins'] ?? [], true)) {
+    header('Access-Control-Allow-Origin: ' . $origin);
+    header('Vary: Origin');
+    header('Access-Control-Allow-Headers: Content-Type, Authorization');
+    header('Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS');
+}
+if ($method === 'OPTIONS') {
+    http_response_code(204);
+    exit;
+}
+header('X-Content-Type-Options: nosniff');
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +47,12 @@ if ($method === 'GET' && $path === '/api/health') {
 */
 
 if ($method === 'POST' && $path === '/api/auth/login') {
+
+    if (!rateLimit($pdo, 'login', 10, 15 * 60)) {
+        http_response_code(429);
+        echo json_encode(['error' => 'Too many login attempts. Please try again later.']);
+        exit;
+    }
 
     $email = trim($body['email'] ?? '');
     $password = $body['password'] ?? '';
@@ -245,6 +267,12 @@ if ($method === 'GET' && preg_match(
 
 if ($method === 'POST' && $path === '/api/contact') {
 
+    if (!rateLimit($pdo, 'contact', 5, 60 * 60)) {
+        http_response_code(429);
+        echo json_encode(['error' => 'Too many submissions. Please try again later.']);
+        exit;
+    }
+
     $name = trim($body['name'] ?? '');
     $company = trim($body['company'] ?? '');
     $country = trim($body['country'] ?? '');
@@ -349,7 +377,7 @@ if ($method === 'POST' && $path === '/api/contact') {
         )"
     );
 
-    $now = date('Y-m-d H:i:s');
+    $now = nowIso();
 
     $stmt->execute([
         ':id' => $id,
@@ -594,7 +622,7 @@ if ($method === 'POST' && $path === '/api/admin/commodities') {
     }
 
     $id = bin2hex(random_bytes(12));
-    $now = date('Y-m-d H:i:s');
+    $now = nowIso();
 
     $stmt = $pdo->prepare(
         "INSERT INTO CoffeeCommodity (
@@ -828,7 +856,7 @@ if ($method === 'PUT' && preg_match(
     }
 
     $updates[] = 'updatedAt = :updatedAt';
-    $params[':updatedAt'] = date('Y-m-d H:i:s');
+    $params[':updatedAt'] = nowIso();
     $params[':id'] = $id;
 
     $sql = "
@@ -1247,7 +1275,7 @@ if ($method === 'GET' && preg_match(
 
         $stmt->execute([
             ':id' => $id,
-            ':updatedAt' => date('Y-m-d H:i:s')
+            ':updatedAt' => nowIso()
         ]);
 
         $submission['status'] = 'read';
@@ -1346,7 +1374,7 @@ if ($method === 'PATCH' && preg_match(
     }
 
     $updates[] = 'updatedAt = :updatedAt';
-    $params[':updatedAt'] = date('Y-m-d H:i:s');
+    $params[':updatedAt'] = nowIso();
     $params[':id'] = $id;
 
     $stmt = $pdo->prepare(
@@ -1608,7 +1636,7 @@ if ($method === 'POST' && $path === '/api/admin/content') {
 
     $existing = $check->fetch();
 
-    $now = date('Y-m-d H:i:s');
+    $now = nowIso();
 
     if ($existing) {
 
@@ -1745,7 +1773,7 @@ if ($method === 'PUT' && $path === '/api/admin/content/bulk') {
 
             $existing = $check->fetch();
 
-            $now = date('Y-m-d H:i:s');
+            $now = nowIso();
 
             if ($existing) {
 
