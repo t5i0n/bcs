@@ -32,3 +32,14 @@ yarn-error.log*
 # Database
 *.db
 *.db-journal
+
+/client/public/field-videos/*.mp4
+/client/public/field-videos/*.MP4
+/client/public/field-videos/*.mov
+/client/public/field-videos/*.MOV
+/client/public/videos/*.mp4
+/client/public/videos/*.MP4
+/client/public/videos/*.mov
+/client/public/videos/*.MOV
+/client/bcs-frontend-v1.zip
+/client/bcs-frontend-v2.zip
